@@ -12,7 +12,7 @@ module.exports = {
       interpreter: "node",
       node_args: "--import tsx",
       cwd: __dirname,
-      env: { DESK_AUTOPUBLISH: "1", CYCLE_SECONDS: "900" },
+      env: { DESK_CMD: "loop", DESK_AUTOPUBLISH: "1", CYCLE_SECONDS: "900" },
       autorestart: true,
       max_restarts: 10,
       min_uptime: 30000,

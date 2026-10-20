@@ -400,7 +400,8 @@ async function status(): Promise<void> {
 
 const isMain = process.argv[1] && /desk\.ts$/.test(process.argv[1]);
 if (isMain) {
-  const cmd = process.argv[2] ?? "status";
+  // PM2 on Windows can drop script args on `pm2 restart`; DESK_CMD (set in ecosystem.config.cjs) survives it
+  const cmd = process.env.DESK_CMD ?? process.argv[2] ?? "status";
   if (cmd === "keygen") await keygen();
   else if (cmd === "airdrop") await airdrop();
   else if (cmd === "register") await register();
