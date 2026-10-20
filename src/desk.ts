@@ -342,6 +342,8 @@ function publish(): void {
     git("add", "data", "docs");
     if (!git("status", "--porcelain", "data", "docs").trim()) return;
     git("-c", "user.name=Debate Desk", "-c", "user.email=nobanksnearby@gmail.com", "commit", "-q", "-m", `record: ${readLedger().length} receipts`);
+    // code changes may have been pushed from this same checkout; data/ and docs/ are only ever written here
+    git("pull", "-q", "--rebase", "--autostash", "origin", "main");
     git("push", "-q", "origin", "main");
   } catch (e) {
     console.error(`publish failed (will retry next cycle): ${String(e).slice(0, 200)}`);
