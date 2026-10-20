@@ -398,10 +398,12 @@ async function status(): Promise<void> {
   console.log(`ledger rows: ${readLedger().length}`);
 }
 
-const isMain = process.argv[1] && /desk\.ts$/.test(process.argv[1]);
+// Under PM2, argv[1] is PM2's own container script, not this file. DESK_CMD marks a PM2 launch.
+const isMain = process.env.DESK_CMD !== undefined || /desk\.ts$/.test(process.argv[1] ?? "");
 if (isMain) {
   // PM2 on Windows can drop script args on `pm2 restart`; DESK_CMD (set in ecosystem.config.cjs) survives it
   const cmd = process.env.DESK_CMD ?? process.argv[2] ?? "status";
+  if (cmd === "loop") console.log(`desk loop starting: cycle every ${CYCLE_SECONDS}s, autopublish ${process.env.DESK_AUTOPUBLISH === "1" ? "on" : "off"}`);
   if (cmd === "keygen") await keygen();
   else if (cmd === "airdrop") await airdrop();
   else if (cmd === "register") await register();

@@ -107,7 +107,7 @@ function pythItem(p: PythPrice, nowS: number): EvidenceItem {
 
 async function coingeckoItem(): Promise<EvidenceItem> {
   const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=solana&price_change_percentage=1h,24h,7d";
-  const raw = await getText(url);
+  const raw = await getText(url, 8000); // free tier is often slow; the desk has other price sources
   const [m] = JSON.parse(raw) as Array<Record<string, number | string | null>>;
   if (!m) throw new Error("CoinGecko returned no solana row");
   return {
@@ -280,7 +280,7 @@ export async function gatherEvidence(rpc: Rpc<GetAccountInfoApi>): Promise<Evide
     withRetry(() => readPyth(rpc, PYTH_SOL_USD)),
     withRetry(coinbaseItem, 3).catch(() => null),
     withRetry(krakenItem, 3).catch(() => null),
-    withRetry(coingeckoItem, 2).catch(() => null),
+    coingeckoItem().catch(() => null),
     newsItems(),
     creItem().catch(() => null),
   ]);
