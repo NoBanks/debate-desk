@@ -38,7 +38,7 @@ async function withRetry<T>(call: () => Promise<T>): Promise<T> {
     try {
       return await call();
     } catch (e) {
-      if (i >= 7 || !/429|Too Many|fetch failed|ECONNRESET/i.test(String(e))) throw e;
+      if (i >= 7 || !/429|Too Many|fetch failed|ECONNRESET|Timeout|UND_ERR|HTTP 5/i.test(String(e))) throw e;
       await new Promise((r) => setTimeout(r, 1000 * 2 ** i));
     }
   }
@@ -47,9 +47,11 @@ async function withRetry<T>(call: () => Promise<T>): Promise<T> {
 function makeLoader(base: string) {
   return async (rel: string): Promise<string> => {
     if (base.startsWith("http")) {
-      const res = await fetch(`${base.replace(/\/$/, "")}/${rel}`);
-      if (!res.ok) throw new Error(`${rel}: HTTP ${res.status}`);
-      return res.text();
+      return withRetry(async () => {
+        const res = await fetch(`${base.replace(/\/$/, "")}/${rel}`, { signal: AbortSignal.timeout(20_000) });
+        if (!res.ok) throw new Error(`${rel}: HTTP ${res.status}`);
+        return res.text();
+      });
     }
     return readFileSync(join(base, rel), "utf8");
   };
