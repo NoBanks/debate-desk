@@ -19,6 +19,7 @@
  * the same transaction, and a HOLD receipt with one. A trade and its reasoning land
  * together or not at all.
  */
+import { execFileSync } from "node:child_process";
 import { generateKeyPairSync } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync, appendFileSync } from "node:fs";
 import { join } from "node:path";
@@ -42,7 +43,7 @@ import {
 import { swapInstructions } from "@orca-so/whirlpools";
 import { WhirlpoolDeployment, fetchWhirlpool } from "@orca-so/whirlpools-client";
 import {
-  AGENT_NAME, CLUSTER, CYCLE_SECONDS, DATA_DIR, DEV_USDC_MINT, GEMINI_MODEL, KEY_DIR, ORCA_WHIRLPOOL_PROGRAM,
+  AGENT_NAME, CLUSTER, REPO_ROOT, CYCLE_SECONDS, DATA_DIR, DEV_USDC_MINT, GEMINI_MODEL, KEY_DIR, ORCA_WHIRLPOOL_PROGRAM,
   POOL, PROGRAM_ID, RPC_URL, SLIPPAGE_BPS, WSOL_MINT, explorerAddress, explorerTx,
 } from "./config.js";
 import { canonicalBytes, receiptHash, sha256Hex, type Json } from "./canonical.js";
@@ -162,7 +163,7 @@ export function evidenceView(items: { id: string; data: { [k: string]: Json } }[
   const pythPriceE8 = shift >= 0 ? price * 10n ** BigInt(shift) : price / 10n ** BigInt(-shift);
   const crossPricesE8: { [id: string]: bigint } = {};
   for (const it of items) {
-    if (it.id === "CG" || it.id === "CL") crossPricesE8[it.id] = e8(String(it.data.price_usd));
+    if (["CL", "CB", "KR", "CG"].includes(it.id)) crossPricesE8[it.id] = e8(String(it.data.price_usd));
   }
   return { ids: items.map((i) => i.id), pythPriceE8, pythAgeS: Number(p.age_s), pythConfBps: Number(p.conf_bps), crossPricesE8 };
 }
@@ -329,6 +330,24 @@ export async function decide(
   return { receipt, out, swapIxs };
 }
 
+/**
+ * DESK_AUTOPUBLISH=1: after each cycle, rebuild docs/ and push data/ + docs/ to the public repo,
+ * so the GitHub Pages record and the verifier's raw data follow the chain within one cycle.
+ */
+function publish(): void {
+  if (process.env.DESK_AUTOPUBLISH !== "1") return;
+  const git = (...a: string[]) => execFileSync("git", a, { cwd: REPO_ROOT, stdio: "pipe" }).toString();
+  try {
+    execFileSync(process.execPath, [join(REPO_ROOT, "node_modules", "tsx", "dist", "cli.mjs"), join(REPO_ROOT, "src", "site.ts")], { cwd: REPO_ROOT, stdio: "pipe" });
+    git("add", "data", "docs");
+    if (!git("status", "--porcelain", "data", "docs").trim()) return;
+    git("-c", "user.name=Debate Desk", "-c", "user.email=nobanksnearby@gmail.com", "commit", "-q", "-m", `record: ${readLedger().length} receipts`);
+    git("push", "-q", "origin", "main");
+  } catch (e) {
+    console.error(`publish failed (will retry next cycle): ${String(e).slice(0, 200)}`);
+  }
+}
+
 async function keygen(): Promise<void> {
   if (existsSync(KEY_FILE)) {
     console.log(`key already exists: ${KEY_FILE}`);
@@ -385,7 +404,10 @@ if (isMain) {
   else if (cmd === "register") await register();
   else if (cmd === "sync-policy") await syncPolicy();
   else if (cmd === "status") await status();
-  else if (cmd === "once") await cycle(0);
+  else if (cmd === "once") {
+    await cycle(0);
+    publish();
+  } else if (cmd === "publish") publish();
   else if (cmd === "loop") {
     for (let n = 0; ; n++) {
       try {
@@ -393,6 +415,7 @@ if (isMain) {
       } catch (e) {
         console.error(`cycle ${n} error: ${String(e).slice(0, 400)}`);
       }
+      publish();
       await new Promise((r) => setTimeout(r, CYCLE_SECONDS * 1000));
     }
   } else {

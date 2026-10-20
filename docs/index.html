@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Debate Desk</title>
+<meta name="description" content="Bull and bear agents argue from the same market evidence, a judge decides, and every practice trade lands on Solana with its reasoning trail committed on chain.">
+<style>
+:root{--bg:#0d0f12;--fg:#e8e6e1;--mut:#8b8f97;--card:#15181d;--line:#262a31;--bull:#3ecf8e;--bear:#ff6b6b;--hold:#a0a6b0;--acc:#f2c14e}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f6f4ef;--fg:#1b1d21;--mut:#5d636c;--card:#fff;--line:#e3dfd6;--bull:#14864f;--bear:#c0392b;--hold:#6b7280;--acc:#9a6b00}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:30px;margin:0 0 4px;letter-spacing:-.02em}h1 span{color:var(--acc)}
+.lede{color:var(--mut);max-width:720px;margin:0 0 18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.stat b{display:block;font-size:22px}.stat span{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.how{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:14px 0 26px}
+.how ol{margin:6px 0 0;padding-left:20px}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--mut);word-break:break-all}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto;font:12px ui-monospace,Menlo,Consolas,monospace}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 16px}
+.card header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--mut)}
+.badge{font-weight:700;color:#000;border-radius:6px;padding:2px 9px;font-size:12px;letter-spacing:.05em}.badge.buy{background:var(--bull)}.badge.sell{background:var(--bear)}.badge.hold{background:var(--hold)}
+.px{margin-left:auto;color:var(--fg)}
+.reason{font-size:16px;margin:10px 0}
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media (max-width:720px){.debate{grid-template-columns:1fr}}
+.side{border-left:3px solid var(--line);padding:4px 0 4px 12px}.side.bull{border-color:var(--bull)}.side.bear{border-color:var(--bear)}
+.side h4,.judge h4{margin:0 0 6px;font-size:13px;letter-spacing:.08em}.conf{color:var(--mut);font-weight:400;letter-spacing:0}
+.side ol{padding-left:18px;margin:6px 0}.side li{margin:0 0 6px}.ce{color:var(--mut);font-size:13px}
+.thesis{margin:0 0 6px}
+.judge{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:12px 0}
+.cite{font:11px ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);border-radius:4px;padding:0 4px;text-decoration:none;color:var(--acc)}
+.muted{color:var(--mut);font-size:13px}
+details{margin:8px 0}summary{cursor:pointer;color:var(--mut);font-size:13px}
+.ev,.rules{list-style:none;padding:0;margin:8px 0;font-size:13px}.ev li,.rules li{padding:3px 0;border-bottom:1px dashed var(--line)}
+.rules span{font:700 11px ui-monospace,Menlo,Consolas,monospace}.rules .pass span{color:var(--bull)}.rules .fail span{color:var(--bear)}
+.card footer{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--mut);border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+a{color:var(--acc)}
+</style></head><body><main>
+<h1>Debate <span>Desk</span></h1>
+<p class="lede">Two agents argue about SOL from the same evidence. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
+<div class="stats">
+  <div class="stat"><b>2</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2</b><span>debates</span></div>
+  <div class="stat"><b>0</b><span>entries</span></div>
+  <div class="stat"><b>0</b><span>rule exits</span></div>
+  <div class="stat"><b>0</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>-</b><span>bps on closed trades (market price)</span></div>
+</div>
+<div class="how">
+  <b>How to check every word on this page</b>
+  <ol>
+    <li>Each card's receipt hash is committed by program <a href="https://explorer.solana.com/address/GkCqpfzoMVSCMw4muiKAXoo4kcHFRiYjjAHBQjmhMwmU?cluster=devnet" target="_blank" rel="noopener"><code>GkCqpfzoMVSCMw4muiKAXoo4kcHFRiYjjAHBQjmhMwmU</code></a> into the desk's on-chain log <a href="https://explorer.solana.com/address/Ahw9K3YcVcaKZTKyx7u5QBCfoMKLLjhZz5ZFDqm3Y5gR?cluster=devnet" target="_blank" rel="noopener"><code>Ahw9K3YcVcaK...</code></a>.</li>
+    <li>The receipt names the hashes of every evidence item and every model transcript. Those files are in the repo under <code>data/</code>.</li>
+    <li>Run the verifier. It re-hashes everything, proves bull and bear saw the identical evidence, replays the risk rules to the same action and size, and replays the on-chain head.</li>
+  </ol>
+  <pre>git clone https://github.com/NoBanks/debate-desk && cd debate-desk && npm install
+npx tsx src/verify.ts --tx all</pre>
+  <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
+</div>
+<article class="card" id="r1">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1</span>
+    <time>2026-10-20T22:51:01Z</time>
+    <span class="px">SOL $106.88</span>
+  </header>
+  <p class="reason">judge ruled HOLD (conviction 50)</p>
+  <details ><summary>Evidence (10) - pack <code>7ae738b6...</code></summary><ul class="ev"><li id="ev-PYTH-1"><b>PYTH</b> <a>$106.884</a> - EMA $106.7029, 16 bps from EMA, 22s old <code title="9a2ac5e2f0f70699eca17dbcb907b0f6351d6889d1c3f1953702a18d602174ac">9a2ac5e2...</code></li><li id="ev-CB-1"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$106.89</a> - 24h 172 bps <code title="1c5219c09344898fe712e2a7d49b400ca15c7c3e1ef0f0e01ac79cd616036623">1c5219c0...</code></li><li id="ev-KR-1"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$106.91</a> - 101 bps vs 24h VWAP <code title="9ad45d97b1aea59fc7011dd38e19191e2c50e69e31948f06779ca2385d53ed97">9ad45d97...</code></li><li id="ev-CG-1"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$106.86</a> - 1h 1 bps, 24h 172 bps, 7d -34 bps <code title="cb2315caa796051209e5de366172e426c53dde2ea7ab745d1bfaa92ce5c960d8">cb2315ca...</code></li><li id="ev-NEWS-1-1"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/blackrock-ishares-bitcoin-managed-protection-etf-pbit?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">BlackRock files for third Bitcoin ETF, still no Solana or XRP</a> <code title="43fa671165e218d97ce0769f34fbd4f2855b7bd9934141c4584ee9e0d7010929">43fa6711...</code></li><li id="ev-NEWS-2-1"><b>NEWS-2</b> <a href="https://decrypt.co/381456/vibe-coding-ads-out-smart-tvs-heres-how" target="_blank" rel="noopener">People Are Vibe Coding the Ads Out of Their Smart TVs: Here's How</a> <code title="57c421ddfb1e9cd374b9aaf945d4aa3c4c12fdc9aefe046cd3bbe568695f9d30">57c421dd...</code></li><li id="ev-NEWS-3-1"><b>NEWS-3</b> <a href="https://decrypt.co/381467/openai-buys-orchestra-bio-ai-agents-drug-development" target="_blank" rel="noopener">OpenAI Buys Orchestra Bio to Put AI Agents in Charge of Drug Development Grunt Work</a> <code title="d6da6516ed0912f249450a066b9e54bd120122a08d8ed0192f6d12dec557d02f">d6da6516...</code></li><li id="ev-NEWS-4-1"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/utah-lawsuit-kalshi-susquehanna-prediction-markets-illegal-bets?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Utah AG sues Kalshi, pursues profits from prediction market company</a> <code title="c352aca1df942b94e9aa8f3ff5a261ac5e505cea8916c344e023cd948e4f7795">c352aca1...</code></li><li id="ev-NEWS-5-1"><b>NEWS-5</b> <a href="https://decrypt.co/381464/jpmorgan-bitcoin-forecast-first-time-stocks-gold" target="_blank" rel="noopener">JPMorgan Puts a Number on Bitcoin for the First Time: 10% a Year, With a Big Caveat</a> <code title="1c1d6a8397a704777405f2d234fac808bd8c082e6920fe08b0dbef8082645626">1c1d6a83...</code></li><li id="ev-NEWS-6-1"><b>NEWS-6</b> <a href="https://www.coindesk.com/policy/2026/10/20/u-s-cftc-sets-agenda-for-ai-forum-exploring-trading-and-agentic-finance" target="_blank" rel="noopener">U.S. CFTC sets agenda for AI forum, exploring trading and agentic finance</a> <code title="247bfd7efce62fb460e4f15f3580fd7eacb13ced9d8a6f9d6dc46f61e43d66d2">247bfd7e...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 70</span></h4>
+    <p class="thesis">SOL is exhibiting strong short-term bullish momentum, driven by significant 24-hour price appreciation and trading above its volume-weighted average price, suggesting continued upward potential.</p>
+    <ol><li>SOL has demonstrated robust positive price movement over the past 24 hours. <a class="cite" href="#ev-CB-1">CB</a> <a class="cite" href="#ev-KR-1">KR</a> <a class="cite" href="#ev-CG-1">CG</a><div class="ce">The substantial 24-hour price increases (172-187 bps) across major exchanges indicate strong buying pressure and a clear upward trend, likely to continue in the short term.</div></li><li>The current price of SOL is trading above its 24-hour volume-weighted average price (VWAP). <a class="cite" href="#ev-KR-1">KR</a><div class="ce">Trading 101 bps above VWAP suggests that buyers are aggressively accumulating SOL at prices higher than the average, signaling strong bullish sentiment and potential for further price appreciation.</div></li><li>SOL's price is currently near its 24-hour highs, indicating sustained strength. <a class="cite" href="#ev-CB-1">CB</a> <a class="cite" href="#ev-KR-1">KR</a> <a class="cite" href="#ev-CG-1">CG</a><div class="ce">The proximity of the current price to the 24-hour highs on multiple exchanges suggests that the upward momentum is being sustained and not immediately facing strong selling pressure, which could lead to further gains.</div></li></ol>
+    <p class="muted">Would change my mind: A significant reversal in the 24-hour trend, with SOL's price falling below its 24-hour open prices or consistently trading below its VWAP, would invalidate this bullish thesis.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 65</span></h4>
+    <p class="thesis">Solana is vulnerable to a price decline due to a lack of institutional ETF interest compared to Bitcoin and a negative weekly performance, suggesting that recent short-term gains may be unsustainable.</p>
+    <ol><li>Major institutional players are prioritizing Bitcoin for investment products, explicitly excluding Solana from ETF filings, which is likely to divert institutional capital away from SOL. <a class="cite" href="#ev-NEWS-1-1">NEWS-1</a> <a class="cite" href="#ev-NEWS-5-1">NEWS-5</a><div class="ce">BlackRock's filing for a Bitcoin ETF without including Solana (NEWS-1), coupled with JPMorgan's valuation of Bitcoin (NEWS-5), demonstrates a clear institutional preference for Bitcoin. This preference will likely draw capital away from altcoins like SOL, leading to reduced demand and downward pressure on SOL's price.</div></li><li>Solana's significant 24-hour rally has pushed its price to a premium above its 24-hour VWAP and EMA, making it vulnerable to a correction, especially in the context of a negative weekly performance. <a class="cite" href="#ev-CG-1">CG</a> <a class="cite" href="#ev-KR-1">KR</a> <a class="cite" href="#ev-PYTH-1">PYTH</a><div class="ce">The current price is trading significantly above its 24-hour VWAP (KR: 101 bps above) and EMA (PYTH: 16 bps above), indicating that the recent 24-hour rally has led to a short-term overbought condition. This overextension, combined with a negative 7-day performance (CG: -34 bps), suggests that the price is likely to correct downwards.</div></li></ol>
+    <p class="muted">Would change my mind: Positive news regarding Solana ETFs or direct institutional adoption for SOL, a sustained break above current 24-hour highs with strong volume, or a significant positive shift in Solana's 7-day or longer-term price performance.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">NEITHER wins - HOLD at conviction 50</span></h4>
+        <p>SOL is exhibiting strong short-term bullish momentum, evidenced by significant 24-hour price appreciation (172-187 bps) across major exchanges [CB, KR, CG] and trading above its 24-hour volume-weighted average price (101 bps) [KR]. However, this rally occurs in the context of a negative 7-day performance (-34 bps) [CG] and the price trading above its EMA (16 bps) [PYTH], suggesting potential short-term overextension. Furthermore, institutional preference for Bitcoin ETFs, explicitly excluding Solana [NEWS-1], presents a fundamental headwind that could divert capital. The conflicting signals between strong short-term momentum and underlying vulnerabilities warrant a cautious HOLD decision.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-CB-1">CB</a> <a class="cite" href="#ev-KR-1">KR</a> <a class="cite" href="#ev-CG-1">CG</a> <a class="cite" href="#ev-NEWS-1-1">NEWS-1</a> - stop 50 bps, target 50 bps, horizon 30 min, size 0% of max</p>
+        
+      </div>
+  <details><summary>Rules (5/6 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>evidence.pyth_fresh</code> Pyth age 22s, limit 900s</li><li class="pass"><span>PASS</span> <code>evidence.pyth_tight</code> Pyth confidence 3 bps, limit 100</li><li class="pass"><span>PASS</span> <code>evidence.sources_agree</code> CB 0 bps vs PYTH, KR 2 bps vs PYTH, CG -2 bps vs PYTH; limit 150 bps</li><li class="pass"><span>PASS</span> <code>ruling.citations_valid</code> cited [CB, KR, CG, NEWS-1]; unknown []; need 2+</li><li class="pass"><span>PASS</span> <code>ruling.coherent</code> winner NEITHER, verdict HOLD</li><li class="fail"><span>FAIL</span> <code>ruling.verdict</code> judge ruled HOLD</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="https://explorer.solana.com/tx/4FmjrNyemYzbvFcUu43yiBAawjjNudGTM5LA171u6pgfmzEPgfGmn1K7XEBtrFjied86F8FjhR2woPKD8b8M2FKr?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="e8a8fc86fe3292129c617b06924ad82b8b0c7033bf80885f3546c685420c2f64">receipt e8a8fc86fe32...</code>
+  </footer>
+</article>
+<article class="card" id="r0">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #0</span>
+    <time>2026-10-20T22:49:40Z</time>
+    <span class="px">SOL $106.83</span>
+  </header>
+  <p class="reason">only one price source; cannot cross-check</p>
+  <details ><summary>Evidence (1) - pack <code>7ee4ece5...</code></summary><ul class="ev"><li id="ev-PYTH-0"><b>PYTH</b> <a>$106.8344</a> - EMA $106.696, 12 bps from EMA, 77s old <code title="de7975103ab9466d1a44fac36da34c1c323d7833f5a9fce7d9f12ce08d85f5c7">de797510...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 0</span></h4>
+    <p class="thesis">SOL's current price is marginally above its short-term exponential moving average, indicating a very slight positive price momentum.</p>
+    <ol><li>The current SOL price is 12 basis points higher than its exponential moving average. <a class="cite" href="#ev-PYTH-0">PYTH</a><div class="ce">A price trading above its EMA, even by a small margin, suggests a slight bullish momentum that could persist in the very short term.</div></li></ol>
+    <p class="muted">Would change my mind: The availability of at least one more decisive piece of bullish evidence, or a significant increase in the deviation of price above EMA, would be required to change my mind. Currently, the evidence is insufficient to support a trade.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 20</span></h4>
+    <p class="thesis">The current SOL price is marginally above its Exponential Moving Average, suggesting a very slight short-term overextension that could lead to a minor price correction.</p>
+    <ol><li>SOL's current price is trading 12 basis points above its Exponential Moving Average. <a class="cite" href="#ev-PYTH-0">PYTH</a><div class="ce">A price trading above its EMA indicates a minor overbought condition in the very short term, which could cause a slight reversion to the mean and a decrease in SOL's price.</div></li></ol>
+    <p class="muted">Would change my mind: The availability of additional bearish technical indicators, negative fundamental news, or a significantly larger deviation from the EMA. Crucially, at least one more decisive piece of evidence supporting a sell would be required to consider a trade.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">NEITHER wins - HOLD at conviction 0</span></h4>
+        <p>Both advocates interpret the same single piece of evidence (SOL's price being 12 basis points above its EMA) in opposing ways, one as slight bullish momentum and the other as a minor overbought condition. A 12 bps deviation is extremely small and does not provide a strong directional signal. Furthermore, both advocates explicitly state that the evidence is insufficient to support a trade, and the desk rules require at least two decisive evidence IDs for a trade. With only one ambiguous piece of evidence, a HOLD decision is warranted.</p>
+        <p class="muted">Decisive:  - stop 50 bps, target 50 bps, horizon 30 min, size 0% of max</p>
+        
+      </div>
+  <details><summary>Rules (2/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>evidence.pyth_fresh</code> Pyth age 77s, limit 900s</li><li class="pass"><span>PASS</span> <code>evidence.pyth_tight</code> Pyth confidence 3 bps, limit 100</li><li class="fail"><span>FAIL</span> <code>evidence.sources_agree</code> no second price source in pack; limit 150 bps</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="https://explorer.solana.com/tx/4T2ScCqw78iBtbwJnuMqHVeHt4yCuQdMtfS8n9vYKRkx83rD6bWrc6hBGyKytjjtpp1zJX58sDR6TsUhvDNfQ4Je?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="f7412042750047b6386f207c7e92c6ca9d6bd92cea4eef03026d4c0816100407">receipt f74120427500...</code>
+  </footer>
+</article>
+</main></body></html>

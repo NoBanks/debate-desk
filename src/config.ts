@@ -7,13 +7,22 @@
  *
  * Anything that differs per deployment comes from the environment.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { address, type Address } from "@solana/kit";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+// Secrets come from the environment or a gitignored .env next to package.json. Never committed.
+const envFile = join(REPO_ROOT, ".env");
+if (existsSync(envFile)) {
+  for (const line of readFileSync(envFile, "utf8").split("\n")) {
+    const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(line);
+    if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+}
 export const IDL = JSON.parse(readFileSync(join(REPO_ROOT, "idl", "solana_agent_receipts.json"), "utf8"));
 
 export const PROGRAM_ID: Address = address(process.env.RECEIPTS_PROGRAM_ID ?? IDL.address);

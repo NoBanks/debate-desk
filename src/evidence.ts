@@ -8,7 +8,9 @@
  * evidence" is a checkable claim, not a promise.
  *
  *   PYTH   SOL/USD read straight from Pyth's account on Solana devnet
- *   CG     CoinGecko market snapshot (1h / 24h / 7d moves, volume)
+ *   CB     Coinbase Exchange SOL-USD 24h stats (last, open, high, low, volume)
+ *   KR     Kraken SOLUSD ticker (last, 24h VWAP, open, high, low, volume)
+ *   CG     CoinGecko market snapshot (1h / 24h / 7d moves, volume), when its free tier answers
  *   NEWS-n crypto headlines from public RSS feeds
  *   CL     Chainlink SOL/USD Data Feed, delivered by the CRE workflow in cre/ (when it runs)
  */
@@ -128,6 +130,60 @@ async function coingeckoItem(): Promise<EvidenceItem> {
   };
 }
 
+function bpsMove(from: number, to: number): number {
+  return Math.round(((to - from) / from) * 10_000);
+}
+
+async function coinbaseItem(): Promise<EvidenceItem> {
+  const url = "https://api.exchange.coinbase.com/products/SOL-USD/stats";
+  const raw = await getText(url, 10000);
+  const m = JSON.parse(raw) as Record<string, string>;
+  const last = Number(m.last), open = Number(m.open);
+  if (!(last > 0 && open > 0)) throw new Error("Coinbase stats missing last/open");
+  return {
+    id: "CB",
+    source: "Coinbase Exchange SOL-USD 24h stats",
+    url,
+    fetched_at: iso(),
+    raw_sha256: sha256Hex(Buffer.from(raw, "utf8")),
+    data: {
+      price_usd: dec(last, 4),
+      open_24h_usd: dec(open, 4),
+      change_24h_bps: bpsMove(open, last),
+      high_24h_usd: dec(Number(m.high), 4),
+      low_24h_usd: dec(Number(m.low), 4),
+      volume_24h_sol: String(Math.round(Number(m.volume))),
+    },
+  };
+}
+
+async function krakenItem(): Promise<EvidenceItem> {
+  const url = "https://api.kraken.com/0/public/Ticker?pair=SOLUSD";
+  const raw = await getText(url, 10000);
+  const j = JSON.parse(raw) as { error: string[]; result: Record<string, { c: string[]; p: string[]; o: string; h: string[]; l: string[]; v: string[]; t: number[] }> };
+  const t = Object.values(j.result ?? {})[0];
+  if (!t) throw new Error(`Kraken: ${j.error?.join(",")}`);
+  const last = Number(t.c[0]), open = Number(t.o), vwap = Number(t.p[1]);
+  return {
+    id: "KR",
+    source: "Kraken SOLUSD ticker",
+    url,
+    fetched_at: iso(),
+    raw_sha256: sha256Hex(Buffer.from(raw, "utf8")),
+    data: {
+      price_usd: dec(last, 4),
+      open_today_usd: dec(open, 4),
+      change_today_bps: bpsMove(open, last),
+      vwap_24h_usd: dec(vwap, 4),
+      price_vs_vwap_bps: bpsMove(vwap, last),
+      high_24h_usd: dec(Number(t.h[1]), 4),
+      low_24h_usd: dec(Number(t.l[1]), 4),
+      volume_24h_sol: String(Math.round(Number(t.v[1]))),
+      trades_24h: t.t[1],
+    },
+  };
+}
+
 const FEEDS = [
   { name: "CoinDesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/" },
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
@@ -220,14 +276,18 @@ async function creItem(): Promise<EvidenceItem | null> {
 
 export async function gatherEvidence(rpc: Rpc<GetAccountInfoApi>): Promise<EvidencePack> {
   const nowS = Math.floor(Date.now() / 1000);
-  const [pyth, cg, news, cl] = await Promise.all([
+  const [pyth, cb, kr, cg, news, cl] = await Promise.all([
     withRetry(() => readPyth(rpc, PYTH_SOL_USD)),
-    coingeckoItem().catch(() => null),
+    withRetry(coinbaseItem, 3).catch(() => null),
+    withRetry(krakenItem, 3).catch(() => null),
+    withRetry(coingeckoItem, 2).catch(() => null),
     newsItems(),
     creItem().catch(() => null),
   ]);
   const items: EvidenceItem[] = [pythItem(pyth, nowS)];
   if (cl) items.push(cl);
+  if (cb) items.push(cb);
+  if (kr) items.push(kr);
   if (cg) items.push(cg);
   items.push(...news);
 
