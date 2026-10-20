@@ -49,3 +49,15 @@ export function sha256Hex(data: Uint8Array): string {
 export function receiptHash(receipt: Json): string {
   return sha256Hex(canonicalBytes(receipt));
 }
+
+/**
+ * Documents that are not receipts (model transcripts, prompt sets) keep their exact text,
+ * newlines and all. Same sorted-key JSON, no ASCII rule; hashed over the UTF-8 bytes.
+ * Added for debate-desk; receipts themselves still go through canonicalBytes().
+ */
+export function documentBytes(doc: Json): Buffer {
+  return Buffer.from(JSON.stringify(sortKeys(doc)), "utf8");
+}
+export function documentHash(doc: Json): string {
+  return sha256Hex(documentBytes(doc));
+}
