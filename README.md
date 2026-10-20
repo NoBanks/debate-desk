@@ -89,6 +89,12 @@ Dry run with no chain writes: `npx tsx scripts/dry_run.ts`.
 
 **New for this hackathon (Oct 2026):** everything else. The evidence pack, the bull/bear/judge debate, the transcript commitments, the deterministic risk and exit rules, the position lifecycle, the reasoning verifier, the public page, and the Chainlink CRE workflow. See the git history.
 
+## Day one: receipts #5 to #23
+
+On 2026-10-20, about 23:08 UTC, receipts #5 to #23 landed seconds apart instead of 15 minutes apart. The cause was ours: the step that rebuilds the public page runs `site.ts` in a child process, `site.ts` imports `desk.ts`, and the child inherited the setting that tells the desk to loop. Each child ran a cycle and spawned another.
+
+Every one of those receipts is true: a position was open, so each is a HOLD with its rule trace, and the chain and the verifier agree on all of them. The log is append-only, so they stay. The fix (commit "Fix runaway publish loop") makes the desk start only when its own file is the process entry, gives the publish child a clean environment, and refuses any cycle within 60 seconds of the last receipt, so even a second desk process cannot flood the log.
+
 ## What the numbers mean
 
 The signal is the real SOL/USD market (Pyth, Chainlink, CoinGecko). Execution happens in an Orca devnet pool whose price is set by devnet liquidity, not the market. Trades are real devnet transactions with practice money. Profit and loss is measured at the market price, from receipt to receipt. This is evidence that the mechanism works, not a trading performance claim.
