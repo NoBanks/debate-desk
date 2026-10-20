@@ -5,8 +5,16 @@
 Built for the BLI Legal Tech Hackathon 2 (RYO-CHAN Autonomous Agents bounty, Chainlink CRE bounty).
 
 - Live record: https://nobanks.github.io/debate-desk/
-- Desk on chain (Solana devnet): see the "Desk" line on the live page
+- Desk wallet (Solana devnet): [`FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B`](https://explorer.solana.com/address/FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B?cluster=devnet)
+- Desk's on-chain log: [`Ahw9K3YcVcaKZTKyx7u5QBCfoMKLLjhZz5ZFDqm3Y5gR`](https://explorer.solana.com/address/Ahw9K3YcVcaKZTKyx7u5QBCfoMKLLjhZz5ZFDqm3Y5gR?cluster=devnet)
 - Receipts program: `GkCqpfzoMVSCMw4muiKAXoo4kcHFRiYjjAHBQjmhMwmU` (devnet)
+
+Everything the desk wallet did before its log existed, so nothing is off the record:
+1. received 2 devnet SOL from a test wallet: [tx](https://explorer.solana.com/tx/3zUC1V5ZaH46uUzwyWQuFpNvv5kDZhdbQmpBeUShsWQ4dRQT8t7w49BPE36t65KMPZFv2PgiRZcMnrfHwze1BpVe?cluster=devnet)
+2. one seed swap, 0.4 SOL to devUSDC, so it could act on a BUY (`scripts/seed.ts`, refuses to run once registered): [tx](https://explorer.solana.com/tx/2jt2TpmtWneyRj1JRL8qSj3c3dHzS73gvBUdXYkBjHbHHjA4zvwCh6HYjLR1yTwGKEgTLCir8SuGMwhi9h2ESL1C?cluster=devnet)
+3. registered with the receipts program, committing its policy hash: [tx](https://explorer.solana.com/tx/4MeZZSCrbjSe5pnkciDpssqyMWA3Ur3P5kqMPXiBBsZuVFaKTvCYnVbr2p3ZrtYXQcmbYRWp4zzWTq1Y6Qsbrf2i?cluster=devnet)
+
+From then on, every action is a receipt.
 
 ## The problem
 
@@ -40,6 +48,7 @@ Every model call runs at temperature 0 with a JSON schema. The full prompt and t
 ```bash
 git clone https://github.com/NoBanks/debate-desk && cd debate-desk && npm install
 npx tsx src/verify.ts --tx all                 # everything, against devnet
+npx tsx src/verify.ts https://raw.githubusercontent.com/NoBanks/debate-desk/main/data --tx all   # same, reading the data straight from GitHub
 npx tsx src/verify.ts data --offline           # reasoning checks only, no network
 ```
 
