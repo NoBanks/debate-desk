@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>27</b><span>receipts on chain</span></div>
+  <div class="stat"><b>28</b><span>receipts on chain</span></div>
   <div class="stat"><b>3</b><span>debates</span></div>
   <div class="stat"><b>1</b><span>entries</span></div>
   <div class="stat"><b>0</b><span>rule exits</span></div>
@@ -56,6 +56,27 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r27">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #27</span>
+    <time>2026-10-20T23:58:10Z</time>
+    <span class="px">SOL $106.40</span>
+  </header>
+  <p class="reason">position from #2 open at -38 bps; no exit condition met</p>
+  <details ><summary>Evidence (3) - pack <code>beed9477...</code></summary><ul class="ev"><li id="ev-PYTH-27"><b>PYTH</b> <a>$106.398</a> - EMA $106.5573, -14 bps from EMA, 52s old <code title="723768c30a6e7435ad88758a99fb7471802834737783811af064d80d87d516b6">723768c3...</code></li><li id="ev-CB-27"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$106.4</a> - 24h 139 bps <code title="d8e81c6a63ad72877048c433b8e3440a5760f0662685bda9e117a06ca8824eb1">d8e81c6a...</code></li><li id="ev-KR-27"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$106.43</a> - 53 bps vs 24h VWAP <code title="e32fd4e91335c95b173079e9d36f2e4414dde20eb67e27a3212291ac5b1cedfc">e32fd4e9...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 52s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #2: market moved -38 bps (position -38 bps), stop -220, target +350, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #2 at $106.80</span>
+    <a href="https://explorer.solana.com/tx/5QvAGWHUfiRsX44iVchboPivqQtJodCPoBaZj3wJCyg6U3VofNL7j9CgrnbwtRqdmNAmbQgZfT2wBxaW6Uo1N4iF?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="110a2038f68e5f0c5449b3d0d503b784279828e6f30018a0a5e9228ece6f4793">receipt 110a2038f68e...</code>
+  </footer>
+</article>
 <article class="card" id="r26">
   <header>
     <span class="badge hold">HOLD</span>
