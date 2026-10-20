@@ -22,7 +22,8 @@
 import { execFileSync } from "node:child_process";
 import { generateKeyPairSync } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync, appendFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   appendTransactionMessageInstructions,
   createKeyPairSignerFromBytes,
@@ -52,6 +53,7 @@ import { promptsSha256, runDebate, type Debate } from "./debate.js";
 import { LIMITS, applyRules, checkExit, policyDocument, type EvidenceView, type Inventory, type Outcome, type Position } from "./risk.js";
 import { attestIx, fetchAgentLog, registerAgentIx, updatePolicyIx, type AgentLog } from "./program.js";
 
+const MIN_GAP_SECONDS = 60;
 const RECEIPT_TYPE = "debate_desk_decision";
 const ENGINE = "debate-desk";
 const ENGINE_VERSION = "0.1.0";
@@ -206,6 +208,10 @@ async function cycle(n: number): Promise<void> {
   }
   const rows = readLedger();
   if (BigInt(rows.length) !== log.count) throw new Error(`ledger has ${rows.length} rows but chain count is ${log.count}; refusing to write past a gap`);
+  // Hard floor between receipts. A second desk process, or any runaway loop, cannot spam the log.
+  const last = rows.at(-1);
+  const sinceLast = last ? Math.floor(Date.now() / 1000) - Math.floor(Date.parse(String((last.receipt as { timestamp: string }).timestamp)) / 1000) : Infinity;
+  if (sinceLast < MIN_GAP_SECONDS) throw new Error(`last receipt is only ${sinceLast}s old (minimum ${MIN_GAP_SECONDS}s); is another desk process running?`);
   if (log.policyHash !== policyHash().toString("hex")) throw new Error("on-chain policy_hash is out of date; run: npx tsx src/desk.ts sync-policy");
 
   const { receipt, out, swapIxs } = await decide(signer, log, rows, n);
@@ -338,7 +344,9 @@ function publish(): void {
   if (process.env.DESK_AUTOPUBLISH !== "1") return;
   const git = (...a: string[]) => execFileSync("git", a, { cwd: REPO_ROOT, stdio: "pipe" }).toString();
   try {
-    execFileSync(process.execPath, [join(REPO_ROOT, "node_modules", "tsx", "dist", "cli.mjs"), join(REPO_ROOT, "src", "site.ts")], { cwd: REPO_ROOT, stdio: "pipe" });
+    // clean env: the child must never inherit anything that says "you are the desk"
+    const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => k !== "DESK_CMD" && !/^pm_|^PM2/i.test(k)));
+    execFileSync(process.execPath, [join(REPO_ROOT, "node_modules", "tsx", "dist", "cli.mjs"), join(REPO_ROOT, "src", "site.ts")], { cwd: REPO_ROOT, stdio: "pipe", env });
     git("add", "data", "docs");
     if (!git("status", "--porcelain", "data", "docs").trim()) return;
     git("-c", "user.name=Debate Desk", "-c", "user.email=nobanksnearby@gmail.com", "commit", "-q", "-m", `record: ${readLedger().length} receipts`);
@@ -398,8 +406,14 @@ async function status(): Promise<void> {
   console.log(`ledger rows: ${readLedger().length}`);
 }
 
-// Under PM2, argv[1] is PM2's own container script, not this file. DESK_CMD marks a PM2 launch.
-const isMain = process.env.DESK_CMD !== undefined || /desk\.ts$/.test(process.argv[1] ?? "");
+// Run the CLI only when THIS file is the process entry: run directly, or as the script PM2 launched
+// (PM2 puts its own container in argv[1] and the real script in pm_exec_path). Never because of an
+// inherited env var: on 2026-10-20 that made every publish child re-run the loop (see README).
+const norm = (p: string) => resolve(p).replace(/\\/g, "/").toLowerCase();
+const self = norm(fileURLToPath(import.meta.url));
+const entry = process.argv[1] ? norm(process.argv[1]) : "";
+const pm2Entry = /processcontainer/.test(entry) && process.env.pm_exec_path ? norm(process.env.pm_exec_path) : "";
+const isMain = entry === self || pm2Entry === self;
 if (isMain) {
   // PM2 on Windows can drop script args on `pm2 restart`; DESK_CMD (set in ecosystem.config.cjs) survives it
   const cmd = process.env.DESK_CMD ?? process.argv[2] ?? "status";
