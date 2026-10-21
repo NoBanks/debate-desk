@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>28</b><span>receipts on chain</span></div>
+  <div class="stat"><b>29</b><span>receipts on chain</span></div>
   <div class="stat"><b>3</b><span>debates</span></div>
   <div class="stat"><b>1</b><span>entries</span></div>
   <div class="stat"><b>0</b><span>rule exits</span></div>
@@ -56,6 +56,27 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r28">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #28</span>
+    <time>2026-10-21T00:13:42Z</time>
+    <span class="px">SOL $106.47</span>
+  </header>
+  <p class="reason">position from #2 open at -30 bps; no exit condition met</p>
+  <details ><summary>Evidence (10) - pack <code>5ecced80...</code></summary><ul class="ev"><li id="ev-PYTH-28"><b>PYTH</b> <a>$106.4746</a> - EMA $106.5211, -4 bps from EMA, 23s old <code title="9ed9a71138fd5e9167167489e63077e997b37a3657aacc54ade756f80b7b7c7b">9ed9a711...</code></li><li id="ev-CB-28"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$106.49</a> - 24h 178 bps <code title="22474146950020eb7e536519870d5558065f60b6def0c85f6dc0b10569acb098">22474146...</code></li><li id="ev-KR-28"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$106.43</a> - 52 bps vs 24h VWAP <code title="017231ea215bbb9b21b24b01f245991a3efa3bc952c4f0b4286c215bc016450c">017231ea...</code></li><li id="ev-CG-28"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$106.43</a> - 1h -37 bps, 24h 169 bps, 7d -45 bps <code title="c08e935143d5937ba0ca0a714e6cf0d2d6c04f20a82eb05109204d04e39a03c6">c08e9351...</code></li><li id="ev-NEWS-1-28"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/blackrock-ishares-bitcoin-managed-protection-etf-pbit?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">BlackRock files for third Bitcoin ETF, still no Solana or XRP</a> <code title="1dcd9ef7185a4d838ba37311f5dcc5a2c6124b8222db2d7117d108e2eea73fa2">1dcd9ef7...</code></li><li id="ev-NEWS-2-28"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/qubic-restarts-blockchain-opens-recovery-claims-after-14m-hack?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Qubic restarts blockchain, opens recovery claims after $1.4M hack</a> <code title="825a4d882761c0b7af93a8a00d5a65c6c1e49cc9c66107b2ca0f8d253b83bd3b">825a4d88...</code></li><li id="ev-NEWS-3-28"><b>NEWS-3</b> <a href="https://decrypt.co/381456/vibe-coding-ads-out-smart-tvs-heres-how" target="_blank" rel="noopener">People Are Vibe Coding the Ads Out of Their Smart TVs: Here's How</a> <code title="c206ef531f2e0efeedc200837a9b420a994dc642b3dfc99d2bf7d621b8e5b4e8">c206ef53...</code></li><li id="ev-NEWS-4-28"><b>NEWS-4</b> <a href="https://decrypt.co/381467/openai-buys-orchestra-bio-ai-agents-drug-development" target="_blank" rel="noopener">OpenAI Buys Orchestra Bio to Put AI Agents in Charge of Drug Development Grunt Work</a> <code title="3508954538e5c3720f2ceb2a3931f0b793eca9210bba1a6e92532763ce5f0a7f">35089545...</code></li><li id="ev-NEWS-5-28"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/utah-lawsuit-kalshi-susquehanna-prediction-markets-illegal-bets?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Utah AG sues Kalshi, pursues profits from prediction market company</a> <code title="0ca135a1e209d3370eb992f86769f229c53e3476da68e1089ff3196996973a11">0ca135a1...</code></li><li id="ev-NEWS-6-28"><b>NEWS-6</b> <a href="https://decrypt.co/381464/jpmorgan-bitcoin-forecast-first-time-stocks-gold" target="_blank" rel="noopener">JPMorgan Puts a Number on Bitcoin for the First Time: 10% a Year, With a Big Caveat</a> <code title="bd11f3c83d85de5fda95ccb3f6cacf0207401d740258e1a8a5a044fcacf0033d">bd11f3c8...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 23s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #2: market moved -30 bps (position -30 bps), stop -220, target +350, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #2 at $106.80</span>
+    <a href="https://explorer.solana.com/tx/2V7k4wmyaDojjPS6Eg4hsvsevzBvmSMfGEUhUZAVsVb8rh8HZ93PAavcGryqhhiqHwgotnSMmcAPGPP1orfD5bg9?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="8c26190e136afe8e527c6b5e3d2cc3ad9e7673498d7839f80790c19cd35722b5">receipt 8c26190e136a...</code>
+  </footer>
+</article>
 <article class="card" id="r27">
   <header>
     <span class="badge hold">HOLD</span>
