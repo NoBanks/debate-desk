@@ -80,6 +80,8 @@ const creArgs = [
 	'--trigger-index',
 	'0',
 	'--non-interactive',
+	...(args.has('--engine-logs') ? ['--engine-logs'] : []),
+	...(args.has('--no-config') ? ['--no-config'] : []),
 ]
 
 const started = Date.now()
@@ -109,7 +111,21 @@ child.on('close', (code) => {
 	// Find the EVIDENCE_REPORT log line and extract the JSON after the prefix
 	const marker = 'EVIDENCE_REPORT '
 	let report = null
-	for (const line of output.split(/\r?\n/)) {
+	// Preferred: the workflow's return value, printed in full as a JSON string on the line after
+	// "Workflow Simulation Result:". The simulator truncates long USER LOG lines, so the
+	// EVIDENCE_REPORT log line is only the fallback.
+	const lines = output.split(/\r?\n/)
+	const r = lines.findIndex((l) => l.includes('Workflow Simulation Result:'))
+	if (r !== -1) {
+		for (const l of lines.slice(r + 1, r + 4)) {
+			try {
+				const parsed = JSON.parse(JSON.parse(l.trim()))
+				if (parsed && parsed.type === 'cre_evidence_report') report = parsed
+			} catch {}
+			if (report) break
+		}
+	}
+	for (const line of report ? [] : lines) {
 		const i = line.indexOf(marker)
 		if (i === -1) continue
 		const candidate = line.slice(i + marker.length).trim()

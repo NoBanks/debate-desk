@@ -2,9 +2,9 @@
 //
 // On every cron tick it:
 //   1. Reads the Chainlink SOL/USD Data Feed (latestRoundData) on Ethereum mainnet via the EVM capability.
-//   2. Fetches SOL market data from the CoinGecko public API via the HTTP capability (median consensus per field).
+//   2. Fetches SOL market data from the Coinbase Exchange public API via the HTTP capability (median consensus per field).
 //   3. Fetches the top crypto news headlines from the CoinDesk RSS feed via the HTTP capability.
-//   4. Computes the Chainlink vs CoinGecko divergence in basis points.
+//   4. Computes the Chainlink vs Coinbase divergence in basis points.
 //   5. Logs one line "EVIDENCE_REPORT {json}" and returns the same JSON as the workflow result.
 //
 // The report contains only integers and strings (no floats). Prices are decimal strings.
@@ -35,7 +35,7 @@ const configSchema = z.object({
 	chainSelectorName: z.string(),
 	feedAddress: z.string(),
 	feedPair: z.string(),
-	coingeckoUrl: z.string(),
+	coinbaseStatsUrl: z.string(),
 	newsRssUrl: z.string(),
 	maxHeadlines: z.number().int().min(0).max(10),
 })
@@ -47,8 +47,8 @@ const aggregatorV3Abi = parseAbi([
 	'function latestRoundData() view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)',
 ])
 
-// CoinGecko values scaled to integers so the DON can take a median per field.
-type CoinGeckoData = {
+// Coinbase values scaled to integers so the DON can take a median per field.
+type MarketData = {
 	usdE8: number // USD price * 1e8
 	change24hBps: number // 24h change in basis points
 	vol24hUsd: number // 24h volume in whole USD
@@ -133,33 +133,32 @@ const readChainlinkFeed = (runtime: Runtime<Config>) => {
 	return { roundId, answer, updatedAt, decimals }
 }
 
-// ---------- 2. CoinGecko (HTTP capability, median consensus per field) ----------
+// ---------- 2. Coinbase Exchange 24h stats (HTTP capability, median consensus per field) ----------
 
-const fetchCoinGecko = (sendRequester: HTTPSendRequester, config: Config): CoinGeckoData => {
+const fetchCoinbase = (sendRequester: HTTPSendRequester, config: Config): MarketData => {
 	const resp = sendRequester
 		.sendRequest({
-			url: config.coingeckoUrl,
+			url: config.coinbaseStatsUrl,
 			method: 'GET' as const,
 			headers: { Accept: 'application/json', 'User-Agent': 'debate-desk-evidence-oracle/1.0' },
 		})
 		.result()
 
 	if (!ok(resp)) {
-		throw new Error(`CoinGecko returned HTTP ${resp.statusCode}`)
+		throw new Error(`Coinbase returned HTTP ${resp.statusCode}`)
 	}
 
-	const body = JSON.parse(text(resp)) as {
-		solana?: { usd?: number; usd_24h_change?: number; usd_24h_vol?: number }
-	}
-	const sol = body.solana
-	if (!sol || typeof sol.usd !== 'number') {
-		throw new Error('CoinGecko response missing solana.usd')
+	const body = JSON.parse(text(resp)) as { open?: string; last?: string; volume?: string }
+	const last = Number(body.last)
+	const open = Number(body.open)
+	if (!(last > 0) || !(open > 0)) {
+		throw new Error('Coinbase response missing open/last')
 	}
 
 	return {
-		usdE8: Math.round(sol.usd * 1e8),
-		change24hBps: Math.round((sol.usd_24h_change ?? 0) * 100),
-		vol24hUsd: Math.round(sol.usd_24h_vol ?? 0),
+		usdE8: Math.round(last * 1e8),
+		change24hBps: Math.round(((last - open) / open) * 10000),
+		vol24hUsd: Math.round(Number(body.volume ?? 0) * last),
 	}
 }
 
@@ -209,19 +208,30 @@ const onCronTrigger = (runtime: Runtime<Config>): string => {
 
 	const httpClient = new HTTPClient()
 
-	// 2. CoinGecko
-	const cg = httpClient
-		.sendRequest(
-			runtime,
-			fetchCoinGecko,
-			ConsensusAggregationByFields<CoinGeckoData>({
-				usdE8: median,
-				change24hBps: median,
-				vol24hUsd: median,
-			}),
-		)(cfg)
-		.result()
-	runtime.log(`CoinGecko SOL: usdE8=${cg.usdE8} change24hBps=${cg.change24hBps} vol24hUsd=${cg.vol24hUsd}`)
+	// 2. Coinbase (up to 3 attempts: a cold first connection can hit the 10s HTTP limit)
+	const fetchMarket = () =>
+		httpClient
+			.sendRequest(
+				runtime,
+				fetchCoinbase,
+				ConsensusAggregationByFields<MarketData>({
+					usdE8: median,
+					change24hBps: median,
+					vol24hUsd: median,
+				}),
+			)(cfg)
+			.result()
+	let cg: MarketData | null = null
+	for (let attempt = 1; attempt <= 3 && !cg; attempt++) {
+		try {
+			cg = fetchMarket()
+		} catch (e) {
+			runtime.log(`Coinbase attempt ${attempt} failed: ${String(e)}`)
+			if (attempt === 3) throw e
+		}
+	}
+	if (!cg) throw new Error('Coinbase: no data')
+	runtime.log(`Coinbase SOL-USD: usdE8=${cg.usdE8} change24hBps=${cg.change24hBps} vol24hUsd=${cg.vol24hUsd}`)
 
 	// 3. Headlines (optional; failure does not fail the report)
 	let headlines: Headline[] = []
@@ -257,7 +267,8 @@ const onCronTrigger = (runtime: Runtime<Config>): string => {
 			updated_at: Number(cl.updatedAt),
 			round_id: cl.roundId.toString(),
 		},
-		coingecko: {
+		coinbase: {
+			source: cfg.coinbaseStatsUrl,
 			usd: trimDecimal(formatScaled(cgE8, 8)),
 			change_24h_bps: cg.change24hBps,
 			vol_24h_usd: String(cg.vol24hUsd),

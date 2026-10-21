@@ -1,0 +1,29 @@
+Initializing...
+Loading settings...
+! Using default private key for chain write simulation. To use your own key, set CRE_ETH_PRIVATE_KEY in your .env file or system environment.
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+✓ Simulation limits enabled
+  HTTP: req=120kb resp=250kb timeout=10s | ConfHTTP: req=125kb resp=500kb timeout=1m30s | Consensus obs=25kb | ChainWrite evm_report=50kb evm_gas=10000000 solana_report=265b solana_cu=300000 | WASM binary=100mb compressed=20mb
+  Binary hash: dfad87c0a6087919a88484d1e628f2879e3bac0262975750b8b12cb95c999d6d
+  Config hash: 9da3000ea8072bcd425b38ce5d606ab2d2064a40c51dc4e5ceee658c803b99b3
+2026-10-20T20:40:30Z [SIMULATION] Simulator Initialized
+
+2026-10-20T20:40:30Z [SIMULATION] Running trigger trigger=cron-trigger@1.0.0
+2026-10-20T20:40:30Z [USER LOG] evidence-oracle triggered | feed=SOL/USD 0x4ffC43a60e009B551865A93d232E33Fce9f01507 on ethereum-mainnet
+2026-10-20T20:40:30Z [USER LOG] Chainlink SOL/USD: answer=10675944278 decimals=8 roundId=36893488147419106566 updatedAt=1792505279
+2026-10-20T20:40:31Z [USER LOG] Coinbase SOL-USD: usdE8=10593000000 change24hBps=69 vol24hUsd=69416672
+2026-10-20T20:40:31Z [USER LOG] EVIDENCE_REPORT {"type":"cre_evidence_report","version":1,"chainlink":{"chain":"ethereum-mainnet","feed":"0x4ffC43a60e009B551865A93d232E33Fce9f01507","pair":"SOL/USD","answer":"10675944278","answer_decimal":"106.75944278","decimals":8,"updated_at":1792505279,"round_id":"36893488147419106566"},"coinbase":{"source":"https://api.exchange.coinbase.com/products/SOL-USD/stats","usd":"105.93","change_24h_bps":69,"vol_24h_usd":"69416672"},"divergence_bps":78,"headlines":[{"title":"U.S. CFTC sets agenda for AI forum, exploring trading and agentic finance","link":"https://www.coindesk.com/policy/2026/10/20/u-s-cftc-sets-agenda-for-ai-forum-exploring-trading-and-agentic-finance"},{"title":"OKX-ICE co-chair Andrew Cuomo calls corporate objections a ‘natural response’ to tokenized stock plans","link":"https://www.coindesk.com/business/2026/10/20/okx-ice-s-andrew-cuomo-calls-issuer-objections-a-natural-response-to-tokenized-stock-plans"},{"title":"The Coinbase allegations expose Bitcoin's corpor ...(truncated)
+
+✓ Workflow Simulation Result:
+"{\"type\":\"cre_evidence_report\",\"version\":1,\"chainlink\":{\"chain\":\"ethereum-mainnet\",\"feed\":\"0x4ffC43a60e009B551865A93d232E33Fce9f01507\",\"pair\":\"SOL/USD\",\"answer\":\"10675944278\",\"answer_decimal\":\"106.75944278\",\"decimals\":8,\"updated_at\":1792505279,\"round_id\":\"36893488147419106566\"},\"coinbase\":{\"source\":\"https://api.exchange.coinbase.com/products/SOL-USD/stats\",\"usd\":\"105.93\",\"change_24h_bps\":69,\"vol_24h_usd\":\"69416672\"},\"divergence_bps\":78,\"headlines\":[{\"title\":\"U.S. CFTC sets agenda for AI forum, exploring trading and agentic finance\",\"link\":\"https://www.coindesk.com/policy/2026/10/20/u-s-cftc-sets-agenda-for-ai-forum-exploring-trading-and-agentic-finance\"},{\"title\":\"OKX-ICE co-chair Andrew Cuomo calls corporate objections a ‘natural response’ to tokenized stock plans\",\"link\":\"https://www.coindesk.com/business/2026/10/20/okx-ice-s-andrew-cuomo-calls-issuer-objections-a-natural-response-to-tokenized-stock-plans\"},{\"title\":\"The Coinbase allegations expose Bitcoin's corporate governance gap\",\"link\":\"https://www.coindesk.com/opinion/2026/10/20/the-coinbase-allegations-expose-bitcoin-s-corporate-governance-gap\"},{\"title\":\"BlackRock seeks to shield bitcoin investors from losses after rival fund weathers 50% crash\",\"link\":\"https://www.coindesk.com/markets/2026/10/20/blackrock-seeks-to-shield-bitcoin-investors-from-losses-after-rival-fund-weathers-50-crash\"},{\"title\":\"Kazakhstan court bars Coinbase, five others from unlicensed crypto services in Astana International Financial Centre\",\"link\":\"https://www.coindesk.com/business/2026/10/20/kazakhstan-court-bars-coinbase-five-others-from-unlicensed-crypto-services-in-astana-international-financial-centre\"}],\"headlines_source\":\"https://www.coindesk.com/arc/outboundfeeds/rss\",\"generated_at\":1792554031}"
+
+2026-10-20T20:40:31Z [SIMULATION] Execution finished signal received
+2026-10-20T20:40:31Z [SIMULATION] Skipping WorkflowEngineV2
+
+╭──────────────────────────────────────────────────────╮
+│ Simulation complete! Ready to deploy your workflow?  │
+│                                                      │
+│ Run cre account access to request deployment access. │
+╰──────────────────────────────────────────────────────╯

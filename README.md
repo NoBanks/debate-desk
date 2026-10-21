@@ -24,7 +24,7 @@ An agent that trades gives you a log file its operator controls. "It bought beca
 
 Every cycle:
 
-1. **Evidence.** The desk gathers one evidence pack: Pyth SOL/USD read straight from its Solana account, the Chainlink SOL/USD Data Feed (delivered by a Chainlink CRE workflow, see `cre/`), a CoinGecko market snapshot, and recent crypto headlines. Each item is normalised, hashed and saved under `data/evidence/`.
+1. **Evidence.** The desk gathers one evidence pack: Pyth SOL/USD read straight from its Solana account, the Chainlink SOL/USD Data Feed (delivered by a Chainlink CRE workflow, see `cre/`), Coinbase, Kraken and CoinGecko market data, and recent crypto headlines. Each item is normalised, hashed and saved under `data/evidence/`.
 2. **Debate.** BULL and BEAR each build the strongest honest case for their side. They run independently and read the exact same evidence text. Every claim must cite evidence ids and state cause and effect.
 3. **Ruling.** The JUDGE weighs both cases against the evidence itself, lists the points it rejects and why, and makes one decision covering entry, size and exit: BUY, SELL or HOLD, conviction, stop loss, take profit, horizon.
 4. **Rules.** Plain code (`src/risk.ts`) decides whether the ruling may trade. It holds if the price is stale, if price sources disagree by more than 150 bps, if the judge cites evidence that is not in the pack, if the ruling contradicts itself, or if conviction is under 60. It clamps the exit plan to policy and sizes the ticket. Every check is written into the receipt, pass or fail.
@@ -57,13 +57,13 @@ The verifier needs no keys. Change one letter of one transcript and it fails.
 ## Layout
 
 ```
-src/evidence.ts   evidence pack: Pyth (on chain), Chainlink via CRE, CoinGecko, RSS headlines
+src/evidence.ts   evidence pack: Pyth (on chain), Chainlink via CRE, Coinbase, Kraken, CoinGecko, RSS headlines
 src/debate.ts     BULL, BEAR, JUDGE on Gemini, temperature 0, schema-bound, transcripts saved
 src/risk.ts       the deterministic rules: entry gates, sizing, exit plan, exits
 src/desk.ts       the cycle: evidence -> debate or exit check -> rules -> Orca quote -> receipt + swap in one tx
 src/verify.ts     re-derives every claim from public data
 src/site.ts       renders the public record to docs/index.html
-cre/              Chainlink CRE workflow "evidence-oracle" (Chainlink feed + CoinGecko + news)
+cre/              Chainlink CRE workflow "evidence-oracle" (Chainlink feed + Coinbase + news)
 test/             rule tests
 data/             the public record: ledger.jsonl, evidence/, transcripts/
 ```
@@ -97,7 +97,7 @@ Every one of those receipts is true: a position was open, so each is a HOLD with
 
 ## What the numbers mean
 
-The signal is the real SOL/USD market (Pyth, Chainlink, CoinGecko). Execution happens in an Orca devnet pool whose price is set by devnet liquidity, not the market. Trades are real devnet transactions with practice money. Profit and loss is measured at the market price, from receipt to receipt. This is evidence that the mechanism works, not a trading performance claim.
+The signal is the real SOL/USD market (Pyth, Chainlink, Coinbase, Kraken, CoinGecko). Execution happens in an Orca devnet pool whose price is set by devnet liquidity, not the market. Trades are real devnet transactions with practice money. Profit and loss is measured at the market price, from receipt to receipt. This is evidence that the mechanism works, not a trading performance claim.
 
 ## License
 

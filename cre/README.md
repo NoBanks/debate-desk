@@ -7,9 +7,9 @@ A Chainlink Runtime Environment (CRE) workflow, written with the CRE TypeScript 
 On every cron tick (every 5 minutes, `0 */5 * * * *`):
 
 1. **Blockchain read (EVM capability):** calls `decimals()` and `latestRoundData()` on the Chainlink SOL/USD Data Feed proxy `0x4ffC43a60e009B551865A93d232E33Fce9f01507` on Ethereum mainnet (finalized block). Ethereum Sepolia has no SOL/USD feed, so mainnet is used (read-only, no wallet, no gas).
-2. **External API (HTTP capability):** GET CoinGecko `simple/price` for SOL (price, 24h change, 24h volume). Each value is scaled to an integer and aggregated with median consensus per field.
+2. **External API (HTTP capability):** GET Coinbase Exchange `products/SOL-USD/stats` (last price, 24h change, 24h volume). Each value is scaled to an integer and aggregated with median consensus per field. Up to 3 attempts, because a cold first connection can hit the simulator's 10s HTTP limit.
 3. **External data source (HTTP capability):** GET the CoinDesk RSS feed and keep the top 5 headlines (title + link), identical consensus. If this fails, the report is still produced with an empty list.
-4. **Compute:** divergence between the Chainlink price and the CoinGecko price in basis points (integer math on 1e8-scaled values).
+4. **Compute:** divergence between the Chainlink price and the Coinbase price in basis points (integer math on 1e8-scaled values).
 5. **Output:** logs one line `EVIDENCE_REPORT {json}` and returns the same JSON as the workflow result. The JSON contains only integers and strings (prices are decimal strings).
 
 Feed address source: Chainlink feed directory (the data behind docs.chain.link/data-feeds/price-feeds/addresses), file `https://reference-data-directory.vercel.app/feeds-mainnet.json`, entry "SOL / USD", proxy `0x4ffC43a60e009B551865A93d232E33Fce9f01507`, 8 decimals, heartbeat 86400s. Also checked onchain with `eth_call` against a public RPC.
@@ -29,7 +29,7 @@ cre/
 
 ## Requirements
 
-- Bun 1.x (TypeScript workflows compile with Bun)
+- Bun 1.2.21 or newer (tested with 1.4.3). Older Bun compiles fine but the simulator then fails with `failed to execute subscribe ... wasm trap: unreachable`.
 - CRE CLI (tested with v1.38.0)
 - A CRE account. Every CRE CLI command except build/hash needs auth, including `simulate`. Either run `cre login` once (opens a browser) or set `CRE_API_KEY`.
 
@@ -64,6 +64,15 @@ cre/
 
 ## Result
 
-Compilation to WASM succeeds (`cre workflow build ./evidence-oracle -T staging-settings`, about 20s).
+Simulation succeeds (CRE CLI v1.38.0, Bun 1.4.3, Windows, 2026-10-21). Full output: [`SIMULATION_OUTPUT.txt`](SIMULATION_OUTPUT.txt). The key lines:
 
-Simulation status: PENDING. It is blocked only on CRE account login (see Requirements). Once logged in, run `node simulate.mjs --save` and paste the result here.
+```
+[USER LOG] Chainlink SOL/USD: answer=10675944278 decimals=8 roundId=36893488147419106566 updatedAt=1792505279
+[USER LOG] Coinbase SOL-USD: usdE8=10593000000 change24hBps=69 vol24hUsd=69416672
+[USER LOG] EVIDENCE_REPORT {"type":"cre_evidence_report","version":1,"chainlink":{...,"answer_decimal":"106.75944278",...},"coinbase":{...,"usd":"105.93",...},"divergence_bps":78,"headlines":[5 CoinDesk headlines],...}
+Simulation complete!
+```
+
+(The simulator prints local time with a `Z` suffix; the run was at 03:40 UTC.)
+
+Debate Desk runs this simulation every cycle (`src/evidence.ts`, `creItem`). The Chainlink price becomes evidence item `CL`, which the bull, bear and judge all read, and which the risk rules cross-check against Pyth, Coinbase and Kraken before any trade.
