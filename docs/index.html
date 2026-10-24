@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>295</b><span>receipts on chain</span></div>
+  <div class="stat"><b>296</b><span>receipts on chain</span></div>
   <div class="stat"><b>22</b><span>debates</span></div>
   <div class="stat"><b>17</b><span>entries</span></div>
   <div class="stat"><b>16</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r295">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #295</span>
+    <time>2026-10-24T11:47:48Z</time>
+    <span class="px">SOL $101.23</span>
+  </header>
+  <p class="reason">position from #288 open at -1 bps; no exit condition met</p>
+  <details ><summary>Evidence (5) - pack <code>e3f9ea26...</code></summary><ul class="ev"><li id="ev-PYTH-295"><b>PYTH</b> <a>$101.2336</a> - EMA $101.4559, -21 bps from EMA, 102s old <code title="6f583459250291ee1becc8a315585b8fa520764bfb7595095ffc18bfde0b572a">6f583459...</code></li><li id="ev-CL-295"><b>CL</b> <a>$102.36</a> <a href="https://sepolia.etherscan.io/tx/0x3610b55dee7aa312a008c758c8bfd93ed7d9363971442704d196ce71449d32af" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="56e56d19b9f62e1dd537fadee1a4b96f39810745cf3c3117fa3d6862f30f804d">56e56d19...</code></li><li id="ev-CB-295"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$101.25</a> - 24h -302 bps <code title="6c26533e5214b6664c95260e1356f24f599fab8f11219fe004ca1334e4909f28">6c26533e...</code></li><li id="ev-KR-295"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$101.26</a> - -150 bps vs 24h VWAP <code title="9dd09f4ab2fddb3161da6167a5a6a046bfd50bcd5f68b209133bb5ccce40f084">9dd09f4a...</code></li><li id="ev-KOL-295"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">14 signals from 9 public voices; convergence: 3 voices BEAR on ETH; 2 voices BEAR on BTC; 2 voices BEAR on ENA; 2 voices BEAR on UNI; SOL 0 bull / 0 bear</a> <code title="a4004115a4f5ba920204e4b2052dac74871bbbaa4dee9d1c4e89f8309e395e28">a4004115...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 102s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #288: market moved 1 bps (position -1 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #288 at $101.22</span>
+    <a href="record.html?seq=295"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/f8b2t2QtLFxxaU5CXecAKnsnFMjjdG2wsxtQnFiGvAd2Tr8XJe1JqsTcmyphKkQPdmDxenrS62gFpb65GEvTTco?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="edaf2d3e5422ba00fec438d52b3ec2a2622c6911a90452898965931276a33268">receipt edaf2d3e5422...</code>
+  </footer>
+</article>
 <article class="card" id="r294">
   <header>
     <span class="badge hold">HOLD</span>
