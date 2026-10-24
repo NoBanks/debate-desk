@@ -146,7 +146,7 @@ details{margin:8px 0}summary{cursor:pointer;color:var(--mut);font-size:13px}
 a{color:var(--acc)}
 </style></head><body><main>
 <h1>Debate <span>Desk</span></h1>
-<p class="lede">Two agents argue about SOL from the same evidence. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana ${esc(CLUSTER)} as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
+<p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana ${esc(CLUSTER)} as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
   <div class="stat"><b>${s.receipts}</b><span>receipts on chain</span></div>
   <div class="stat"><b>${s.debates}</b><span>debates</span></div>
