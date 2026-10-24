@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Decision Record</title>
+<meta name="description" content="A printable, independently checked record of one Debate Desk decision: evidence, arguments, ruling, rules and the on-chain transaction.">
+<style>
+:root{--paper:#fbfaf6;--ink:#1c1d20;--mut:#5f646c;--line:#d9d4c7;--ok:#17703f;--bad:#b3261e;--warn:#8a5a00;--acc:#7a5600;--box:#f3f0e7}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#121316;--ink:#e9e6df;--mut:#9aa0a8;--line:#2c3036;--ok:#4cc38a;--bad:#ff7b72;--warn:#e0b050;--acc:#e0b050;--box:#1a1c20}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 64px}
+.top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.top h1{font-size:26px;margin:0;letter-spacing:.02em;text-transform:uppercase}
+.top p{margin:4px 0 0;color:var(--mut);font-size:14px}
+.seal{flex:none;width:118px;height:118px;border-radius:50%;border:4px double currentColor;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 15px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-align:center;color:var(--mut);transform:rotate(-8deg)}
+.seal small{font-weight:400;font-size:10px;letter-spacing:.04em;margin-top:4px}
+.seal.ok{color:var(--ok)}.seal.bad{color:var(--bad)}.seal.warn{color:var(--warn)}
+h2{font-size:16px;text-transform:uppercase;letter-spacing:.08em;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+h2 span{color:var(--mut);font-weight:400}
+.meta{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14px;margin:14px 0}
+.meta b{font-weight:400;color:var(--mut)}
+.holding{background:var(--box);border-left:4px solid var(--ink);padding:10px 14px;font-size:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;vertical-align:top;padding:6px 6px;border-bottom:1px solid var(--line)}
+th{font:600 11px ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+code,.mono{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all}
+.side{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:10px 0}
+.side h3,.ruling h3{font-size:14px;margin:0 0 4px;text-transform:uppercase;letter-spacing:.06em}
+.side ol{margin:4px 0;padding-left:20px}.side li{margin:0 0 6px}
+.ce{color:var(--mut);font-size:13px}
+.ruling{border:1px solid var(--ink);padding:10px 14px;margin:12px 0}
+.cite{font:11px ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);padding:0 4px;border-radius:3px}
+.chk{list-style:none;padding:0;margin:0;font-size:14px}
+.chk li{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.st{font:700 11px ui-sans-serif,system-ui,sans-serif;letter-spacing:.06em}
+.st.ok{color:var(--ok)}.st.bad{color:var(--bad)}.st.warn{color:var(--warn)}.st.run{color:var(--mut)}
+.pass{color:var(--ok)}.fail{color:var(--bad)}
+.muted{color:var(--mut);font-size:13px}
+.not li{margin:0 0 6px}
+pre{background:var(--box);border:1px solid var(--line);padding:10px;overflow-x:auto;font:12px ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--acc)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 16px;font:13px ui-sans-serif,system-ui,sans-serif}
+.bar input{width:90px;padding:4px 6px;font:inherit;background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.bar button{padding:4px 10px;font:inherit;background:var(--ink);color:var(--paper);border:0;cursor:pointer}
+.err{color:var(--bad)}
+@media (max-width:600px){.top{flex-direction:column-reverse}.seal{width:96px;height:96px;font-size:12px}table{font-size:12px}}
+@media print{:root{--paper:#fff;--ink:#000;--mut:#444;--line:#bbb;--box:#f4f4f4}.bar{display:none}a{color:#000}main{padding:0}h2{break-after:avoid}.ruling,.side,tr{break-inside:avoid}}
+</style></head><body><main>
+<div class="bar"><a href="./">&larr; all decisions</a>
+  <label>Record no. <input id="seqIn" inputmode="numeric"></label><button id="go">Open</button>
+  <button id="print">Print / save as PDF</button></div>
+<div id="doc"><p class="muted">Loading the record...</p></div>
+</main>
+<script>
+(() => {
+const RAW = "https://raw.githubusercontent.com/NoBanks/debate-desk/main/data/";
+const RPC = "https://api.devnet.solana.com";
+const CLUSTER = "devnet";
+const ORCA = "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc";
+const ACTION = { HOLD: 0, BUY: 1, SELL: 2 };
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const sortKeys = (v) => Array.isArray(v) ? v.map(sortKeys) : v !== null && typeof v === "object" ? Object.keys(v).sort().reduce((o, k) => (o[k] = sortKeys(v[k]), o), {}) : v;
+const canon = (v) => JSON.stringify(sortKeys(v));
+const sha = async (s) => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))].map((b) => b.toString(16).padStart(2, "0")).join("");
+const usd = (e8) => (Number(BigInt(e8)) / 1e8).toFixed(2);
+const explorer = (sig) => "https://explorer.solana.com/tx/" + sig + "?cluster=" + CLUSTER;
+const B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+function b58decode(s) {
+  const bytes = [0];
+  for (const c of s) {
+    let carry = B58.indexOf(c);
+    if (carry < 0) throw new Error("bad base58");
+    for (let i = 0; i < bytes.length; i++) { carry += bytes[i] * 58; bytes[i] = carry & 255; carry >>= 8; }
+    while (carry) { bytes.push(carry & 255); carry >>= 8; }
+  }
+  for (const c of s) { if (c === "1") bytes.push(0); else break; }
+  return Uint8Array.from(bytes.reverse());
+}
+const hex = (u8) => [...u8].map((b) => b.toString(16).padStart(2, "0")).join("");
+async function getJson(url) {
+  const r = await fetch(url, { cache: "no-store" });
+  if (!r.ok) throw new Error(url.split("/").slice(-2).join("/") + ": HTTP " + r.status);
+  return r.json();
+}
+
+const checks = [];
+function check(label) {
+  const c = { label, state: "run", note: "" };
+  checks.push(c);
+  return c;
+}
+function renderChecks() {
+  const st = { ok: "PASS", bad: "FAIL", warn: "N/A", run: "..." };
+  $("#checks").innerHTML = checks.map((c) => '<li><span class="st ' + c.state + '">' + st[c.state] + "</span><span>" + esc(c.label) + (c.note ? ' <span class="muted">' + esc(c.note) + "</span>" : "") + "</span></li>").join("");
+  const seal = $("#seal");
+  const bad = checks.some((c) => c.state === "bad");
+  const run = checks.some((c) => c.state === "run");
+  const warn = checks.some((c) => c.state === "warn" && c.blocking);
+  seal.className = "seal " + (bad ? "bad" : run ? "" : warn ? "warn" : "ok");
+  seal.innerHTML = bad ? "FAILED<small>a check did not match</small>" : run ? "CHECKING<small>in your browser</small>" : warn ? "INCOMPLETE<small>a source was unreachable</small>" : "VERIFIED<small>" + checks.length + " checks in your browser</small>";
+}
+const pass = (c, note) => { c.state = "ok"; if (note) c.note = note; renderChecks(); };
+const fail = (c, note) => { c.state = "bad"; c.note = note; renderChecks(); };
+const unavailable = (c, note) => { c.state = "warn"; c.blocking = true; c.note = note; renderChecks(); };
+
+function cites(ids) { return (ids || []).map((id) => '<span class="cite">' + esc(id) + "</span>").join(" "); }
+
+function evidenceSummary(item) {
+  const d = item.data || {};
+  if (item.id === "PYTH") return "SOL/USD $" + d.price_usd + " (EMA $" + d.ema_price_usd + "), confidence " + d.conf_bps + " bps, " + d.age_s + " s old";
+  if (item.id === "CL") return "Chainlink SOL/USD $" + d.price_usd + (d.anchor_tx ? ' - same report <a href="https://sepolia.etherscan.io/tx/' + esc(d.anchor_tx) + '" target="_blank" rel="noopener">anchored on Ethereum Sepolia</a>' : "");
+  if (item.id === "CB") return "Coinbase SOL-USD $" + d.price_usd + ", 24h " + d.change_24h_bps + " bps";
+  if (item.id === "KR") return "Kraken SOLUSD $" + d.price_usd + ", " + d.price_vs_vwap_bps + " bps vs 24h VWAP";
+  if (item.id === "CG") return "CoinGecko $" + d.price_usd + ", 1h " + d.change_1h_bps + " / 24h " + d.change_24h_bps + " / 7d " + d.change_7d_bps + " bps";
+  if (item.id === "KOL") {
+    const conv = (d.convergence || []).map((c) => c.n + " voices " + c.stance + " on " + c.token).join("; ");
+    return (d.signals || []).length + " signals from " + (d.voices || []).length + " public voices; " + (conv ? "convergence: " + conv : "no convergence") + "; SOL " + d.sol.bull_voices + " bull / " + d.sol.bear_voices + " bear";
+  }
+  if (d.headline) return '"' + esc(d.headline) + '"';
+  return "";
+}
+
+async function load(seq) {
+  checks.length = 0;
+  const doc = $("#doc");
+  let row;
+  try {
+    if (seq == null) seq = (await getJson("rows/index.json")).latest;
+    row = await getJson("rows/" + seq + ".json");
+  } catch (e) {
+    doc.innerHTML = '<p class="err">Could not load record ' + esc(seq) + ": " + esc(e.message) + "</p>";
+    return;
+  }
+  $("#seqIn").value = seq;
+  history.replaceState(null, "", "?seq=" + seq);
+  const r = row.receipt;
+  const deb = r.debate;
+  document.title = "Decision Record No. " + seq;
+
+  doc.innerHTML =
+    '<div class="top"><div><h1>Decision Record No. ' + esc(seq) + "</h1>" +
+    "<p>Debate Desk, an autonomous practice-trading agent on Solana " + esc(r.cluster) + ". Issued from receipt data committed on chain.</p></div>" +
+    '<div class="seal" id="seal">CHECKING<small>in your browser</small></div></div>' +
+    '<div class="meta"><b>Date (UTC)</b><span>' + esc(r.timestamp) + "</span>" +
+    "<b>Decision</b><span><strong>" + esc(r.action) + "</strong> (" + esc(r.kind) + ")</span>" +
+    "<b>SOL/USD at decision</b><span>$" + usd(r.market_price_e8) + " (Pyth)</span>" +
+    "<b>Agent</b><span>" + esc(r.agent) + ' <code>' + esc(r.agent_address) + "</code></span>" +
+    "<b>Policy</b><span>version " + esc(r.policy_version) + ' <code>' + esc(r.policy_hash) + "</code></span>" +
+    "<b>Receipt hash</b><span><code>" + esc(row.receipt_hash) + "</code></span>" +
+    '<b>Transaction</b><span><a href="' + explorer(row.signature) + '" target="_blank" rel="noopener"><code>' + esc(row.signature) + "</code></a></span></div>" +
+    '<div class="holding">' + esc(r.reason) + "</div>" +
+    '<h2>1. Evidence relied upon <span>(' + r.evidence.items.length + " items)</span></h2>" +
+    '<table><thead><tr><th>ID</th><th>Source and content</th><th>SHA-256</th></tr></thead><tbody id="ev"></tbody></table>' +
+    '<div id="kol"></div>' +
+    '<h2>2. Arguments and ruling</h2><div id="debate">' + (deb ? '<p class="muted">Loading transcripts...</p>' : "<p>A position was open, so no debate was held. The exit rules in section 3 ran alone and no model was consulted.</p>") + "</div>" +
+    "<h2>3. Rules applied</h2><p class=\"muted\">Fixed rules in src/risk.ts, committed on chain as the policy hash above. The ruling can only trade if every gate passes.</p>" +
+    '<table><thead><tr><th>Result</th><th>Rule</th><th>Detail</th></tr></thead><tbody>' +
+    r.rules.map((c) => '<tr><td class="' + (c.pass ? "pass" : "fail") + '">' + (c.pass ? "PASS" : "FAIL") + "</td><td><code>" + esc(c.rule) + "</code></td><td>" + esc(c.detail) + "</td></tr>").join("") +
+    "</tbody></table>" +
+    "<h2>4. Execution</h2>" +
+    (r.swap && r.swap.input_amount
+      ? "<p>Swap on Orca (devnet) in the same transaction as this receipt: " + esc(r.swap.input_amount) + " in, quoted " + esc(r.swap.quote_est_out) + " out (minimum " + esc(r.swap.quote_min_out) + ", slippage " + esc(r.swap.slippage_bps) + " bps).</p>"
+      : "<p>No trade. The transaction carries only the receipt.</p>") +
+    (r.closes ? "<p>Closed the position opened in record no. " + esc(r.closes.opened_seq) + " on " + esc(r.closes.trigger) + " at " + esc(r.closes.move_bps) + " bps.</p>" : "") +
+    (r.position_after ? "<p>Position after this decision: " + esc(r.position_after.side) + " from record no. " + esc(r.position_after.opened_seq) + " at $" + usd(r.position_after.entry_price_e8) + ", stop " + esc(r.position_after.stop_loss_bps) + " bps, target " + esc(r.position_after.take_profit_bps) + " bps, horizon " + esc(r.position_after.horizon_minutes) + " min.</p>" : "<p>No open position after this decision.</p>") +
+    '<h2>5. Integrity checks run in your browser</h2><ul class="chk" id="checks"></ul>' +
+    '<h2>6. What this record does not prove</h2><ul class="not">' +
+    "<li>It does not prove the decision was good or that the agents reasoned well. It proves what they were given, what they said, and which fixed rules allowed or blocked the action.</li>" +
+    "<li>It does not prove the evidence was true. Prices and headlines are recorded exactly as received from the named sources. KOL items are what public channels posted, sorted by keyword rules, not fact-checked.</li>" +
+    "<li>These are practice trades on Solana devnet with test tokens. No real funds moved and nothing here is a performance claim or investment advice.</li>" +
+    "<li>The date comes from the desk's clock. The chain proves the order of records and that this one has not changed since its transaction confirmed, not the exact second evidence was fetched.</li>" +
+    "<li>Model output can differ between model versions and runs. The transcript is the record of what the model actually returned this time.</li>" +
+    "<li>This page re-checks hashes and the transaction. Replaying the risk rules to the same action and size, re-deriving every KOL signal from its quote, and replaying the on-chain head are done by the open-source verifier below.</li></ul>" +
+    "<h2>7. Check it yourself</h2><pre>git clone https://github.com/NoBanks/debate-desk && cd debate-desk && npm install\nnpx tsx src/verify.ts --tx all</pre>";
+
+  // receipt hash
+  const cReceipt = check("Receipt re-hashes to the receipt hash");
+  const cEv = check("Every evidence file re-hashes to the hash named in the receipt");
+  const cPack = check("Evidence pack hash matches the list of item hashes");
+  const cTr = deb ? check("Every model transcript re-hashes to the hash named in the receipt") : null;
+  const cSame = deb ? check("BULL and BEAR were given the identical prompt") : null;
+  const cText = deb ? check("All three prompts contain exactly the recorded evidence") : null;
+  const cRuling = deb ? check("The ruling in the receipt is the judge's recorded output") : null;
+  const cPrev = check("Links to the previous record's hash");
+  const cChain = check("Solana transaction succeeded and carries this receipt hash and record number");
+  const cVenue = check(r.action === "HOLD" ? "HOLD: transaction contains no swap" : "Trade: the swap is in the same transaction");
+  renderChecks();
+
+  sha(canon(r)).then((h) => h === row.receipt_hash ? pass(cReceipt) : fail(cReceipt, "got " + h));
+
+  const items = [];
+  const evBody = $("#ev");
+  let evOk = true, evMissing = false;
+  await Promise.all(r.evidence.items.map(async (ref, i) => {
+    try {
+      const item = await getJson(RAW + "evidence/" + ref.sha256 + ".json");
+      const h = await sha(canon(item));
+      if (h !== ref.sha256 || item.id !== ref.id) evOk = false;
+      items[i] = item;
+    } catch (e) { evMissing = true; }
+  }));
+  evBody.innerHTML = r.evidence.items.map((ref, i) => {
+    const it = items[i];
+    const link = String(ref.url).startsWith("http") ? '<a href="' + esc(ref.url) + '" target="_blank" rel="noopener">' + esc(ref.source) + "</a>" : esc(ref.source);
+    return "<tr><td><code>" + esc(ref.id) + "</code></td><td>" + link + (it ? "<br>" + evidenceSummary(it) : ' <span class="muted">(file not loaded)</span>') + '</td><td><code title="' + esc(ref.sha256) + '">' + esc(ref.sha256.slice(0, 16)) + "...</code></td></tr>";
+  }).join("");
+  evOk ? (evMissing ? unavailable(cEv, "some files could not be fetched yet (new records reach the public repo within minutes)") : pass(cEv, r.evidence.items.length + " files")) : fail(cEv, "an evidence file does not match its hash");
+  sha(canon(r.evidence.items.map((x) => x.sha256))).then((h) => h === r.evidence.pack_hash ? pass(cPack) : fail(cPack, "got " + h));
+
+  const kol = items.find((x) => x && x.id === "KOL");
+  if (kol) {
+    const d = kol.data;
+    $("#kol").innerHTML = '<h2>1a. Public market voices (KOL) <span>(' + d.signals.length + " signals, rules " + esc(d.rules_version) + ")</span></h2>" +
+      '<p class="muted">Each line is a literal quote from a public Telegram channel. Stance, conviction and urgency come from fixed keyword rules in src/kol.ts, with no model. A convergence needs ' + esc(d.min_voices) + "+ distinct voices on the same token and side within " + esc(d.window_hours) + " hours.</p>" +
+      "<table><thead><tr><th>Voice</th><th>Quote</th><th>Read as</th></tr></thead><tbody>" +
+      d.signals.map((s) => '<tr><td><a href="' + esc(s.post) + '" target="_blank" rel="noopener">' + esc(s.voice) + "</a><br><span class=\"muted\">" + esc(s.posted_at) + "</span></td><td>" + esc(s.quote) + "</td><td><strong>" + esc(s.stance) + "</strong> " + esc(s.tokens.join(", ")) + "<br><span class=\"muted\">conviction " + esc(s.conviction) + ", urgency " + esc(s.urgency) + (s.matched.length ? ", matched " + esc(s.matched.join(" ")) : "") + "</span></td></tr>").join("") +
+      "</tbody></table>";
+  }
+
+  if (deb) {
+    const tr = {};
+    let trOk = true, trMissing = false;
+    await Promise.all(deb.transcripts.map(async (t) => {
+      try {
+        const doc = await getJson(RAW + "transcripts/" + t.sha256 + ".json");
+        if ((await sha(canon(doc))) !== t.sha256 || doc.role !== t.role) trOk = false;
+        tr[t.role] = doc;
+      } catch (e) { trMissing = true; }
+    }));
+    trOk ? (trMissing ? unavailable(cTr, "a transcript could not be fetched yet") : pass(cTr, "BULL, BEAR, JUDGE")) : fail(cTr, "a transcript does not match its hash");
+    if (tr.BULL && tr.BEAR) tr.BULL.prompt === tr.BEAR.prompt ? pass(cSame) : fail(cSame, "prompts differ");
+    else unavailable(cSame, "transcripts not loaded");
+    if (items.every(Boolean) && tr.BULL && tr.JUDGE) {
+      const text = items.map((i) => "[" + i.id + "] " + i.source + "\n" + canon(i.data)).join("\n\n");
+      tr.BULL.prompt.includes(text) && tr.JUDGE.prompt.includes(text) ? pass(cText) : fail(cText, "a prompt does not contain the recorded evidence");
+    } else unavailable(cText, "evidence or transcripts not loaded");
+    if (tr.JUDGE) canon(tr.JUDGE.parsed) === canon(deb.ruling) ? pass(cRuling) : fail(cRuling, "ruling differs from the judge's output");
+    else unavailable(cRuling, "judge transcript not loaded");
+
+    const side = (role) => {
+      const t = tr[role];
+      if (!t) return '<div class="side"><h3>' + role + '</h3><p class="muted">transcript not loaded</p></div>';
+      const c = t.parsed;
+      return '<div class="side"><h3>' + role + " <span class=\"muted\">confidence " + esc(c.confidence) + "</span></h3><p>" + esc(c.thesis) + "</p><ol>" +
+        c.points.map((p) => "<li>" + esc(p.claim) + " " + cites(p.evidence_ids) + '<div class="ce">Cause and effect: ' + esc(p.cause_effect) + "</div></li>").join("") +
+        '</ol><p class="muted">Would change my mind: ' + esc(c.what_would_change_my_mind) + "</p></div>";
+    };
+    const j = deb.ruling;
+    $("#debate").innerHTML = '<p class="muted">Both advocates read the identical evidence and did not see each other. Model ' + esc((tr.JUDGE || {}).model_version || (tr.JUDGE || {}).model || "") + ", temperature 0.</p>" + side("BULL") + side("BEAR") +
+      '<div class="ruling"><h3>Ruling of the judge</h3><p><strong>' + esc(j.winner) + " prevails. Verdict " + esc(j.verdict) + ", conviction " + esc(j.conviction) + ".</strong></p><p>" + esc(j.rationale) + "</p>" +
+      '<p class="muted">Decisive evidence: ' + cites(j.decisive_evidence_ids) + ". Exit plan asked: stop " + esc(j.stop_loss_bps) + " bps, target " + esc(j.take_profit_bps) + " bps, horizon " + esc(j.horizon_minutes) + " min, size " + esc(j.size_pct_of_max) + "% of max.</p>" +
+      (j.rejected_points && j.rejected_points.length ? "<p><strong>Points rejected:</strong></p><ul>" + j.rejected_points.map((x) => "<li>" + esc(x.side) + ": " + esc(x.claim) + " - " + esc(x.why) + "</li>").join("") + "</ul>" : "") + "</div>";
+  }
+
+  if (Number(seq) === 0) pass(cPrev, "first record");
+  else getJson("rows/" + (Number(seq) - 1) + ".json").then((p) => p.receipt_hash === row.prev_receipt_hash ? pass(cPrev, "no. " + (Number(seq) - 1)) : fail(cPrev, "previous hash differs")).catch(() => unavailable(cPrev, "previous record not reachable"));
+
+  try {
+    const res = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getTransaction", params: [row.signature, { encoding: "json", maxSupportedTransactionVersion: 0, commitment: "confirmed" }] }) });
+    const tx = (await res.json()).result;
+    if (!tx) { unavailable(cChain, "RPC did not return the transaction; try again in a minute"); unavailable(cVenue, "transaction not loaded"); }
+    else {
+      const keys = [...tx.transaction.message.accountKeys, ...((tx.meta.loadedAddresses || {}).writable || []), ...((tx.meta.loadedAddresses || {}).readonly || [])];
+      const want = row.receipt_hash;
+      let found = false;
+      for (const ix of tx.transaction.message.instructions) {
+        const d = b58decode(ix.data);
+        if (d.length >= 49 && hex(d.slice(8, 40)) === want) {
+          const seqLE = new DataView(d.buffer, d.byteOffset + 40, 8).getBigUint64(0, true);
+          if (String(seqLE) === String(seq) && d[48] === ACTION[r.action]) found = true;
+        }
+      }
+      if (tx.meta.err) fail(cChain, "transaction failed on chain");
+      else found ? pass(cChain, "slot " + tx.slot) : fail(cChain, "no attest instruction with this hash, number and action");
+      const swaps = tx.transaction.message.instructions.filter((ix) => keys[ix.programIdIndex] === ORCA).length;
+      r.action === "HOLD" ? (swaps === 0 ? pass(cVenue) : fail(cVenue, "HOLD carries a swap")) : (swaps > 0 ? pass(cVenue, swaps + " Orca instruction(s)") : fail(cVenue, "trade without its swap"));
+    }
+  } catch (e) {
+    unavailable(cChain, "could not reach " + RPC);
+    unavailable(cVenue, "transaction not loaded");
+  }
+}
+
+const q = new URLSearchParams(location.search).get("seq");
+load(q !== null && /^\d+$/.test(q) ? Number(q) : null);
+$("#go").onclick = () => { const v = $("#seqIn").value.trim(); if (/^\d+$/.test(v)) load(Number(v)); };
+$("#print").onclick = () => window.print();
+})();
+</script></body></html>

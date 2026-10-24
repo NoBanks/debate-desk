@@ -11,6 +11,7 @@ import { join } from "node:path";
 import { AGENT_NAME, CLUSTER, DATA_DIR, PROGRAM_ID, REPO_ROOT, explorerAddress, explorerTx } from "./config.js";
 import type { Json } from "./canonical.js";
 import { readLedger, type LedgerRow } from "./desk.js";
+import { recordPage } from "./record.js";
 
 type Obj = { [k: string]: any };
 const esc = (s: unknown) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -85,6 +86,7 @@ function card(row: LedgerRow): string {
     ${swap.input_amount ? `<span>swap in ${esc(swap.input_amount)} -> est out ${esc(swap.quote_est_out)} (min ${esc(swap.quote_min_out)})</span>` : ""}
     ${closes ? `<span>closed #${esc(closes.opened_seq)} on ${esc(closes.trigger)} at ${esc(closes.move_bps)} bps</span>` : ""}
     ${pos ? `<span>open ${esc(pos.side)} from #${esc(pos.opened_seq)} at $${usd(pos.entry_price_e8)}</span>` : ""}
+    <a href="record.html?seq=${esc(row.seq)}"><b>Decision Record</b></a>
     <a href="${explorerTx(row.signature)}" target="_blank" rel="noopener">transaction</a>
     <code title="${esc(row.receipt_hash)}">receipt ${short(row.receipt_hash, 12)}</code>
   </footer>
@@ -158,6 +160,7 @@ a{color:var(--acc)}
   <ol>
     <li>Each card's receipt hash is committed by program <a href="${explorerAddress(String(PROGRAM_ID))}" target="_blank" rel="noopener"><code>${esc(PROGRAM_ID)}</code></a> into the desk's on-chain log <a href="${explorerAddress(log)}" target="_blank" rel="noopener"><code>${esc(short(log, 12))}</code></a>.</li>
     <li>The receipt names the hashes of every evidence item and every model transcript. Those files are in the repo under <code>data/</code>.</li>
+    <li>Open any card's <a href="record.html">Decision Record</a>: a printable page that re-checks that decision in your browser (every hash, identical prompts, the judge's own output, the Solana transaction) and shows VERIFIED or FAILED.</li>
     <li>Run the verifier. It re-hashes everything, proves bull and bear saw the identical evidence, replays the risk rules to the same action and size, and replays the on-chain head.</li>
   </ol>
   <pre>git clone https://github.com/NoBanks/debate-desk && cd debate-desk && npm install
@@ -170,5 +173,14 @@ ${rows.slice().reverse().map(card).join("\n")}
 mkdirSync(join(REPO_ROOT, "docs"), { recursive: true });
 writeFileSync(join(REPO_ROOT, "docs", "index.html"), html);
 writeFileSync(join(REPO_ROOT, "docs", ".nojekyll"), "");
+// Decision Record: one static page plus one small row file per receipt (the page checks each row against the chain)
+writeFileSync(join(REPO_ROOT, "docs", "record.html"), recordPage());
+mkdirSync(join(REPO_ROOT, "docs", "rows"), { recursive: true });
+for (const row of rows) {
+  const p = join(REPO_ROOT, "docs", "rows", `${row.seq}.json`);
+  const body = JSON.stringify(row);
+  if (!existsSync(p) || readFileSync(p, "utf8") !== body) writeFileSync(p, body);
+}
+writeFileSync(join(REPO_ROOT, "docs", "rows", "index.json"), JSON.stringify({ latest: rows.length - 1 }));
 console.log(`docs/index.html: ${rows.length} receipts, ${(html.length / 1024).toFixed(0)} KB`);
 void (null as unknown as Json);
