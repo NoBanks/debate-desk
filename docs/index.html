@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>297</b><span>receipts on chain</span></div>
+  <div class="stat"><b>298</b><span>receipts on chain</span></div>
   <div class="stat"><b>22</b><span>debates</span></div>
   <div class="stat"><b>17</b><span>entries</span></div>
   <div class="stat"><b>16</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r297">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #297</span>
+    <time>2026-10-24T12:19:37Z</time>
+    <span class="px">SOL $101.49</span>
+  </header>
+  <p class="reason">position from #288 open at -26 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>06e94373...</code></summary><ul class="ev"><li id="ev-PYTH-297"><b>PYTH</b> <a>$101.4883</a> - EMA $101.3544, 13 bps from EMA, 30s old <code title="3077e02737cffc512a1f9775f9c03bdffe9ec42b5e74a9cb5ce9d78eae9231cc">3077e027...</code></li><li id="ev-CL-297"><b>CL</b> <a>$102.36</a> <a href="https://sepolia.etherscan.io/tx/0xfbd79f6515dac67fb050b48e55f5895138b03d537c6f7bbfd5989355ea9d564d" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="09969902a0c4bd3b60d915ffdd1e91269166d24f7966a17ee2f94f7b496f4280">09969902...</code></li><li id="ev-CB-297"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$101.45</a> - 24h -278 bps <code title="ed52a8db9e8658550c5c4d53a6f38e2029b9ad93944904cd435df6e7de78058e">ed52a8db...</code></li><li id="ev-KR-297"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$101.46</a> - -128 bps vs 24h VWAP <code title="3184aae7a8b12d95571bdb328182a754ada5b8869b27a8f36b7fcaa88e193898">3184aae7...</code></li><li id="ev-CG-297"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$101.43</a> - 1h -23 bps, 24h -285 bps, 7d -328 bps <code title="d8fecc59f5bf22573b37d4e902f4ffc3e1fd879a92cd69527b5ccd22e165324e">d8fecc59...</code></li><li id="ev-NEWS-1-297"><b>NEWS-1</b> <a href="https://www.coindesk.com/policy/2026/10/24/u-s-clarity-act-failure-gives-asia-and-middle-east-a-competitive-edge-says-apex-group-ceo" target="_blank" rel="noopener">U.S. Clarity Act failure gives Asia and Middle East a competitive edge, says Apex Group CEO</a> <code title="b9b923c5c61be39dffa93ebfe8388747ece9f94aa0ae7bcc4b8e119c05f1131a">b9b923c5...</code></li><li id="ev-NEWS-2-297"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/10/24/franklin-templeton-adds-usd150-million-in-fund-shares-to-xrp-ledger-all-in-one-wallet" target="_blank" rel="noopener">Franklin Templeton adds $150 million in fund shares to XRP Ledger, all in one wallet</a> <code title="644a8d2d263cdbc6f6825db99f44ee09e5b7ba3ba340148a6dfc0493bc1e4708">644a8d2d...</code></li><li id="ev-NEWS-3-297"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/nasdaq-companies-object-tokenized-stock-listings-okx-ice?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Wells Fargo and five others object to OKX-ICE tokenized stock listings: Report</a> <code title="f311d2daae08909b7b12e04df9da4f64bc6df27562c55f980b16aa2580147ec5">f311d2da...</code></li><li id="ev-NEWS-4-297"><b>NEWS-4</b> <a href="https://decrypt.co/381758/netanyahu-crypto-plan-banking-sanctions-israel" target="_blank" rel="noopener">Netanyahu Considering Crypto Plan to Dodge Banking Sanctions on Israel</a> <code title="4af02fece4abefd5dbcd54f4a2192a3fe496ba4d0bfaf9afe0e2bb3a225b0459">4af02fec...</code></li><li id="ev-NEWS-5-297"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/irs-plans-lower-penalties-for-crypto-tax-disclosures-forbes-reports?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">IRS plans lower tax disclosure penalties, including for crypto: Forbes</a> <code title="521d167a74e219743d75c2fd1140f91d355ce2fe381b234a381805e3ce8044a9">521d167a...</code></li><li id="ev-NEWS-6-297"><b>NEWS-6</b> <a href="https://decrypt.co/381755/senate-democrat-tether-payments-ex-white-house-crypto-adviser" target="_blank" rel="noopener">Senate Democrat Probes Tether Payments to Ex-White House Crypto Adviser's Firm</a> <code title="8dd04088f4d0895ff3581da24420219f4c3946dbdf1d81f7519a7dbe3d7b8dd2">8dd04088...</code></li><li id="ev-KOL-297"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">13 signals from 9 public voices; convergence: 3 voices BEAR on ETH; 2 voices BEAR on BTC; 2 voices BEAR on ENA; 2 voices BEAR on UNI; SOL 0 bull / 0 bear</a> <code title="16be8798d4956376b431d9ec50967cd07de65065322436e9459e4605939cfad0">16be8798...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 30s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #288: market moved 26 bps (position -26 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #288 at $101.22</span>
+    <a href="record.html?seq=297"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2KTJgXEPFsVLrmToxYHMdkqeta4ZJ2sCfTPNYwhYRvLUJCBFqUbXf9eKqzNj2zvCAY8m1Dgs4sAjZWvAb22Z9XfQ?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="702c2a341f43039c3aeb634657888a45fa3be5b47c8dcc65707c19b9c2e854cd">receipt 702c2a341f43...</code>
+  </footer>
+</article>
 <article class="card" id="r296">
   <header>
     <span class="badge hold">HOLD</span>
