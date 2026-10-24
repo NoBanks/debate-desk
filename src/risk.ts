@@ -32,6 +32,10 @@ export const LIMITS = {
   stop_loss_bps_range: [50, 1000] as [number, number],
   take_profit_bps_range: [50, 2000] as [number, number],
   horizon_minutes_range: [30, 1440] as [number, number],
+  // KOL narrative can only shrink a trade: if this many public voices converge AGAINST the verdict
+  // on SOL, the size is cut to this percentage. Agreement never adds size.
+  kol_min_voices: 2,
+  kol_counter_size_pct: 50,
 };
 
 export type EvidenceView = {
@@ -41,6 +45,8 @@ export type EvidenceView = {
   pythConfBps: number;
   /** other sources' USD prices as 1e-8 integers, by evidence id */
   crossPricesE8: { [id: string]: bigint };
+  /** distinct public voices net bullish / bearish on SOL, when the pack has a KOL item */
+  kol?: { bullVoices: number; bearVoices: number };
 };
 
 export type Position = {
@@ -168,6 +174,17 @@ export function applyRules(r: Ruling, ev: EvidenceView, inv: Inventory): Outcome
   const max = isBuy ? LIMITS.max_usdc_in_units : LIMITS.max_sol_in_lamports;
   const min = isBuy ? LIMITS.min_usdc_in_units : LIMITS.min_sol_in_lamports;
   let size = (max * pct * conv) / 10_000n;
+  // only when the pack has a KOL item, so receipts from before kol.ts replay unchanged
+  if (ev.kol) {
+    const against = isBuy ? ev.kol.bearVoices : ev.kol.bullVoices;
+    const cut = against >= LIMITS.kol_min_voices;
+    check(
+      "kol.no_counter_narrative",
+      !cut,
+      `${against} public voice(s) net ${isBuy ? "BEAR" : "BULL"} on SOL against this ${r.verdict} (cut at ${LIMITS.kol_min_voices}+); ${cut ? `size cut to ${LIMITS.kol_counter_size_pct}%, trade still allowed` : "no cut"}; KOL never adds size`,
+    );
+    if (cut) size = (size * BigInt(LIMITS.kol_counter_size_pct)) / 100n;
+  }
   if (size < min) size = min;
   const have = isBuy ? inv.usdcUnits : inv.lamports > LIMITS.sol_reserve_lamports ? inv.lamports - LIMITS.sol_reserve_lamports : 0n;
   size = minB(size, have);

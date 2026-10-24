@@ -13,6 +13,7 @@
  *   CG     CoinGecko market snapshot (1h / 24h / 7d moves, volume), when its free tier answers
  *   NEWS-n crypto headlines from public RSS feeds
  *   CL     Chainlink SOL/USD Data Feed, delivered by the CRE workflow in cre/ (when it runs)
+ *   KOL    what public market voices on Telegram said, classified by fixed rules (src/kol.ts)
  */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { execFile } from "node:child_process";
@@ -21,6 +22,7 @@ import type { Rpc, GetAccountInfoApi } from "@solana/kit";
 import { DATA_DIR, PYTH_SOL_USD, REPO_ROOT } from "./config.js";
 import { canonicalBytes, receiptHash, sha256Hex, type Json } from "./canonical.js";
 import { confBps, deviationBps, readPyth, type PythPrice } from "./pyth.js";
+import { buildSignals, kolChannels, kolData, parseChannelPage, type Post } from "./kol.js";
 
 export type EvidenceItem = {
   id: string;
@@ -274,15 +276,50 @@ async function creItem(): Promise<EvidenceItem | null> {
   };
 }
 
+/**
+ * Public Telegram voices via their keyless web preview. A voice that does not answer is
+ * simply absent; fewer than two voices means no convergence is possible, so no item.
+ */
+export async function kolItem(): Promise<EvidenceItem | null> {
+  const nowMs = Math.floor(Date.now() / 1000) * 1000;
+  const channels = kolChannels();
+  const voices: { channel: string; url: string; page_sha256: string; posts_read: number }[] = [];
+  const posts: Post[] = [];
+  // one channel at a time: t.me drops connections when a burst of previews is requested at once
+  for (const ch of channels) {
+    const url = `https://t.me/s/${ch}`;
+    try {
+      const html = await withRetry(() => getText(url, 12000), 3);
+      const got = parseChannelPage(ch, html);
+      if (!got.length) continue;
+      voices.push({ channel: ch, url, page_sha256: sha256Hex(Buffer.from(html, "utf8")), posts_read: got.length });
+      posts.push(...got);
+    } catch {
+      // a dead channel does not stop the debate
+    }
+  }
+  if (voices.length < 2) return null;
+  const signals = buildSignals(posts, voices.map((v) => v.channel), nowMs);
+  return {
+    id: "KOL",
+    source: `Public Telegram market voices (${voices.length}), stance by fixed keyword rules in src/kol.ts, no model`,
+    url: "https://t.me/s/",
+    fetched_at: iso(nowMs),
+    raw_sha256: sha256Hex(Buffer.from(voices.map((v) => v.page_sha256).join(""), "utf8")),
+    data: kolData(voices, signals),
+  };
+}
+
 export async function gatherEvidence(rpc: Rpc<GetAccountInfoApi>): Promise<EvidencePack> {
   const nowS = Math.floor(Date.now() / 1000);
-  const [pyth, cb, kr, cg, news, cl] = await Promise.all([
+  const [pyth, cb, kr, cg, news, cl, kol] = await Promise.all([
     withRetry(() => readPyth(rpc, PYTH_SOL_USD)),
     withRetry(coinbaseItem, 3).catch(() => null),
     withRetry(krakenItem, 3).catch(() => null),
     coingeckoItem().catch(() => null),
     newsItems(),
     creItem().catch(() => null),
+    process.env.DESK_SKIP_KOL === "1" ? null : kolItem().catch(() => null),
   ]);
   const items: EvidenceItem[] = [pythItem(pyth, nowS)];
   if (cl) items.push(cl);
@@ -290,6 +327,7 @@ export async function gatherEvidence(rpc: Rpc<GetAccountInfoApi>): Promise<Evide
   if (kr) items.push(kr);
   if (cg) items.push(cg);
   items.push(...news);
+  if (kol) items.push(kol);
 
   const dir = join(DATA_DIR, "evidence");
   mkdirSync(dir, { recursive: true });

@@ -7,7 +7,8 @@
  *   npx tsx src/verify.ts https://raw.githubusercontent.com/NoBanks/debate-desk/main/data
  *
  * Reasoning checks (what was decided, and why):
- *   R1  every evidence item re-hashes to the hash in the receipt, and the pack hash matches
+ *   R1  every evidence item re-hashes to the hash in the receipt, and the pack hash matches;
+ *       every KOL signal re-derives from its literal quote and convergence recomputes
  *   R2  every transcript re-hashes; BULL and BEAR got the identical prompt; the JUDGE's
  *       prompt contains that same evidence; the ruling in the receipt is the judge's own output
  *   R3  replaying risk.ts on the recorded evidence, ruling, balances and position gives the
@@ -28,6 +29,7 @@ import { applyRules, checkExit, type Position } from "./risk.js";
 import type { Ruling } from "./debate.js";
 import type { EvidenceItem } from "./evidence.js";
 import { evidenceText } from "./evidence.js";
+import { recheckKol } from "./kol.js";
 import { evidenceView, type LedgerRow } from "./desk.js";
 
 const rpc = createSolanaRpc(RPC_URL);
@@ -121,7 +123,7 @@ async function main() {
   if (!rows.length) throw new Error("ledger is empty");
   const authority = String((rows[0].receipt as Obj).agent_address) as Address;
   const problems: string[] = [];
-  const counts = { evidence_files: 0, transcripts: 0, rule_replays: 0, debates: 0, entries: 0, exits: 0, holds: 0 };
+  const counts = { evidence_files: 0, kol_rederived: 0, transcripts: 0, rule_replays: 0, debates: 0, entries: 0, exits: 0, holds: 0 };
 
   // ---- reasoning
   for (const [i, row] of rows.entries()) {
@@ -136,6 +138,10 @@ async function main() {
       items.push(item);
     }
     if (receiptHash(evRef.items.map((x) => x.sha256) as Json) !== evRef.pack_hash) problems.push(`${tag} R1: pack hash mismatch`);
+    for (const k of items.filter((x) => x.id === "KOL")) {
+      counts.kol_rederived++;
+      for (const p of recheckKol(k.data, k.fetched_at)) problems.push(`${tag} R1: KOL ${p}`);
+    }
 
     const deb = r.debate as { transcripts: { role: string; sha256: string }[]; ruling: Json } | null;
     let ruling: Ruling | null = null;

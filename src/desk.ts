@@ -167,7 +167,10 @@ export function evidenceView(items: { id: string; data: { [k: string]: Json } }[
   for (const it of items) {
     if (["CL", "CB", "KR", "CG"].includes(it.id)) crossPricesE8[it.id] = e8(String(it.data.price_usd));
   }
-  return { ids: items.map((i) => i.id), pythPriceE8, pythAgeS: Number(p.age_s), pythConfBps: Number(p.conf_bps), crossPricesE8 };
+  const view: EvidenceView = { ids: items.map((i) => i.id), pythPriceE8, pythAgeS: Number(p.age_s), pythConfBps: Number(p.conf_bps), crossPricesE8 };
+  const sol = items.find((i) => i.id === "KOL")?.data.sol as { bull_voices: number; bear_voices: number } | undefined;
+  if (sol) view.kol = { bullVoices: Number(sol.bull_voices), bearVoices: Number(sol.bear_voices) };
+  return view;
 }
 
 function openPosition(rows: LedgerRow[]): Position | null {
@@ -180,7 +183,7 @@ function deskContext(inv: Inventory, pos: Position | null): string {
     `Instrument: SOL/USD. Practice desk on Solana devnet; trades are small and real on devnet, never on mainnet.`,
     `Desk balances: ${inv.lamports} lamports SOL (reserve ${LIMITS.sol_reserve_lamports} never traded), ${inv.usdcUnits} devUSDC units (6 decimals).`,
     `Open position: ${pos ? `${pos.side} since receipt #${pos.opened_seq}` : "none"}.`,
-    `Desk rules the judge cannot override: conviction below ${LIMITS.min_conviction_to_trade} means no trade; at least ${LIMITS.min_decisive_citations} decisive evidence ids required; price sources must agree within ${LIMITS.max_source_divergence_bps} bps; stop ${LIMITS.stop_loss_bps_range.join("-")} bps, target ${LIMITS.take_profit_bps_range.join("-")} bps, horizon ${LIMITS.horizon_minutes_range.join("-")} minutes.`,
+    `Desk rules the judge cannot override: conviction below ${LIMITS.min_conviction_to_trade} means no trade; at least ${LIMITS.min_decisive_citations} decisive evidence ids required; price sources must agree within ${LIMITS.max_source_divergence_bps} bps; stop ${LIMITS.stop_loss_bps_range.join("-")} bps, target ${LIMITS.take_profit_bps_range.join("-")} bps, horizon ${LIMITS.horizon_minutes_range.join("-")} minutes; if ${LIMITS.kol_min_voices}+ public voices in KOL converge against the verdict on SOL, size is cut to ${LIMITS.kol_counter_size_pct}%.`,
   ].join("\n");
 }
 

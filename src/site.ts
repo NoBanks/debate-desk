@@ -48,7 +48,10 @@ function card(row: LedgerRow): string {
   const evList = items
     .map(({ ref, item }) => {
       const d = item?.data ?? {};
-      const label = d.headline ?? (d.price_usd ? `$${d.price_usd}` : "");
+      const conv = ((d.convergence ?? []) as Obj[]).map((c) => `${c.n} voices ${c.stance} on ${c.token}`).join("; ");
+      const label = ref.id === "KOL"
+        ? `${(d.signals ?? []).length} signals from ${(d.voices ?? []).length} public voices; ${conv ? `convergence: ${conv}` : "no convergence"}; SOL ${d.sol?.bull_voices ?? 0} bull / ${d.sol?.bear_voices ?? 0} bear`
+        : d.headline ?? (d.price_usd ? `$${d.price_usd}` : "");
       const extra = ref.id === "PYTH" ? ` - EMA $${d.ema_price_usd}, ${d.deviation_from_ema_bps} bps from EMA, ${d.age_s}s old` : ref.id === "CG" ? ` - 1h ${d.change_1h_bps} bps, 24h ${d.change_24h_bps} bps, 7d ${d.change_7d_bps} bps` : ref.id === "CB" ? ` - 24h ${d.change_24h_bps} bps` : ref.id === "KR" ? ` - ${d.price_vs_vwap_bps} bps vs 24h VWAP` : "";
       const href = String(ref.url).startsWith("http") ? ` href="${esc(ref.url)}" target="_blank" rel="noopener"` : "";
       return `<li id="ev-${esc(ref.id)}-${row.seq}"><b>${esc(ref.id)}</b> <a${href}>${esc(label)}</a>${esc(extra)} <code title="${esc(ref.sha256)}">${short(ref.sha256, 8)}</code></li>`;

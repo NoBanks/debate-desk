@@ -106,6 +106,7 @@ const RULES_OF_EVIDENCE = [
   "- Every claim must cite the bracketed ids it relies on, e.g. PYTH or NEWS-2.",
   "- State cause and effect plainly: what in the evidence causes what expected move.",
   "- Numbers ending in _bps are basis points (100 bps = 1%). Prices are USD strings.",
+  "- KOL is what public market voices said, not market data. Cite it as KOL. A convergence is a narrative to weigh against the prices, not proof.",
   "- Write plain ASCII. No markdown.",
 ].join("\n");
 
