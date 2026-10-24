@@ -6,6 +6,7 @@
 //   node simulate.mjs              -> prints the JSON line
 //   node simulate.mjs --save       -> also writes the full simulator output to SIMULATION_OUTPUT.txt
 //   node simulate.mjs --verbose    -> streams the simulator output to stderr while it runs
+//   node simulate.mjs --no-broadcast -> dry-run the Sepolia anchor even when cre/.env has a key
 //
 // Auth: the CRE CLI requires `cre login` (one time, browser) or the CRE_API_KEY env var.
 //
@@ -15,7 +16,7 @@
 // real bun.exe (~/.bun/bin) first on PATH when one exists.
 
 import { spawn } from 'node:child_process'
-import { existsSync, mkdirSync, readlinkSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readlinkSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -69,6 +70,17 @@ if (existsSync(path.join(bunHome, isWin ? 'bun.exe' : 'bun'))) {
 	if (isWin) delete env.Path
 }
 
+// Broadcast the evidence anchor to Sepolia when a signing key is configured (cre/.env, gitignored),
+// unless CRE_BROADCAST=0. Without a key the write step is a dry run and the evidence is unchanged.
+const hasKey = (() => {
+	try {
+		return /^\s*CRE_ETH_PRIVATE_KEY\s*=\s*\S+/m.test(readFileSync(path.join(here, '.env'), 'utf8'))
+	} catch {
+		return false
+	}
+})()
+const BROADCAST = args.has('--broadcast') || (hasKey && process.env.CRE_BROADCAST !== '0' && !args.has('--no-broadcast'))
+
 const root = projectRoot()
 const cre = findCre()
 const creArgs = [
@@ -82,6 +94,7 @@ const creArgs = [
 	'--non-interactive',
 	...(args.has('--engine-logs') ? ['--engine-logs'] : []),
 	...(args.has('--no-config') ? ['--no-config'] : []),
+	...(BROADCAST ? ['--broadcast'] : []),
 ]
 
 const started = Date.now()

@@ -1,12 +1,17 @@
 # CRE project settings. Public RPCs only, no API keys.
 # SOL/USD has no Chainlink Data Feed on Ethereum Sepolia, so the workflow reads
 # the Ethereum mainnet SOL/USD proxy (read-only, no gas, no wallet needed).
+# The evidence anchor is written to Ethereum Sepolia (contracts/EvidenceReceiver.sol, see receiver.json).
 staging-settings:
   rpcs:
     - chain-name: ethereum-mainnet
       url: https://ethereum-rpc.publicnode.com
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
 
 production-settings:
   rpcs:
     - chain-name: ethereum-mainnet
       url: https://ethereum-rpc.publicnode.com
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com

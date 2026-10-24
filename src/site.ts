@@ -53,8 +53,9 @@ function card(row: LedgerRow): string {
         ? `${(d.signals ?? []).length} signals from ${(d.voices ?? []).length} public voices; ${conv ? `convergence: ${conv}` : "no convergence"}; SOL ${d.sol?.bull_voices ?? 0} bull / ${d.sol?.bear_voices ?? 0} bear`
         : d.headline ?? (d.price_usd ? `$${d.price_usd}` : "");
       const extra = ref.id === "PYTH" ? ` - EMA $${d.ema_price_usd}, ${d.deviation_from_ema_bps} bps from EMA, ${d.age_s}s old` : ref.id === "CG" ? ` - 1h ${d.change_1h_bps} bps, 24h ${d.change_24h_bps} bps, 7d ${d.change_7d_bps} bps` : ref.id === "CB" ? ` - 24h ${d.change_24h_bps} bps` : ref.id === "KR" ? ` - ${d.price_vs_vwap_bps} bps vs 24h VWAP` : "";
+      const anchor = ref.id === "CL" && d.anchor_tx ? ` <a href="https://sepolia.etherscan.io/tx/${esc(d.anchor_tx)}" target="_blank" rel="noopener">anchored on Sepolia</a>` : "";
       const href = String(ref.url).startsWith("http") ? ` href="${esc(ref.url)}" target="_blank" rel="noopener"` : "";
-      return `<li id="ev-${esc(ref.id)}-${row.seq}"><b>${esc(ref.id)}</b> <a${href}>${esc(label)}</a>${esc(extra)} <code title="${esc(ref.sha256)}">${short(ref.sha256, 8)}</code></li>`;
+      return `<li id="ev-${esc(ref.id)}-${row.seq}"><b>${esc(ref.id)}</b> <a${href}>${esc(label)}</a>${esc(extra)}${anchor} <code title="${esc(ref.sha256)}">${short(ref.sha256, 8)}</code></li>`;
     })
     .join("");
   const rules = (r.rules as Obj[]).map((c) => `<li class="${c.pass ? "pass" : "fail"}"><span>${c.pass ? "PASS" : "FAIL"}</span> <code>${esc(c.rule)}</code> ${esc(c.detail)}</li>`).join("");

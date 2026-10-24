@@ -248,7 +248,7 @@ async function creItem(): Promise<EvidenceItem | null> {
   const line = out.split(/\r?\n/).find((l) => l.startsWith("EVIDENCE_REPORT ")) ?? (out.trim().startsWith("{") ? "EVIDENCE_REPORT " + out.trim() : "");
   if (!line) return null;
   const raw = line.slice("EVIDENCE_REPORT ".length).trim();
-  let r: { chainlink?: Record<string, Json>; generated_at?: Json };
+  let r: { chainlink?: Record<string, Json>; generated_at?: Json; anchor?: Record<string, Json> };
   try {
     r = JSON.parse(raw);
   } catch {
@@ -272,6 +272,15 @@ async function creItem(): Promise<EvidenceItem | null> {
       round_id: ascii(String(cl.round_id ?? "")),
       chain: ascii(String(cl.chain ?? "")),
       feed: ascii(String(cl.feed ?? "")),
+      // the same report, signed by the workflow and written to EvidenceReceiver on Sepolia (cre/receiver.json)
+      ...(r.anchor?.status === "SUCCESS"
+        ? {
+            anchor_chain: ascii(String(r.anchor.chain ?? "")),
+            anchor_receiver: ascii(String(r.anchor.receiver ?? "")),
+            anchor_tx: ascii(String(r.anchor.tx_hash ?? "")),
+            anchor_report_keccak256: ascii(String(r.anchor.report_keccak256 ?? "")),
+          }
+        : {}),
     },
   };
 }
