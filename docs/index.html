@@ -38,8 +38,8 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>373</b><span>receipts on chain</span></div>
-  <div class="stat"><b>30</b><span>debates</span></div>
+  <div class="stat"><b>374</b><span>receipts on chain</span></div>
+  <div class="stat"><b>31</b><span>debates</span></div>
   <div class="stat"><b>22</b><span>entries</span></div>
   <div class="stat"><b>22</b><span>rule exits</span></div>
   <div class="stat"><b>0</b><span>rulings blocked by rules</span></div>
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r373">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #373</span>
+    <time>2026-10-25T18:38:36Z</time>
+    <span class="px">SOL $101.84</span>
+  </header>
+  <p class="reason">judge ruled HOLD (conviction 0)</p>
+  <details ><summary>Evidence (12) - pack <code>a9dfd1ad...</code></summary><ul class="ev"><li id="ev-PYTH-373"><b>PYTH</b> <a>$101.8354</a> - EMA $101.6885, 14 bps from EMA, 129s old <code title="5d67c8ae8f16423aaa7df5724145b5dff619bd305144476838000a352ab301f8">5d67c8ae...</code></li><li id="ev-CL-373"><b>CL</b> <a>$101.9927</a> <a href="https://sepolia.etherscan.io/tx/0xa7cf7ab19dca72515d039b9bd940777a10ab68eb646f1d6ad8ebe575ee697121" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="31dd6fa00724c1d18c22ad866021a5aa94e9ea0c5cb303abdc3ee6fa311b3ba5">31dd6fa0...</code></li><li id="ev-CB-373"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$101.85</a> - 24h 66 bps <code title="7b5bee690782d026ca1161a5627bd50cc93c2446fd6d5c70462bd7a2a47b72bd">7b5bee69...</code></li><li id="ev-KR-373"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$101.85</a> - 41 bps vs 24h VWAP <code title="c6146efe6fa0925020ab19920abe6de50759bb94fd564a654df23a6d8469516a">c6146efe...</code></li><li id="ev-CG-373"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$101.85</a> - 1h 9 bps, 24h 93 bps, 7d -8 bps <code title="8e89835234b56844e16091ee72276386661ab95b3bedecbd56d1f6902e06a2eb">8e898352...</code></li><li id="ev-NEWS-1-373"><b>NEWS-1</b> <a href="https://decrypt.co/381784/wells-fargo-cisco-intuit-more-companies-object-tokenized-stocks" target="_blank" rel="noopener">Wells Fargo, Cisco, Intuit Among 6 More Companies Objecting to Tokenized Stocks</a> <code title="5caaa0465b20837088a5181b972ae8b27de1598b974ba74e5a599a53d72a36f3">5caaa046...</code></li><li id="ev-NEWS-2-373"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/ecb-official-sees-digital-euro-tool-to-protect-eu-sovereignty?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">ECB official sees digital euro as key to protecting EU 'sovereignty'</a> <code title="2caf51ed7fd2727c3d10f11fb4c32a1b9f0afdd4951a08e2cacd9e4d9013efdc">2caf51ed...</code></li><li id="ev-NEWS-3-373"><b>NEWS-3</b> <a href="https://www.coindesk.com/business/2026/10/25/latvia-targets-tokenization-rules-in-2027-with-commercial-property-in-focus" target="_blank" rel="noopener">Latvia targets tokenization rules in 2027 with commercial property in focus</a> <code title="bcb345d50fca9d44eb5084b67c7a00ea362ae0e68f11369116d92fd6e39ec9cf">bcb345d5...</code></li><li id="ev-NEWS-4-373"><b>NEWS-4</b> <a href="https://decrypt.co/381777/bitcoin-etfs-snap-two-week-losing-streak-despite-late-week-slide" target="_blank" rel="noopener">Bitcoin ETFs Snap Two-Week Losing Streak Despite Late-Week Slide</a> <code title="9b2c29998db194ac3ecef1eecea089f2ab8240386db81aee21459a67df433a12">9b2c2999...</code></li><li id="ev-NEWS-5-373"><b>NEWS-5</b> <a href="https://www.coindesk.com/policy/2026/10/22/uk-banks-face-10-000-complaints-in-3-months-over-crypto-restrictions" target="_blank" rel="noopener">UK banks face 10,000 complaints in 3 months over crypto restrictions</a> <code title="68e4605ee7b6e6c23c3ec9c4301bd84102d8263136428b599d372f402616bfd5">68e4605e...</code></li><li id="ev-NEWS-6-373"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/netanyahu-floats-use-of-blockchain-as-solution-to-potential-financial-sanctions?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Netanyahu floats use of blockchain as solution to potential financial sanctions</a> <code title="2965c5a3ef1fd65b5781a12e2376069f887105badad02fff533378b0707cfb50">2965c5a3...</code></li><li id="ev-KOL-373"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">6 signals from 9 public voices; no convergence; SOL 0 bull / 0 bear</a> <code title="f9e47c24b2dd34e8d23d5d14eb5cdac7578dcff4533039f86aa56057a7a9a3b8">f9e47c24...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 75</span></h4>
+    <p class="thesis">SOL is poised for a short-term upward move, driven by strong positive price momentum across multiple exchanges and a generally bullish sentiment in the broader crypto market indicated by significant stablecoin activity.</p>
+    <ol><li>SOL's price exhibits strong short-term bullish momentum, trading above key averages and showing positive 24-hour and 1-hour gains. <a class="cite" href="#ev-PYTH-373">PYTH</a> <a class="cite" href="#ev-CB-373">CB</a> <a class="cite" href="#ev-KR-373">KR</a> <a class="cite" href="#ev-CG-373">CG</a><div class="ce">The consistent positive 24-hour price changes (CB: 66 bps, CG: 93 bps), the positive 1-hour change (CG: 9 bps), and the current price being above its 24-hour VWAP (KR: 41 bps) and EMA (PYTH: 14 bps) indicate sustained buying interest and upward price pressure, which is likely to drive further price appreciation in the short term.</div></li><li>General crypto market sentiment is bullish due to significant stablecoin liquidity injections and transfers off exchanges. <a class="cite" href="#ev-KOL-373">KOL</a><div class="ce">The minting of 250M USDC and the transfer of 386M USDT from an exchange to an unknown wallet, as identified by KOL, are typically interpreted as bullish signals for the broader crypto market, suggesting capital inflow and accumulation. This positive market sentiment is expected to provide a tailwind for SOL's price.</div></li></ol>
+    <p class="muted">Would change my mind: A reversal in short-term price trends, such as SOL falling below its 24-hour open or EMA/VWAP, or a shift in KOL sentiment towards bearishness for the broader crypto market.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 25</span></h4>
+    <p class="thesis">The immediate short-term price action for SOL shows a minor daily decline, indicating some selling pressure.</p>
+    <ol><li>SOL's price has declined by 38 basis points today according to Kraken. <a class="cite" href="#ev-KR-373">KR</a><div class="ce">This daily price decline suggests current selling pressure, which could lead to further short-term price depreciation.</div></li><li>SOL's price has slightly decreased by 8 basis points over the last seven days according to CoinGecko. <a class="cite" href="#ev-CG-373">CG</a><div class="ce">A minor negative weekly price change indicates a slight underlying weakness that could contribute to a bearish sentiment.</div></li></ol>
+    <p class="muted">Would change my mind: Stronger and consistent bearish price action across multiple major exchanges, negative SOL-specific news, or a clear bearish convergence from public market voices on SOL.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">NEITHER wins - HOLD at conviction 0</span></h4>
+        <p>The primary reason for a HOLD verdict is that the price sources do not agree within the mandated 150 basis points. The difference between the highest price (Chainlink: 101.9927 USD) and the lowest price (Pyth: 101.8354 USD) is 0.1573 USD, which translates to approximately 154.46 basis points relative to the lowest price. This exceeds the 150 bps threshold, preventing any directional trade. While the bullish arguments regarding short-term momentum and stablecoin activity are stronger than the bearish arguments of minor daily/weekly declines, the price discrepancy rule takes precedence.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-PYTH-373">PYTH</a> <a class="cite" href="#ev-CL-373">CL</a> - stop 0 bps, target 0 bps, horizon 0 min, size 0% of max</p>
+        
+      </div>
+  <details><summary>Rules (5/6 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>evidence.pyth_fresh</code> Pyth age 129s, limit 900s</li><li class="pass"><span>PASS</span> <code>evidence.pyth_tight</code> Pyth confidence 2 bps, limit 100</li><li class="pass"><span>PASS</span> <code>evidence.sources_agree</code> CL 15 bps vs PYTH, CB 1 bps vs PYTH, KR 1 bps vs PYTH, CG 1 bps vs PYTH; limit 150 bps</li><li class="pass"><span>PASS</span> <code>ruling.citations_valid</code> cited [PYTH, CL]; unknown []; need 2+</li><li class="pass"><span>PASS</span> <code>ruling.coherent</code> winner NEITHER, verdict HOLD</li><li class="fail"><span>FAIL</span> <code>ruling.verdict</code> judge ruled HOLD</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=373"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/RzGcrYa8Y93Uxrxuh871YnHFku8EEesD6jbwZhCyA5zDAU9Ec5Q7KgjjqSqFSoXrKiUy3qzbRzECoP3m5h3aej6?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="64cee21dbe0216695cebf3aeed1a07956104d4d134bf4c00f1a03c25a89b1a91">receipt 64cee21dbe02...</code>
+  </footer>
+</article>
 <article class="card" id="r372">
   <header>
     <span class="badge sell">SELL</span>
