@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>414</b><span>receipts on chain</span></div>
+  <div class="stat"><b>415</b><span>receipts on chain</span></div>
   <div class="stat"><b>35</b><span>debates</span></div>
   <div class="stat"><b>26</b><span>entries</span></div>
   <div class="stat"><b>25</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r414">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #414</span>
+    <time>2026-10-26T11:51:47Z</time>
+    <span class="px">SOL $101.35</span>
+  </header>
+  <p class="reason">position from #409 open at -12 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>999319dc...</code></summary><ul class="ev"><li id="ev-PYTH-414"><b>PYTH</b> <a>$101.3467</a> - EMA $101.2748, 7 bps from EMA, 35s old <code title="1d72ca68c11a35b18dec68c08eb9f7a7e5baf8f43d037e5c1290bd2176d35608">1d72ca68...</code></li><li id="ev-CL-414"><b>CL</b> <a>$100.8887</a> <a href="https://sepolia.etherscan.io/tx/0x0e2d0cd47ca887993f3ad63881a4a6f6b81b8e28acf36b1d867b0081152f76aa" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="c9c14e8e4a8e03827d4cc44385ac08a42ea8cf2a9746a44b3baaf934288d7e4d">c9c14e8e...</code></li><li id="ev-CB-414"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$101.32</a> - 24h 14 bps <code title="0a5c727e3ca474ec033506cd4d0d539aa072987c93c1633de8257f3818e69381">0a5c727e...</code></li><li id="ev-KR-414"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$101.4</a> - 38 bps vs 24h VWAP <code title="3de6515624afc45195e070a603b84a43a6792222def2ca4bff8ed53641454504">3de65156...</code></li><li id="ev-CG-414"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$101.33</a> - 1h -30 bps, 24h 17 bps, 7d -391 bps <code title="1fea1d4e42196c0032130feacc59bc254c68c73e1a3bd3b2f26be85f99142457">1fea1d4e...</code></li><li id="ev-NEWS-1-414"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/hong-kong-names-nasdaq-listed-solana-company-a-strategic-enterprise?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Hong Kong names Nasdaq-listed Solana Company a strategic enterprise</a> <code title="bd0b2d64e9aa271a2fa38a1ecb68ecf89c82afdbc2ebbae73fb6e9b8125a315c">bd0b2d64...</code></li><li id="ev-NEWS-2-414"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/aviva-investors-launches-tokenized-share-class-of-sterling-fund-on-xrp-ledger?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Aviva Investors launches tokenized share class of $29B Sterling fund on XRP Ledger</a> <code title="367d46e8ca44830140cf7f4d004fb811392e96bbd9c96dd3facb1b4f587096a4">367d46e8...</code></li><li id="ev-NEWS-3-414"><b>NEWS-3</b> <a href="https://decrypt.co/381789/israels-central-bank-rebukes-netanyahu-plan-to-use-crypto-to-dodge-sanctions" target="_blank" rel="noopener">Israel's Central Bank Rebukes Netanyahu Plan to Use Crypto to Dodge Sanctions</a> <code title="e489382e05daabe55ebd0a33d7881ddff512d397c5573fce325c94a472408702">e489382e...</code></li><li id="ev-NEWS-4-414"><b>NEWS-4</b> <a href="https://www.coindesk.com/markets/2026/10/26/bitcoin-holds-near-usd80-000-as-oil-retreats-and-the-fed-decision-looms" target="_blank" rel="noopener">Bitcoin holds near $80,000 as oil retreats and the Fed decision looms</a> <code title="03b9ced6ab6de274d2c0f0b7d5caaeb8e24f1fea2c5a5d00be40472bcd203540">03b9ced6...</code></li><li id="ev-NEWS-5-414"><b>NEWS-5</b> <a href="https://www.coindesk.com/tech/2026/10/26/live-news-brent-crude-slides-below-usd110-as-iran-deal-hopes-grow-and-brazil-stocks-sink" target="_blank" rel="noopener">Live news: Bitcoin barely holding $80,000 ahead of Fed on Wednesday, tech earnings this week</a> <code title="7f115197f82d3cc121ec1a6df46c92b55cc0e6985b86b05192eadb4d039fa2ce">7f115197...</code></li><li id="ev-NEWS-6-414"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/btc-price-risks-80k-loss-into-fomc-earnings-three-things-to-know-in-bitcoin-this-week?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">BTC price risks $80K loss into FOMC, earnings: Three things to know in Bitcoin this week</a> <code title="8c7627bda562d7bb1c6a9e320522f733b6ce3da61cd8c4e74cae8be3e1aa4eea">8c7627bd...</code></li><li id="ev-KOL-414"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">16 signals from 9 public voices; convergence: 2 voices BULL on BTC; SOL 0 bull / 0 bear</a> <code title="48c813cc795b76bdbf55f33fba6d7774b517db6b126a59053760a215f2d32947">48c813cc...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 35s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #409: market moved -12 bps (position -12 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #409 at $101.48</span>
+    <a href="record.html?seq=414"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/5eVgV4iydTi9sR2GXQPAZKpYVdBtuBAupVhPCSmN2xdJWZQE9UtzKX8Z92k2YpwsV9Hfuf4dgz8qGHm4AupNELPd?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="34b35d436f9a14f6b09fd6b4f0dd407295b3ab388b98ed74914b4026b4e3e694">receipt 34b35d436f9a...</code>
+  </footer>
+</article>
 <article class="card" id="r413">
   <header>
     <span class="badge hold">HOLD</span>
