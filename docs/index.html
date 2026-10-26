@@ -38,12 +38,12 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>421</b><span>receipts on chain</span></div>
+  <div class="stat"><b>422</b><span>receipts on chain</span></div>
   <div class="stat"><b>35</b><span>debates</span></div>
   <div class="stat"><b>26</b><span>entries</span></div>
-  <div class="stat"><b>25</b><span>rule exits</span></div>
+  <div class="stat"><b>26</b><span>rule exits</span></div>
   <div class="stat"><b>0</b><span>rulings blocked by rules</span></div>
-  <div class="stat"><b>+72</b><span>bps on closed trades (market price)</span></div>
+  <div class="stat"><b>+24</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
   <b>How to check every word on this page</b>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r421">
+  <header>
+    <span class="badge sell">SELL</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #421</span>
+    <time>2026-10-26T13:41:47Z</time>
+    <span class="px">SOL $100.98</span>
+  </header>
+  <p class="reason">HORIZON: close LONG from #409 at -48 bps</p>
+  <details ><summary>Evidence (12) - pack <code>f4d4ca70...</code></summary><ul class="ev"><li id="ev-PYTH-421"><b>PYTH</b> <a>$100.9827</a> - EMA $101.2749, -28 bps from EMA, 81s old <code title="9742a8fee55c852786b934f26aa74f57719a94ac22a9f96a4bfd867f57a26398">9742a8fe...</code></li><li id="ev-CL-421"><b>CL</b> <a>$100.8887</a> <a href="https://sepolia.etherscan.io/tx/0x7c39223c4ef90a8c94925ac7b2752045269b08b1f90a58c857b07e9d89f9829f" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="a17e417105022c09ba746a0960abf349b60065dda26982f48b3991f5daa95236">a17e4171...</code></li><li id="ev-CB-421"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$100.95</a> - 24h 34 bps <code title="c8877747aafef9f03506046fc8c7d2073f02e76e70483cedf7e5944eb3fbbe9b">c8877747...</code></li><li id="ev-KR-421"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$100.83</a> - -24 bps vs 24h VWAP <code title="23edae15a64aeabde36aa395b1fcb99a4735a7885fa0d55f9cc549dcfe17d11f">23edae15...</code></li><li id="ev-CG-421"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$101.21</a> - 1h -14 bps, 24h 15 bps, 7d -294 bps <code title="dcc30f2dd28e845e04d1551452967380ad87b3c6657b1641cae1cc5675d19bae">dcc30f2d...</code></li><li id="ev-NEWS-1-421"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/hong-kong-names-nasdaq-listed-solana-company-a-strategic-enterprise?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Hong Kong names Nasdaq-listed Solana Company a strategic enterprise</a> <code title="da46af814e3811472206062b633b055625abacff3f2d5bbc98cba5930e9c4a77">da46af81...</code></li><li id="ev-NEWS-2-421"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/strategy-skips-btc-buy-205-million-strc-buyback?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Strategy skips Bitcoin purchases, spends $205M on STRC buybacks</a> <code title="8171c68b6346fa510290eb2250a31da9ca5c5b601781e30b0965bd739c74f775">8171c68b...</code></li><li id="ev-NEWS-3-421"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="cff8a5b6fe4844454aba8a707a787e3c6e9d00fd11f2d8c6dfbcde29b35da9a6">cff8a5b6...</code></li><li id="ev-NEWS-4-421"><b>NEWS-4</b> <a href="https://decrypt.co/381811/strategy-pauses-bitcoin-buying-spends-205m-buying-back-strc" target="_blank" rel="noopener">Strategy Pauses Bitcoin Buying, Spends $205M Buying Back STRC</a> <code title="e5fb869217e2b44fae1c789cae58c6dac0ed355b063c339e09a52780bcd4f67c">e5fb8692...</code></li><li id="ev-NEWS-5-421"><b>NEWS-5</b> <a href="https://www.coindesk.com/business/2026/10/26/ai-giant-anthropic-files-for-blockbuster-ipo" target="_blank" rel="noopener">AI giant Anthropic files for blockbuster IPO</a> <code title="631d5a15c71f4900171b17aa21a80daa23bf55bf4a756d09598b1a15ff7b441e">631d5a15...</code></li><li id="ev-NEWS-6-421"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/prediction-markets-17b-robinhood-exceed-crypto-revenue-2028-bernstein?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">HOOD's prediction markets to add $1.7B to revenue, exceed crypto by 2028: Bernstein</a> <code title="408ed5a174ef0a12e4dcba389e4f8ddd721758989163bcfe5f87ddacf33f8e9d">408ed5a1...</code></li><li id="ev-KOL-421"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">30 signals from 9 public voices; convergence: 4 voices BULL on BTC; 2 voices BEAR on ETH; 2 voices BULL on ETH; SOL 0 bull / 0 bear</a> <code title="122d2d8abc8c072a0a1f2d89b30dcc150282a682d2e6ef775958a96625925c92">122d2d8a...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 81s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> LONG from #409: market moved -48 bps (position -48 bps), stop -150, target +300, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 21912067, available 1514107106, minimum 5000000</li></ul></details>
+  <footer>
+    <span>swap in 21912067 -> est out 483159 (min 478327)</span>
+    <span>closed #409 on HORIZON at -48 bps</span>
+    
+    <a href="record.html?seq=421"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/5HrEnRewdbcngeCRsrnU3eGGFoUWZ88etvC4Qd5y2Cesd83L2zt8E85QG9e4ocDejEsJyNiKcyRjHGH7LJFfxAL1?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="1b4e890dfc06a6645b33ab8e8dbb13527c2f75ec3173afe23e496d2ccf9bb2ec">receipt 1b4e890dfc06...</code>
+  </footer>
+</article>
 <article class="card" id="r420">
   <header>
     <span class="badge hold">HOLD</span>
