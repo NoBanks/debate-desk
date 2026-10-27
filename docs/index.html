@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>477</b><span>receipts on chain</span></div>
+  <div class="stat"><b>478</b><span>receipts on chain</span></div>
   <div class="stat"><b>40</b><span>debates</span></div>
   <div class="stat"><b>31</b><span>entries</span></div>
   <div class="stat"><b>30</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r477">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #477</span>
+    <time>2026-10-27T04:22:14Z</time>
+    <span class="px">SOL $99.99</span>
+  </header>
+  <p class="reason">position from #473 open at -7 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>e2a62376...</code></summary><ul class="ev"><li id="ev-PYTH-477"><b>PYTH</b> <a>$99.9851</a> - EMA $100.093, -10 bps from EMA, 26s old <code title="daeec2907697fc1d384d29f88bc18451bef276ad2cb29df6bdda64273d49acc7">daeec290...</code></li><li id="ev-CL-477"><b>CL</b> <a>$100.5096</a> <a href="https://sepolia.etherscan.io/tx/0xf2d07fb7fc87bb68da21d2c0ed2d54d8fc6d053822431f6409172e64b8df7630" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="abd691ad34ef9a98e798126c6c04eb0a78dc799e5fd2074a169f3810a9fdaffb">abd691ad...</code></li><li id="ev-CB-477"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$100.01</a> - 24h -116 bps <code title="a0fdf8ae6062643d7d631ff536a7b8ef5d94149d710a7814510ce2efe12ef96b">a0fdf8ae...</code></li><li id="ev-KR-477"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$100.02</a> - -92 bps vs 24h VWAP <code title="bf1aa82ecf6b53588a1ce77212a21cd03c0f3b5175889b15a7cdcb7f76d195fe">bf1aa82e...</code></li><li id="ev-CG-477"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$100.03</a> - 1h -9 bps, 24h -60 bps, 7d -479 bps <code title="fdc39c10971e048adf53cc5ff6a87153c90fc61c5e4844b37895f0393f399166">fdc39c10...</code></li><li id="ev-NEWS-1-477"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/hong-kong-names-nasdaq-listed-solana-company-a-strategic-enterprise?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Hong Kong names Nasdaq-listed Solana Company a strategic enterprise</a> <code title="b691e790ffdfe233908eed69eb7352bd34e435dd9f92322f229fe15af84b2262">b691e790...</code></li><li id="ev-NEWS-2-477"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/keystone-breach-deepens-hackers-stole-key-used-to-verify-wallets-as-genuine?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Keystone breach deepens: Hackers stole key used to verify wallets as genuine</a> <code title="4264ad8563f6e6e61c82280e45b67bd35a6b6f9f451252620e63560055eb1e2f">4264ad85...</code></li><li id="ev-NEWS-3-477"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/ripple-wins-final-us-approval-for-national-trust-bank?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Ripple wins final US approval for national trust bank</a> <code title="0b21c7a6dd91dfb1f4260f5379eb3b83b3f04e37681c10acd296bf4344bf3a25">0b21c7a6...</code></li><li id="ev-NEWS-4-477"><b>NEWS-4</b> <a href="https://decrypt.co/381889/canada-draft-stablecoin-rules-redemption-fees-ban-yield" target="_blank" rel="noopener">Canada's Draft Stablecoin Rules Cap Redemption Fees at 1% and Ban Yield</a> <code title="47dc2666858a00c33b0560481240fab79ff475b435d22cf8a63fa2961b597e1c">47dc2666...</code></li><li id="ev-NEWS-5-477"><b>NEWS-5</b> <a href="https://decrypt.co/381883/openai-launches-gpt-6-1-terra-half-good-half-price" target="_blank" rel="noopener">OpenAI Launches GPT-6.1 Terra, Its Half-Good AI Model at Half the Price</a> <code title="416ee85daf9da200cb125b3a5cc4aa348e1a7891fc09cfb60767ff474b9132ca">416ee85d...</code></li><li id="ev-NEWS-6-477"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/occ-community-banks-stablecoin-issuers-genius-act?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">US OCC calls on community banks to become payment stablecoin issuers</a> <code title="a6942aeed4f4448dbb015a8ff970ee8a7bb7edf1d8216ac0e80d42e9c04a957c">a6942aee...</code></li><li id="ev-KOL-477"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">18 signals from 9 public voices; convergence: 2 voices BEAR on BTC; SOL 0 bull / 1 bear</a> <code title="5be1b9bdd373fa184fc574a97ad3531462f26a862f4dc4e8db1bfce93a318d9f">5be1b9bd...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 26s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #473: market moved 7 bps (position -7 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #473 at $99.91</span>
+    <a href="record.html?seq=477"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/iRwpbJt9TS5STzGkr3KmhRvwTWnogTiRAGCYfDAWr5ABHqs15bpZo3QiZU7hQ4TMANKfheEyDR6nK7THwsEqH4H?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="7cf920b9cfe48bf095cbc9897121597d343cb4b21870fd248442248d38d57e15">receipt 7cf920b9cfe4...</code>
+  </footer>
+</article>
 <article class="card" id="r476">
   <header>
     <span class="badge hold">HOLD</span>
