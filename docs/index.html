@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>501</b><span>receipts on chain</span></div>
+  <div class="stat"><b>502</b><span>receipts on chain</span></div>
   <div class="stat"><b>42</b><span>debates</span></div>
   <div class="stat"><b>33</b><span>entries</span></div>
   <div class="stat"><b>32</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r501">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #501</span>
+    <time>2026-10-27T11:11:36Z</time>
+    <span class="px">SOL $100.17</span>
+  </header>
+  <p class="reason">position from #499 open at -74 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>77289511...</code></summary><ul class="ev"><li id="ev-PYTH-501"><b>PYTH</b> <a>$100.173</a> - EMA $99.7968, 37 bps from EMA, 61s old <code title="bfc6828181df360b461578d7005567f824b1c9717057377b4e1961b4f2945119">bfc68281...</code></li><li id="ev-CL-501"><b>CL</b> <a>$100.5096</a> <a href="https://sepolia.etherscan.io/tx/0xc2d5b7f7aa1b9b2cf3a26ee98315f8c20ddf9e3b0590ad90bd5afcef5900e0fc" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="bbfbff9865f1958c6c7912d0ec59cedc94537414510a27ea30bdff496ac77fc2">bbfbff98...</code></li><li id="ev-CB-501"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$100.16</a> - 24h -137 bps <code title="e1ccb789bd6a4b453585818df0736626f6e26966f85ad2b37fac345feccf09c4">e1ccb789...</code></li><li id="ev-KR-501"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$100.17</a> - -56 bps vs 24h VWAP <code title="ad1d7d6a62d23975745081deeea4db7db328ea4caa56d4379b467c328b132810">ad1d7d6a...</code></li><li id="ev-CG-501"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$100.16</a> - 1h 34 bps, 24h -87 bps, 7d -378 bps <code title="0d572b08c86b18c9debe7917e135d526f49313d90d9a37811b9e095f6cf3932a">0d572b08...</code></li><li id="ev-NEWS-1-501"><b>NEWS-1</b> <a href="https://www.coindesk.com/tech/2026/10/27/solana-bug-reports-now-cost-1-sol-as-ai-floods-security-teams-with-spam" target="_blank" rel="noopener">Solana bug reports now cost 1 SOL as AI floods security teams with spam</a> <code title="1a8f4f0578a8943eb29a86ac1d7e8c1346e955e6c4ffaff84534bd2c459f92b9">1a8f4f05...</code></li><li id="ev-NEWS-2-501"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/hong-kong-names-nasdaq-listed-solana-company-a-strategic-enterprise?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Hong Kong names Nasdaq-listed Solana Company a strategic enterprise</a> <code title="94e9ce9ebb415c8e17745ef41dbda1e642d2f2b0091f1c5e7bcb8b5d615b19a8">94e9ce9e...</code></li><li id="ev-NEWS-3-501"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/10/27/investor-who-called-for-ai-pivot-in-2023-says-bitcoin-is-going-to-usd57-000" target="_blank" rel="noopener">Investor who called for AI pivot in 2023 says bitcoin is going to $57,000</a> <code title="7954633eac9ede4ebee29b60ca42685f2386f5eb0c43f43935ebccec4eeac2e0">7954633e...</code></li><li id="ev-NEWS-4-501"><b>NEWS-4</b> <a href="https://decrypt.co/381899/ripple-wins-final-occ-approval-for-trust-bank-behind-2-6b-rlusd-stablecoin" target="_blank" rel="noopener">Ripple Wins Final OCC Approval for Trust Bank Behind $2.6B RLUSD Stablecoin</a> <code title="680a40c8cf7adf6668d0a3f99e0eae7391368c1fc9417a5e0ed193e1c4b223db">680a40c8...</code></li><li id="ev-NEWS-5-501"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/zcash-co-founder-ending-zcg-funding-125m?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Zcash co-founder calls to stop funding 'over $125M' grants program</a> <code title="03bbabc5ac34daa37599ed2072ca21bbabeedf8f0b38ec56de233670f02c32ab">03bbabc5...</code></li><li id="ev-NEWS-6-501"><b>NEWS-6</b> <a href="https://www.coindesk.com/markets/2026/10/27/now-is-the-time-to-accumulate-bitcoin-galaxy-says" target="_blank" rel="noopener">Now is the time to accumulate bitcoin, Galaxy says</a> <code title="73332f4b51e14ed78de0fa2a884c8aa636a1c41f1937b98554183b1c82ab2e26">73332f4b...</code></li><li id="ev-KOL-501"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">14 signals from 9 public voices; convergence: 2 voices BULL on BTC; 2 voices BEAR on SOL; SOL 0 bull / 2 bear</a> <code title="1d8bf0e55a732322b0bad87017f32d226fb2fbe5701b882efb0150f2e28dd8a5">1d8bf0e5...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 61s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #499: market moved 74 bps (position -74 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #499 at $99.43</span>
+    <a href="record.html?seq=501"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3VEpVY5ZPigNDZEgxDVQP6FiCUQMhL4qpYqZvpLW3ujrsuNjEgEkh91oXVnNUS89oAJLq5ZUdao53s2Km5RRiTLr?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="23c28797b692b884e0c04db9ace1166acb9a9e94620900b84d726c4710302391">receipt 23c28797b692...</code>
+  </footer>
+</article>
 <article class="card" id="r500">
   <header>
     <span class="badge hold">HOLD</span>
