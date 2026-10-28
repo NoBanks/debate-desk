@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>600</b><span>receipts on chain</span></div>
+  <div class="stat"><b>601</b><span>receipts on chain</span></div>
   <div class="stat"><b>49</b><span>debates</span></div>
   <div class="stat"><b>40</b><span>entries</span></div>
   <div class="stat"><b>39</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r600">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #600</span>
+    <time>2026-10-28T13:06:45Z</time>
+    <span class="px">SOL $101.36</span>
+  </header>
+  <p class="reason">position from #594 open at -132 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>4b084b32...</code></summary><ul class="ev"><li id="ev-PYTH-600"><b>PYTH</b> <a>$101.3632</a> - EMA $102.1162, -73 bps from EMA, 179s old <code title="29928f95a0e6f0d092a842750786c5b71109734668e37b6e2e648fa39dfca861">29928f95...</code></li><li id="ev-CL-600"><b>CL</b> <a>$101.3883</a> <a href="https://sepolia.etherscan.io/tx/0x9cab4e8d91df5b1afed40351fa5c9f0c0cc27488761365aaf5d1b1171005b1d6" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="a8af9dbd7349d0a6fca22f3c5a7921fd0dacdc2c2d55e37c27476f29f3b63015">a8af9dbd...</code></li><li id="ev-CB-600"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$101.39</a> - 24h 141 bps <code title="3d8c6086e8fb10c2c81e3987bad1a883d4119aba0a85ab8eb58c977248373180">3d8c6086...</code></li><li id="ev-KR-600"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$101.32</a> - -11 bps vs 24h VWAP <code title="fa7e783e84fc7e337e783aad963b7a79ae354bab310af7ff4632f720597d7b4d">fa7e783e...</code></li><li id="ev-CG-600"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$101.45</a> - 1h -118 bps, 24h 82 bps, 7d -500 bps <code title="a8ed4b3ae3c773bc532f87318aa3e7fa6da5e8d25557ca8b36cd137b11a18fba">a8ed4b3a...</code></li><li id="ev-NEWS-1-600"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/mirae-asset-securities-tokenized-notes-solana?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Mirae Asset Securities issues tokenized notes on Solana</a> <code title="2c8b51b0bbbfee3860e1ab962e95f39a9ae57b44545892eaea788811f0505f61">2c8b51b0...</code></li><li id="ev-NEWS-2-600"><b>NEWS-2</b> <a href="https://decrypt.co/382007/goldman-blackrock-alumni-raise-4-million-loans-onchain" target="_blank" rel="noopener">Goldman, BlackRock Alumni Raise $4 Million to Put Farm and Apartment Loans Onchain</a> <code title="b1b26835ec656a36c9b175b67ce9817b349c73acec83d72854d46475b4450776">b1b26835...</code></li><li id="ev-NEWS-3-600"><b>NEWS-3</b> <a href="https://www.coindesk.com/business/2026/10/28/jpmorgan-coca-cola-dell-also-say-no-to-okx-ice-tokenized-tock-trading-plan" target="_blank" rel="noopener">JPMorgan, Coca-Cola, Dell also say 'no' to OKX-ICE tokenized tock trading plan</a> <code title="a33b8b09e1d74ae4537861ec69e72b0259f766f4fb9cabb73d0e84726db6637e">a33b8b09...</code></li><li id="ev-NEWS-4-600"><b>NEWS-4</b> <a href="https://decrypt.co/382030/moodys-rates-ripples-2-6b-rlusd-stablecoin-a2-a-day-after-occ-bank-approval" target="_blank" rel="noopener">Moody's Rates Ripple's $2.6B RLUSD Stablecoin A2, a Day After OCC Bank Approval</a> <code title="235f8cdace76db50f939b91058e21ba88d69f05a56b3e702a496e0b4ce1b4970">235f8cda...</code></li><li id="ev-NEWS-5-600"><b>NEWS-5</b> <a href="https://decrypt.co/382029/morning-minute-robinhood-misses-but-crypto-beats-and-robinhood-chain-soars" target="_blank" rel="noopener">Morning Minute: Robinhood Misses, But Crypto Beats and Robinhood Chain Soars</a> <code title="f224b7081891f4289e359c4b42a7ce921ece74c926afb18ea4a1a9769a5174ea">f224b708...</code></li><li id="ev-NEWS-6-600"><b>NEWS-6</b> <a href="https://www.coindesk.com/daybook-us/2026/10/28/dissent-and-more-3-things-to-watch-for-at-the-fed-meeting" target="_blank" rel="noopener">Dissent and more: 3 things to watch for at the Fed meeting</a> <code title="97f617952174d5bd0e280b92bb37dd7fcb97c632e3ee27644e0bc5d0aff01527">97f61795...</code></li><li id="ev-KOL-600"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">23 signals from 9 public voices; no convergence; SOL 0 bull / 0 bear</a> <code title="5b7c940b989a5c6ecd9b7dc21e5d142b6d8c963815ab227f8ac6fd5e4f02c8e5">5b7c940b...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 179s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #594: market moved -132 bps (position -132 bps), stop -200, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #594 at $102.72</span>
+    <a href="record.html?seq=600"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4M2wy9Zm4GHbvamce6nLGmANixiohkKFNVcU5gdL4Akb6kZ2DktjPi3RERHwxnHj3g4zJFbnwqWMttpP5eZwArzp?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="e69fefa98fb80b8ff886fc83fa51bb28f2d239e91012acb48561e9439b10b5fe">receipt e69fefa98fb8...</code>
+  </footer>
+</article>
 <article class="card" id="r599">
   <header>
     <span class="badge hold">HOLD</span>
