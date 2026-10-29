@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>684</b><span>receipts on chain</span></div>
+  <div class="stat"><b>685</b><span>receipts on chain</span></div>
   <div class="stat"><b>54</b><span>debates</span></div>
   <div class="stat"><b>45</b><span>entries</span></div>
   <div class="stat"><b>44</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r684">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #684</span>
+    <time>2026-10-29T11:01:04Z</time>
+    <span class="px">SOL $100.44</span>
+  </header>
+  <p class="reason">position from #671 open at -75 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>7596b58a...</code></summary><ul class="ev"><li id="ev-PYTH-684"><b>PYTH</b> <a>$100.4428</a> - EMA $100.2305, 21 bps from EMA, 112s old <code title="b33c7735b1c4bf9eec300fd43d1165c501b18093105a765ff232c532d6ff1a15">b33c7735...</code></li><li id="ev-CL-684"><b>CL</b> <a>$99.2627</a> <a href="https://sepolia.etherscan.io/tx/0x4c9932006b1ffba25c38c40f68655130a563f4d6fa74e2cc41c444ee63c0b1ad" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="adff7e8300a94dd57608f76fbd5abacd251606b9ce953fa1199992572157d1ac">adff7e83...</code></li><li id="ev-CB-684"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$100.46</a> - 24h -208 bps <code title="4cc85dc6f0359288d775ce4c1e1f19b02052df7e5aabee4be1dfdc0d1e94fda3">4cc85dc6...</code></li><li id="ev-KR-684"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$100.48</a> - -45 bps vs 24h VWAP <code title="2db4f9caf520bf0d71747515af8c3e44b69c651880f43ea5d5a15a0a6dcfd401">2db4f9ca...</code></li><li id="ev-CG-684"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$100.42</a> - 1h 22 bps, 24h -225 bps, 7d -359 bps <code title="eb63ae5354ed7548b103d64af7433b755db6dc336e3a1bf8a0a101414beb487e">eb63ae53...</code></li><li id="ev-NEWS-1-684"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/10/29/solana-wallet-solflare-pledges-to-pay-missed-rewards-on-staked-usd160-million-after-validator-goes-offline" target="_blank" rel="noopener">Solana wallet Solflare pledges to pay missed rewards on staked $160 million after validator goes offline</a> <code title="35e401a4f83d13e830f678a25ac408dcdaad9cdf921bbdd8f550642b0c8546fd">35e401a4...</code></li><li id="ev-NEWS-2-684"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/mirae-asset-securities-tokenized-notes-solana?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Mirae Asset Securities issues tokenized notes on Solana</a> <code title="e65343abb6530f0620ce67224d7ffecce2eb980e9f9f04ce1fb265ace09ffe7b">e65343ab...</code></li><li id="ev-NEWS-3-684"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/10/29/cathie-wood-s-ark-buys-the-dip-on-robinhood-in-its-largest-purchase-in-6-months-after-23-slump" target="_blank" rel="noopener">Cathie Wood's ARK buys the dip on Robinhood in its largest purchase in 6 months after 23% slump</a> <code title="73c6b1f67e62105dea7c5227b2863bee16e6435561bce4aac67343de70657038">73c6b1f6...</code></li><li id="ev-NEWS-4-684"><b>NEWS-4</b> <a href="https://cointelegraph.com/markets/bitcoin-long-term-resistance-in-focus-as-analysis-sees-selling-risk-above-85k?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin long-term resistance in focus as analysis sees selling risk above $85K</a> <code title="3601a2cbc76b76644575d9f4caea7d3796063ee5e94b87d2bdeb71276201b68f">3601a2cb...</code></li><li id="ev-NEWS-5-684"><b>NEWS-5</b> <a href="https://www.coindesk.com/business/2026/10/29/live-updates-bitcoin-clings-to-usd80-000-as-strategy-s-cushion-thins-before-earnings" target="_blank" rel="noopener">Live updates: Bitcoin clings to $80,000 as Strategy's cushion thins before earnings</a> <code title="f6ff38633c683ad1f24e406d76d923fe3eef765ab1fc4caabac3f18a909bdc0f">f6ff3863...</code></li><li id="ev-NEWS-6-684"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/ecb-president-lagarde-step-down-february-2027?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">ECB President Christine Lagarde to step down in February 2027</a> <code title="9cc7cac9bf18d322d3aad089e22897edc98ec9a3e32812f03c9deb443427a022">9cc7cac9...</code></li><li id="ev-KOL-684"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">19 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BEAR on SOL; SOL 0 bull / 2 bear</a> <code title="2100b759b67b3cdbac9afcf907b993d0988b71fa120de9787edfa7fe06bc3a9a">2100b759...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 112s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #671: market moved 75 bps (position -75 bps), stop -100, target +200, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #671 at $99.69</span>
+    <a href="record.html?seq=684"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3Tr7nreXpW1uA1K9PizSxs3CUQaowZ7i3btHvNZRK4ydtKcQ9zs5WAzyhD1apN9pJjw5hHAbrvmgDwHdsV4LZzqR?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="9c35ac0f489aa7ccc06e5f9d353b4a5446b7c002aacc7518ca4edfc5feef8c4b">receipt 9c35ac0f489a...</code>
+  </footer>
+</article>
 <article class="card" id="r683">
   <header>
     <span class="badge hold">HOLD</span>
