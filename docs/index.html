@@ -38,12 +38,12 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>657</b><span>receipts on chain</span></div>
+  <div class="stat"><b>658</b><span>receipts on chain</span></div>
   <div class="stat"><b>52</b><span>debates</span></div>
   <div class="stat"><b>43</b><span>entries</span></div>
-  <div class="stat"><b>42</b><span>rule exits</span></div>
+  <div class="stat"><b>43</b><span>rule exits</span></div>
   <div class="stat"><b>0</b><span>rulings blocked by rules</span></div>
-  <div class="stat"><b>-335</b><span>bps on closed trades (market price)</span></div>
+  <div class="stat"><b>-98</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
   <b>How to check every word on this page</b>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r657">
+  <header>
+    <span class="badge buy">BUY</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #657</span>
+    <time>2026-10-29T03:58:54Z</time>
+    <span class="px">SOL $99.51</span>
+  </header>
+  <p class="reason">HORIZON: close SHORT from #645 at 237 bps</p>
+  <details ><summary>Evidence (12) - pack <code>c410dd94...</code></summary><ul class="ev"><li id="ev-PYTH-657"><b>PYTH</b> <a>$99.514</a> - EMA $100.0024, -48 bps from EMA, 97s old <code title="2a26d3d9524ef1fdd1aabb6d1b767de583060268a08b67966ea1ae94e4f01463">2a26d3d9...</code></li><li id="ev-CL-657"><b>CL</b> <a>$99.2627</a> <a href="https://sepolia.etherscan.io/tx/0x915ab4ce8883283280c45de475727497fe1eb1108a219aed22c839700c347a52" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="1d3b574467b83392a49ce56dd9f621a18d22f35083aa281273953e1093bcef63">1d3b5744...</code></li><li id="ev-CB-657"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$99.56</a> - 24h -228 bps <code title="2a90c11e3a2cbf9c033e7448316675cc962818f27a00ed6d596edb557175e319">2a90c11e...</code></li><li id="ev-KR-657"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$99.57</a> - -175 bps vs 24h VWAP <code title="10ce3f2fb4668af5ad3c04f37c81f1921b3cfc4015ba9e60648253d35436e012">10ce3f2f...</code></li><li id="ev-CG-657"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$99.52</a> - 1h 4 bps, 24h -229 bps, 7d -585 bps <code title="93c881ad7f288d93dc49fa4c3d2f1930399e358d09916652167ac6a55157190d">93c881ad...</code></li><li id="ev-NEWS-1-657"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/mirae-asset-securities-tokenized-notes-solana?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Mirae Asset Securities issues tokenized notes on Solana</a> <code title="20578a26e548e95d7c33b8a3b4a4e8d20ba3c3a8f13e406c8d7e94b8118cd44a">20578a26...</code></li><li id="ev-NEWS-2-657"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/10/29/bitcoin-dips-below-usd80-000-as-samsung-led-risk-aversion-in-tech-and-a-hawkish-fed-weigh-on-crypto" target="_blank" rel="noopener">Bitcoin dips below $80,000 as Samsung-led tech jitters and a hawkish Fed weigh on crypto</a> <code title="df8f62da54c78dcae4edce6c929bd28f11331a08cdb9366a9eaceafc7493b8a0">df8f62da...</code></li><li id="ev-NEWS-3-657"><b>NEWS-3</b> <a href="https://www.coindesk.com/policy/2026/10/28/mystery-wall-street-journal-ad-sparks-new-fight-over-tokenized-stocks" target="_blank" rel="noopener">Mystery Wall Street Journal ad sparks new fight over tokenized stocks</a> <code title="3663c523686e5a9ee30f72bfe4ccc15c8f62ef657c65e258d16ecf7056feaf41">3663c523...</code></li><li id="ev-NEWS-4-657"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/tampered-ledger-wallets-cost-singapore-users-27m-police?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Tampered Ledger wallets cost Singapore users $2.7M: Police</a> <code title="9ae7302c23f0377f4479c63e917a7c4aadd4ea976992c5b8fdaeb0d998fe4a87">9ae7302c...</code></li><li id="ev-NEWS-5-657"><b>NEWS-5</b> <a href="https://cointelegraph.com/markets/bitcoin-faces-fresh-pressure-after-feds-hawkish-rate-hold-analysts?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Fed's hawkish rate hold keeps pressure on Bitcoin: Analysts</a> <code title="b6c17002fb4de7636029d4f53eec13ebd547f0b3d5da858801e2019eebc7d588">b6c17002...</code></li><li id="ev-NEWS-6-657"><b>NEWS-6</b> <a href="https://decrypt.co/382116/bitcoin-treasury-datavault-ai-stock-crashes-cant-access-btc" target="_blank" rel="noopener">Bitcoin Treasury Datavault AI Says It Can't Access Its BTC, Stock Tanks</a> <code title="a8c3256954689d3c7ee039264d41b08055171743ea4f1768675f7e9b64d368e6">a8c32569...</code></li><li id="ev-KOL-657"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">20 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BULL on BTC; 2 voices BEAR on ETH; SOL 0 bull / 1 bear</a> <code title="e98cf2f722ad4937289538dac115f3cf33f0b680835aef77691e13502eac568b">e98cf2f7...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 97s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> SHORT from #645: market moved -237 bps (position 237 bps), stop -150, target +300, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 460562, available 9331928, minimum 100000</li></ul></details>
+  <footer>
+    <span>swap in 460562 -> est out 20832460 (min 20624135)</span>
+    <span>closed #645 on HORIZON at 237 bps</span>
+    
+    <a href="record.html?seq=657"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3sFh1e3Keyo6eeYHiJnHjd3snN2UVPo39Lfjfs7CSBtqFkky4kqpo5NTCUTfZcnsPcdNW1wWne1imVc7RifKgWSB?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="c1a63c5999e0ccdcab6f2cfdc1ce931b22828aa7690b5a29ec67713cddf61176">receipt c1a63c5999e0...</code>
+  </footer>
+</article>
 <article class="card" id="r656">
   <header>
     <span class="badge hold">HOLD</span>
