@@ -243,7 +243,8 @@ async function creItem(): Promise<EvidenceItem | null> {
   const script = join(REPO_ROOT, "cre", "simulate.mjs");
   if (process.env.DESK_SKIP_CRE === "1" || !existsSync(script)) return null;
   const out = await new Promise<string>((resolve) => {
-    execFile(process.execPath, [script], { cwd: join(REPO_ROOT, "cre"), timeout: 180_000, maxBuffer: 8 << 20 }, (err, stdout) => resolve(err ? "" : String(stdout)));
+    // windowsHide: under PM2 this child would otherwise open a visible Windows Terminal window every cycle (Oct 30 2026)
+    execFile(process.execPath, [script], { cwd: join(REPO_ROOT, "cre"), timeout: 180_000, maxBuffer: 8 << 20, windowsHide: true }, (err, stdout) => resolve(err ? "" : String(stdout)));
   });
   const line = out.split(/\r?\n/).find((l) => l.startsWith("EVIDENCE_REPORT ")) ?? (out.trim().startsWith("{") ? "EVIDENCE_REPORT " + out.trim() : "");
   if (!line) return null;

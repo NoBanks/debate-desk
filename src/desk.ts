@@ -345,11 +345,13 @@ export async function decide(
  */
 function publish(): void {
   if (process.env.DESK_AUTOPUBLISH !== "1") return;
-  const git = (...a: string[]) => execFileSync("git", a, { cwd: REPO_ROOT, stdio: "pipe" }).toString();
+  // windowsHide: under PM2 (no console) every child console program would otherwise open a visible
+  // Windows Terminal window on NoBanks' screen each cycle (found Oct 30 2026). Never remove it.
+  const git = (...a: string[]) => execFileSync("git", a, { cwd: REPO_ROOT, stdio: "pipe", windowsHide: true }).toString();
   try {
     // clean env: the child must never inherit anything that says "you are the desk"
     const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => k !== "DESK_CMD" && !/^pm_|^PM2/i.test(k)));
-    execFileSync(process.execPath, [join(REPO_ROOT, "node_modules", "tsx", "dist", "cli.mjs"), join(REPO_ROOT, "src", "site.ts")], { cwd: REPO_ROOT, stdio: "pipe", env });
+    execFileSync(process.execPath, [join(REPO_ROOT, "node_modules", "tsx", "dist", "cli.mjs"), join(REPO_ROOT, "src", "site.ts")], { cwd: REPO_ROOT, stdio: "pipe", env, windowsHide: true });
     git("add", "data", "docs");
     if (!git("status", "--porcelain", "data", "docs").trim()) return;
     git("-c", "user.name=Debate Desk", "-c", "user.email=nobanksnearby@gmail.com", "commit", "-q", "-m", `record: ${readLedger().length} receipts`);
