@@ -38,10 +38,10 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>781</b><span>receipts on chain</span></div>
+  <div class="stat"><b>782</b><span>receipts on chain</span></div>
   <div class="stat"><b>62</b><span>debates</span></div>
   <div class="stat"><b>53</b><span>entries</span></div>
-  <div class="stat"><b>52</b><span>rule exits</span></div>
+  <div class="stat"><b>53</b><span>rule exits</span></div>
   <div class="stat"><b>0</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>-540</b><span>bps on closed trades (market price)</span></div>
 </div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r781">
+  <header>
+    <span class="badge buy">BUY</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #781</span>
+    <time>2026-10-30T19:03:48Z</time>
+    <span class="px">SOL $94.08</span>
+  </header>
+  <p class="reason">HORIZON: close SHORT from #768 at 0 bps</p>
+  <details ><summary>Evidence (12) - pack <code>5040b340...</code></summary><ul class="ev"><li id="ev-PYTH-781"><b>PYTH</b> <a>$94.076</a> - EMA $94.2103, -14 bps from EMA, 20s old <code title="db843f87783a8ea9105d02a326e2ac53b6235c17f5171593f4f9a439d957f09d">db843f87...</code></li><li id="ev-CL-781"><b>CL</b> <a>$94.97</a> <a href="https://sepolia.etherscan.io/tx/0xc4322b2714c630e374e884434804df65e96860be9588bc537cb99abfb6996923" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="834f00c299953827e8902f7b510a4d89742ebd316e630e2210604d4cbbc4cd8b">834f00c2...</code></li><li id="ev-CB-781"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$93.93</a> - 24h -579 bps <code title="8b657463e46ea0dbf31e77329b836dbaa9380cf8abec1e695d2d12c4cbbf1821">8b657463...</code></li><li id="ev-KR-781"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$94.05</a> - -195 bps vs 24h VWAP <code title="af09ed2759768daa4dd1565c5338a67d4da0cdb05fee42e8803ca0fc40697fbb">af09ed27...</code></li><li id="ev-CG-781"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$94.07</a> - 1h -8 bps, 24h -628 bps, 7d -977 bps <code title="5b7e1df162f92c84e970add9bf6b6d59943879080e133e7dd115900060e31a60">5b7e1df1...</code></li><li id="ev-NEWS-1-781"><b>NEWS-1</b> <a href="https://www.coindesk.com/business/2026/10/29/from-rivals-to-partners-polygon-and-solana-team-to-bring-stablecoin-payments-to-banks" target="_blank" rel="noopener">From rivals to partners: Polygon and Solana team to bring stablecoin payments to banks</a> <code title="1241966597def10b1e9d03d75099b2b8e04f18f7b170e0e5d259b2f3665cfcab">12419665...</code></li><li id="ev-NEWS-2-781"><b>NEWS-2</b> <a href="https://decrypt.co/381850/polygon-stablecoin-payments-open-money-stack-solana" target="_blank" rel="noopener">Polygon Extends Its Stablecoin Payments Infrastructure to Solana</a> <code title="07d1ef8827fd12707691938b1179bb6b1f361c73c8dfb74f642a1631a8b9a792">07d1ef88...</code></li><li id="ev-NEWS-3-781"><b>NEWS-3</b> <a href="https://decrypt.co/382257/binance-hack-why-bitcoin-didnt-crash" target="_blank" rel="noopener">Binance Hack: Why Bitcoin Didn't Crash Like It Did in 2018</a> <code title="66eedcc5a8a85d2b4dac43840f8b8e8550dd03ff957f6d7d71814c6a85337f22">66eedcc5...</code></li><li id="ev-NEWS-4-781"><b>NEWS-4</b> <a href="https://decrypt.co/382269/crypto-kidnapping-texas-brothers-15-year-prison" target="_blank" rel="noopener">$8 Million Crypto Kidnapping Lands Texas Brothers 15-Year Prison Terms</a> <code title="0303d8456c8186ff4485cf72f05373e7ecf00b560350fb96f2d8acc4fd3e7726">0303d845...</code></li><li id="ev-NEWS-5-781"><b>NEWS-5</b> <a href="https://decrypt.co/382268/secret-service-fbi-binance-hack-probe" target="_blank" rel="noopener">Secret Service, FBI Join Binance Hack Probe as Circle Freezes $823 Million</a> <code title="0b0135c5118b7b3ecfd5c67227ba6d0cd955a04d64e75df0bca4653afddfcdd8">0b0135c5...</code></li><li id="ev-NEWS-6-781"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/coinbase-leads-crypto-stock-selloff-shares-tumble?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Coinbase leads crypto stock selloff following $6.3B Binance hack</a> <code title="03b42510f5cc0e6730cd974a0e3c85d4eee85c27914a67cc1e7b2c5abe9115a5">03b42510...</code></li><li id="ev-KOL-781"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">22 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BEAR on INTC; 2 voices BEAR on NEWT; SOL 0 bull / 0 bear</a> <code title="f04f0e1e2452d68bee5930c85f9f1d66dba0377259491072f2a9c39236d4defa">f04f0e1e...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 20s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> SHORT from #768: market moved 0 bps (position 0 bps), stop -200, target +400, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 817648, available 9708678, minimum 100000</li></ul></details>
+  <footer>
+    <span>swap in 817648 -> est out 36975854 (min 36606095)</span>
+    <span>closed #768 on HORIZON at 0 bps</span>
+    
+    <a href="record.html?seq=781"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3b2hnXLYUcEx2WAVSEK7UtaYKjMPG6RH448xb1zwvAzbDoj4dHS2Ma7nnzvBeKi2iHYuoEmj5s99CCAZ3AHXqQvf?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="06ba43fb430ffab7fd6bc85ba830ddec3626158e7e41fca4db29d7f602cbe572">receipt 06ba43fb430f...</code>
+  </footer>
+</article>
 <article class="card" id="r780">
   <header>
     <span class="badge hold">HOLD</span>
