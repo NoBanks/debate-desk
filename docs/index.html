@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>847</b><span>receipts on chain</span></div>
+  <div class="stat"><b>848</b><span>receipts on chain</span></div>
   <div class="stat"><b>66</b><span>debates</span></div>
   <div class="stat"><b>57</b><span>entries</span></div>
   <div class="stat"><b>56</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r847">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #847</span>
+    <time>2026-10-31T12:17:47Z</time>
+    <span class="px">SOL $95.77</span>
+  </header>
+  <p class="reason">position from #829 open at -17 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>2bf61cdf...</code></summary><ul class="ev"><li id="ev-PYTH-847"><b>PYTH</b> <a>$95.7659</a> - EMA $95.6893, 7 bps from EMA, 44s old <code title="69997263d03b93b4c1f74ac93e881874522422371adecad6ae355279a832e0e4">69997263...</code></li><li id="ev-CL-847"><b>CL</b> <a>$96.8785</a> <a href="https://sepolia.etherscan.io/tx/0x595b41c51e367bbb2701dd32bcde4d3dda997ca43cab2de0e901bbbc44484612" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="6d925cd2eb3c8c80f0a90e37236882bab2b2da28f787a190a4fe9b0c7fd34bdf">6d925cd2...</code></li><li id="ev-CB-847"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$95.72</a> - 24h -100 bps <code title="7f8264b51a2b0d551d9d528d423477c40b060a2e181c3f40bcf76d06ad0ca95c">7f8264b5...</code></li><li id="ev-KR-847"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$95.68</a> - 45 bps vs 24h VWAP <code title="5a709051bf5e303ee42498da370cd29a51110057cbace20b3673116dbb7c1b1c">5a709051...</code></li><li id="ev-CG-847"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$95.8</a> - 1h 28 bps, 24h -75 bps, 7d -574 bps <code title="cc5ffa28c3b06607958d3878a38643e1aa29ae9cb13799d3c2fea4af9e99c27c">cc5ffa28...</code></li><li id="ev-NEWS-1-847"><b>NEWS-1</b> <a href="https://www.coindesk.com/business/2026/10/31/the-usd6-3-billion-binance-hack-paradox-centralization-made-the-hack-possible-but-also-saved-usd3-billion" target="_blank" rel="noopener">The $6.3 billion Binance hack paradox: Centralization made the hack possible, but also saved $3 billion</a> <code title="ae75d2599bc38c8e618592a1e011ecbfa41566b7ac97f7a21b46a81774e8a756">ae75d259...</code></li><li id="ev-NEWS-2-847"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/blockchain-investigator-chainalysis-hit-by-cybersecurity-incident?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Blockchain investigator Chainalysis hit by cybersecurity incident</a> <code title="03e9a933ebf23d5309dc7e61082a2795735acb3aaf40578f703a712ee1cc37cc">03e9a933...</code></li><li id="ev-NEWS-3-847"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/binance-63b-record-hack-sparks-pre-election-political-chatter?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance $6.3B record hack sparks pre-election political clashes</a> <code title="4c53bb0e46d272a6b195a4bcd48f06e9af27f5c501872f602d949111dcfeb96b">4c53bb0e...</code></li><li id="ev-NEWS-4-847"><b>NEWS-4</b> <a href="https://www.coindesk.com/markets/2026/10/31/bitcoin-stolen-from-binance-tops-tesla-s-holdings-and-is-over-twice-el-salvador-s-reserve" target="_blank" rel="noopener">Bitcoin stolen from Binance tops Tesla's holdings and is over twice El Salvador's reserve</a> <code title="4f24303f4eae6b5adde442b9f64bf2a6cc2937cb6a88dc83174ba7130e16564d">4f24303f...</code></li><li id="ev-NEWS-5-847"><b>NEWS-5</b> <a href="https://www.coindesk.com/business/2026/10/30/openai-reportedly-cuts-fundraising-target-amid-ai-jitters" target="_blank" rel="noopener">OpenAI reportedly cuts fundraising and valuation targets amid AI jitters</a> <code title="e03181d79283f5b92296552ec8095f99c4d87c52030ea5917a4605c2dce45ea2">e03181d7...</code></li><li id="ev-NEWS-6-847"><b>NEWS-6</b> <a href="https://cointelegraph.com/magazine/binance-hackers-raced-to-move-billions-before-could-be-frozen?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance hackers raced to move billions before it could be frozen</a> <code title="481b27861c3ec4b17bf8485e11522ad4dd3a6670d8ecbb254b9733795cb25fc8">481b2786...</code></li><li id="ev-KOL-847"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">13 signals from 9 public voices; convergence: 3 voices BEAR on BTC; 2 voices BEAR on ETH; SOL 0 bull / 1 bear</a> <code title="305cb8137fad8e1510369e6cbf7d3dd0140efc6c7a81d8f3afb63f9ea65ff99c">305cb813...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 44s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #829: market moved 17 bps (position -17 bps), stop -150, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #829 at $95.59</span>
+    <a href="record.html?seq=847"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3An9NaH9bVMHRWJ1BvCkKFh4JobLcBMbDYjKcTLEaAMunjKjA5Lsk2KXduQQ1ofQGwz3qWTJBTCizHQCePiBTmoS?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="16319f247aa1f99910b4b7bb791d1711c28b35a43fb1bdd8bd9cd57fea070e34">receipt 16319f247aa1...</code>
+  </footer>
+</article>
 <article class="card" id="r846">
   <header>
     <span class="badge hold">HOLD</span>
