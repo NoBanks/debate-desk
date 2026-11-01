@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>945</b><span>receipts on chain</span></div>
+  <div class="stat"><b>946</b><span>receipts on chain</span></div>
   <div class="stat"><b>73</b><span>debates</span></div>
   <div class="stat"><b>64</b><span>entries</span></div>
   <div class="stat"><b>63</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r945">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #945</span>
+    <time>2026-11-01T13:53:12Z</time>
+    <span class="px">SOL $94.75</span>
+  </header>
+  <p class="reason">position from #940 open at -40 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>4f34bef8...</code></summary><ul class="ev"><li id="ev-PYTH-945"><b>PYTH</b> <a>$94.7471</a> - EMA $94.8801, -14 bps from EMA, 37s old <code title="411366be293bcfe5957d309ce2f044875634749a91b08d9c507d688e39a1d39e">411366be...</code></li><li id="ev-CL-945"><b>CL</b> <a>$95.6478</a> <a href="https://sepolia.etherscan.io/tx/0xfe71726ed1bc1aaf4a0804bcbc8b7c66041dc2b3447f162fee1763efbae7bd30" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="19976d37171217396fa5860b054f7b31974638a40dd336e70213d647a256d3c3">19976d37...</code></li><li id="ev-CB-945"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$94.67</a> - 24h -96 bps <code title="fafb846c053b1fe3a96bc69fb9ae58da9562c63177db47f992f83e3ec4060fea">fafb846c...</code></li><li id="ev-KR-945"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$94.7</a> - -68 bps vs 24h VWAP <code title="e384b110b4d9aa38c2582a71aec48162f7af1e53cb9f76d385670bde3e8ce68f">e384b110...</code></li><li id="ev-CG-945"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$94.83</a> - 1h -49 bps, 24h -122 bps, 7d -637 bps <code title="a6a65b0eff749bfcb026cad3e4bfca751205fed73536985c05feba363b1d37ad">a6a65b0e...</code></li><li id="ev-NEWS-1-945"><b>NEWS-1</b> <a href="https://www.coindesk.com/policy/2026/10/31/fbi-confirms-north-korea-s-role-in-usd6-billion-binance-hack-asks-defi-community-to-block-btc-eth-sol-addresses" target="_blank" rel="noopener">FBI confirms North Korea's role in $6 billion Binance hack, asks DeFi community to block BTC, ETH, SOL addresses</a> <code title="f4425c702cc5f8694b46785525545b9b45fdfc5fc1ef7f31a17f4b78af95d0a3">f4425c70...</code></li><li id="ev-NEWS-2-945"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/deepseek-developing-ai-agent-requiring-less-human-input-report?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">DeepSeek developing AI agent requiring less human input: Report</a> <code title="53f574fdd7b1d0fe8d7e666d375ac35fc5aa574ee0d39dfd9e12aa40080841cb">53f574fd...</code></li><li id="ev-NEWS-3-945"><b>NEWS-3</b> <a href="https://www.coindesk.com/news-analysis/2026/11/01/sherrod-brown-s-ohio-edge-threatens-a-rough-go-for-crypto-next-year" target="_blank" rel="noopener">Sherrod Brown's Ohio edge threatens a rough go for crypto next year</a> <code title="e5db99e88cb34770bebb7fc8aa272c401f904ef3893f840df95451f3b68fdd12">e5db99e8...</code></li><li id="ev-NEWS-4-945"><b>NEWS-4</b> <a href="https://www.coindesk.com/markets/2026/11/01/binance-opens-crypto-withdrawals-in-phases-starting-with-bitcoin-following-usd6-3-billion-hack" target="_blank" rel="noopener">Binance opens crypto withdrawals in phases starting with bitcoin following $6.3 billion hack</a> <code title="b5b6dde22194c83d8faa12498bb475c27bbe078f986f0be8384978f78bf90c4c">b5b6dde2...</code></li><li id="ev-NEWS-5-945"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/binance-says-phase-one-of-withdrawals-opens-after-63b-hack?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance says phase one of withdrawals opens after $6.3B hack</a> <code title="2db1c589aee5920255abc43b68c458dc94b41c7a955b0def57b9b717864f6e46">2db1c589...</code></li><li id="ev-NEWS-6-945"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/fbi-blames-north-korea-for-record-63b-binance-hack?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">FBI blames North Korea for record $6.3B Binance hack</a> <code title="23734afa8dfb5c9d63cf2c32e1d8215e2483060c595113a1a3cfd0a5a6199a3c">23734afa...</code></li><li id="ev-KOL-945"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">15 signals from 9 public voices; convergence: 2 voices BEAR on BTC; SOL 0 bull / 1 bear</a> <code title="7291b76f568cec2e70c020c45329ee0b2be9a8d1bde45742023e941f89a68f2e">7291b76f...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 37s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #940: market moved 40 bps (position -40 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #940 at $94.37</span>
+    <a href="record.html?seq=945"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/hEwTBN1hA53Xfq4FYirsrk9B2JFwu9yM3sH3bp1VZBK56LAKLfeBg8ehJUV84NqTUFBcurRDJmcyYg6VzezpXRM?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="17260a27ca41232ca4fb4e1af30be1fd8355973513d30f3a3ae3bdc92e8f6df5">receipt 17260a27ca41...</code>
+  </footer>
+</article>
 <article class="card" id="r944">
   <header>
     <span class="badge hold">HOLD</span>
