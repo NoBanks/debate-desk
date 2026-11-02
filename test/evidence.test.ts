@@ -4,7 +4,7 @@ import { ascii, withRetry } from "../src/evidence.js";
 import { evidenceView } from "../src/desk.js";
 
 test("ascii folds typography and strips what receipts cannot hold", () => {
-  assert.equal(ascii("“SOL” ‘up’ – now…"), "\"SOL\" 'up' - now...");
+  assert.equal(ascii("\u201CSOL\u201D \u2018up\u2019 \u2013 now\u2026"), "\"SOL\" 'up' - now...");
   assert.equal(ascii("  a b \n\t c  "), "a b c");
   assert.equal(ascii("café"), "cafe");
   assert.equal(ascii("\u{1F680} moon"), "moon");
