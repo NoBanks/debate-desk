@@ -92,14 +92,18 @@ data/             the public record: ledger.jsonl, evidence/, transcripts/
 ## Run it
 
 ```bash
+# Node 22 or newer. Tests and the offline verifier need no keys and no network.
 npm install
+cp .env.example .env                            # then set GEMINI_API_KEY in .env (gitignored), or export it
 export GEMINI_API_KEY=...                       # never committed
 npx tsx src/desk.ts keygen                      # key goes to ~/.config/debate-desk/, outside the repo
 npx tsx src/desk.ts register                    # registers with the Agent Receipts program, commits policy_hash
 npx tsx src/desk.ts once                        # one cycle
 npx tsx src/desk.ts loop                        # forever, every CYCLE_SECONDS (default 900)
 npx tsx src/site.ts                             # rebuild the public page
-npm test                                        # rule and KOL tests
+npm test                                        # unit tests, no network
+npm run typecheck                               # tsc --noEmit
+npx tsx src/verify.ts data --offline            # re-check every recorded decision, no network
 ```
 
 Dry run with no chain writes: `npx tsx scripts/dry_run.ts`.
