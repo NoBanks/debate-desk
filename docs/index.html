@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1038</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1039</b><span>receipts on chain</span></div>
   <div class="stat"><b>84</b><span>debates</span></div>
   <div class="stat"><b>71</b><span>entries</span></div>
   <div class="stat"><b>70</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1038">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1038</span>
+    <time>2026-11-03T01:29:47Z</time>
+    <span class="px">SOL $92.39</span>
+  </header>
+  <p class="reason">position from #1031 open at -65 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>c27e96c2...</code></summary><ul class="ev"><li id="ev-PYTH-1038"><b>PYTH</b> <a>$92.3882</a> - EMA $92.1987, 20 bps from EMA, 260s old <code title="414381fea9a69b27f3eda1958c36298fdad16ea6fcef4b64258a1b8d36a51746">414381fe...</code></li><li id="ev-CL-1038"><b>CL</b> <a>$90.8232</a> <a href="https://sepolia.etherscan.io/tx/0xe80d99fe0fe10eca58808b05ffcda265947c1466a26e09d60c305ddfe4199914" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="074e5f56e7df84b07ca4ae79f3305f5cf99f3bcf202e264a258314af7ceefa81">074e5f56...</code></li><li id="ev-CB-1038"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$92.3</a> - 24h -264 bps <code title="5c95d536d168d941ef586344f0f452f17c631f55422f300568a48f94cb47cb56">5c95d536...</code></li><li id="ev-KR-1038"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$92.37</a> - -32 bps vs 24h VWAP <code title="325e0c78075a0a1ac328ef45289ed86cfa3dfe6985dbbe6d22ad3f1a6742364b">325e0c78...</code></li><li id="ev-CG-1038"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$92.37</a> - 1h 40 bps, 24h -290 bps, 7d -849 bps <code title="c94407298761b400f30855c6d91b0648e5883bfbd91a5f7d3972359c7936236f">c9440729...</code></li><li id="ev-NEWS-1-1038"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/zachxbt-flags-suspected-106m-crypto-theft-as-solana-bot-faces-possible-786k-drain?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Crypto investigators flag suspected $106M theft, $786K Solana bot drain</a> <code title="4d7274bd20737680b5cef05490d2b563e34269112fa8532b8cdf3899b07b7a5e">4d7274bd...</code></li><li id="ev-NEWS-2-1038"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/binance-hackers-solana-new-phase-laundering-chainalysis?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance hackers begin swapping stolen Solana tokens for Bitcoin: Chainalysis</a> <code title="b5813c74a0564526651ed5f426b12959d3f4f4ce216e34b2f75a191dad53868b">b5813c74...</code></li><li id="ev-NEWS-3-1038"><b>NEWS-3</b> <a href="https://decrypt.co/382390/claude-mythos-fable-5-5-gpt-6-2-astra-leaks" target="_blank" rel="noopener">Claude Fable 5.5, GPT 6.2 Astra Could Be Right Around the Corner, Leaks Suggest</a> <code title="7fe0d162f7a95986caa50045251ebefc45b7727ef16de86a0f398c9956a706a2">7fe0d162...</code></li><li id="ev-NEWS-4-1038"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/north-korea-denies-role-in-63b-binance-hack-points-finger-at-us?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">North Korea denies role in $6.3B Binance hack, points finger at US</a> <code title="61fa981cdad1363075c183a3d483b0b2f36db412d772d0de64947275ace5620a">61fa981c...</code></li><li id="ev-NEWS-5-1038"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="638d44de56dcc30c3a32784f6c6202495a87b94b3d58792b24207b9ac32e6310">638d44de...</code></li><li id="ev-NEWS-6-1038"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/new-jersey-coinbase-staking?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">New Jersey drops Coinbase staking order ahead of crypto's midterm test</a> <code title="e15833755dbdd1cda89e1aa055c46bf6d723db8b31652e9fbbba6751224654f3">e1583375...</code></li><li id="ev-KOL-1038"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">25 signals from 9 public voices; convergence: 3 voices BEAR on ETH; 2 voices BEAR on BTC; 2 voices BULL on BTC; SOL 0 bull / 1 bear</a> <code title="bb916ed17b860569c92b636113113134fbdb330eddbdec8a811a279970fff54d">bb916ed1...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 260s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1031: market moved 65 bps (position -65 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1031 at $91.79</span>
+    <a href="record.html?seq=1038"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4gY82G1XEBKEqTgKzbg1r3ucrNB5DpzwNnkf2suwaoKiD8CT6V3YKFAbq45h5unYSUogX7zZTfNuVtNQh9rz42nD?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="3a844f140214a86303fff04b45b2c5a6395e4e33613bb4acc9cd17595e816d6a">receipt 3a844f140214...</code>
+  </footer>
+</article>
 <article class="card" id="r1037">
   <header>
     <span class="badge hold">HOLD</span>
