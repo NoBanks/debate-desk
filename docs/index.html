@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1053</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1054</b><span>receipts on chain</span></div>
   <div class="stat"><b>85</b><span>debates</span></div>
   <div class="stat"><b>72</b><span>entries</span></div>
   <div class="stat"><b>71</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1053">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1053</span>
+    <time>2026-11-03T10:34:50Z</time>
+    <span class="px">SOL $92.32</span>
+  </header>
+  <p class="reason">position from #1044 open at -50 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>7c6745c0...</code></summary><ul class="ev"><li id="ev-PYTH-1053"><b>PYTH</b> <a>$92.3193</a> - EMA $92.0825, 25 bps from EMA, 219s old <code title="a46950e128b8ceb1b92cd12b9720099876eee944f4be9b2510f26f48c4bcb43d">a46950e1...</code></li><li id="ev-CL-1053"><b>CL</b> <a>$90.8232</a> <a href="https://sepolia.etherscan.io/tx/0x0f136cc511b255c184ba6505c36507268081c45efca262b81de6893995a79206" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="7a48bbf372c18fde7540a38657b98d17689d0e28a248f1c2a34c436a4587f411">7a48bbf3...</code></li><li id="ev-CB-1053"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$92.29</a> - 24h -188 bps <code title="6105a0d1a497445865c44c0c7a6fc2545a9083445e5269c0727e7272c054c5e6">6105a0d1...</code></li><li id="ev-KR-1053"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$92.3</a> - 13 bps vs 24h VWAP <code title="ef923595474e0b7fc1e680bab5c2d5583943a40da08ce3688d0364b440873319">ef923595...</code></li><li id="ev-CG-1053"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$92.33</a> - 1h 50 bps, 24h -185 bps, 7d -754 bps <code title="c88f900b095a11ce0e0e91c3da556aa60b60618beeec3b44be3ab462fc4d4020">c88f900b...</code></li><li id="ev-NEWS-1-1053"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/zachxbt-flags-suspected-106m-crypto-theft-as-solana-bot-faces-possible-786k-drain?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Crypto investigators flag suspected $106M theft, $786K Solana bot drain</a> <code title="456af22129591558955ef6269ecfe9f43384287596e410e99654f7a9f2cab63f">456af221...</code></li><li id="ev-NEWS-2-1053"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/binance-hackers-solana-new-phase-laundering-chainalysis?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance hackers begin swapping stolen Solana tokens for Bitcoin: Chainalysis</a> <code title="8d1001a6ff3427b333d7e3a3b44a3dac8aaa46d7e55c4c0b67a1c1335c6f8679">8d1001a6...</code></li><li id="ev-NEWS-3-1053"><b>NEWS-3</b> <a href="https://decrypt.co/382394/north-korea-denies-6-3b-binance-hack-calls-fbi-finding-a-political-provocation" target="_blank" rel="noopener">North Korea Denies $6.3B Binance Hack, Calls FBI Finding a 'Political Provocation'</a> <code title="b41de1abc085f201ddc9e553b870e045e84925b36f5f7763293e1bba162d05ed">b41de1ab...</code></li><li id="ev-NEWS-4-1053"><b>NEWS-4</b> <a href="https://www.coindesk.com/business/2026/11/03/tether-holds-150-000-bitcoin-worth-usd11-5-billion-ceo-paolo-ardoino-says" target="_blank" rel="noopener">Tether holds 150,000 bitcoin worth $11.5 billion, CEO Paolo Ardoino says</a> <code title="1e4ee0c13629183201f754905753811ba41914aedece6fe0848ba9b223aeb7f2">1e4ee0c1...</code></li><li id="ev-NEWS-5-1053"><b>NEWS-5</b> <a href="https://cointelegraph.com/markets/bitcoin-price-support-loss-recent-buyers-underwater?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin price threatens $77.7K support loss with recent buyers underwater</a> <code title="313d76ee95a5b3bc1f3ed8d72b88129c4fde5415ad68ac157cbccb126bbd9917">313d76ee...</code></li><li id="ev-NEWS-6-1053"><b>NEWS-6</b> <a href="https://www.coindesk.com/markets/2026/11/03/live-news-bitcoin-faces-fifth-weekly-loss-as-midterm-uncertainty-and-apple-warning-weigh-on-markets" target="_blank" rel="noopener">Live news: Bitcoin faces fifth weekly loss as midterm elections weigh on markets</a> <code title="726a4dd51ca3dd32afb5c94a2fe9e3b233921cd40ee103c746ac6cedbc2ef8a4">726a4dd5...</code></li><li id="ev-KOL-1053"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">18 signals from 9 public voices; convergence: 3 voices BEAR on BTC; 2 voices BEAR on ETH; SOL 0 bull / 1 bear</a> <code title="e157dfccd64008656d6fa2e13e3ed05b3cc1c39019b8cdca0714952ad6320c05">e157dfcc...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 219s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1044: market moved 50 bps (position -50 bps), stop -150, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1044 at $91.85</span>
+    <a href="record.html?seq=1053"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/5oTeHku5HGF31DDa7G2xvx932oHx9omXFLjnAcRBa8oNVmEYnSnoYfHmXDehZmK56db1jdNSwAWfc4BGWz11AHMY?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="15f564cec761301fbb7a4e52c50f81723a51b583615ae47fa93106ff57efdd12">receipt 15f564cec761...</code>
+  </footer>
+</article>
 <article class="card" id="r1052">
   <header>
     <span class="badge hold">HOLD</span>
