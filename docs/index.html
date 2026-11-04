@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1101</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1102</b><span>receipts on chain</span></div>
   <div class="stat"><b>89</b><span>debates</span></div>
   <div class="stat"><b>75</b><span>entries</span></div>
   <div class="stat"><b>74</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1101">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1101</span>
+    <time>2026-11-04T08:37:22Z</time>
+    <span class="px">SOL $93.31</span>
+  </header>
+  <p class="reason">position from #1100 open at 1 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>359a3822...</code></summary><ul class="ev"><li id="ev-PYTH-1101"><b>PYTH</b> <a>$93.3129</a> - EMA $93.0409, 29 bps from EMA, 65s old <code title="127b06c603666da52ed77f6e9425a95a11a0b1129260e6bee85fc5cff09bd2d6">127b06c6...</code></li><li id="ev-CL-1101"><b>CL</b> <a>$92.7582</a> <a href="https://sepolia.etherscan.io/tx/0x607de09275c7c5746f53aaafb0c061f1a0e72fdfa7b2acbe88e4904e67688775" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="b0da0fed2e57af2229462844adafcc57f313dc03552a1aca67e83873cdc583cb">b0da0fed...</code></li><li id="ev-CB-1101"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$93.34</a> - 24h 170 bps <code title="a9cb2e03e3dddf10de3d040e37b438c3e30b5020854f75c804eed8d186e47c15">a9cb2e03...</code></li><li id="ev-KR-1101"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$93.28</a> - 85 bps vs 24h VWAP <code title="731b024c752bb2bb9fddacf139cc64f6f61bed36b953485c14e55acc95962d4c">731b024c...</code></li><li id="ev-CG-1101"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$93.29</a> - 1h 1 bps, 24h 193 bps, 7d -878 bps <code title="3a0b936f778b835bf5cf4a29bd1f097dc155c38939f96fa3e93eba5146717a20">3a0b936f...</code></li><li id="ev-NEWS-1-1101"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/04/zcash-grants-committee-drops-plan-to-redirect-98-000-zec-to-future-mining-rewards" target="_blank" rel="noopener">Zcash grants committee drops plan to redirect 98,000 ZEC to future mining rewards</a> <code title="33c0aed42ff6d82ed594028a3feb2090f046b9e7a7cb0753012a98615e5f5475">33c0aed4...</code></li><li id="ev-NEWS-2-1101"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/democrats-win-us-house-congress-control?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Democrats win US House to secure control of Congress in midterms</a> <code title="13dd17619cbcce06baab5f10e815d0fbe7d9a1f37cb910f7a2e1f435ea151b8e">13dd1761...</code></li><li id="ev-NEWS-3-1101"><b>NEWS-3</b> <a href="https://cointelegraph.com/markets/bitcoin-bounces-from-7-week-low-under-76k-as-democrats-eye-congress-sweep?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin bounces from 7-week low under $76K as Democrats sweep Congress</a> <code title="9df813d2a4ed394b6727b8d86dd52eab3128db6efa6bf0ae263394029bf7b0df">9df813d2...</code></li><li id="ev-NEWS-4-1101"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/us-midterms-2026-live-results-and-what-they-mean-for-crypto?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">US midterm elections 2026 live: Democrats win House, securing control of Congress</a> <code title="be9cb6ff541dab7efc6dadc1b1dcd9033a96ea05baeb42791f1d95757ec24007">be9cb6ff...</code></li><li id="ev-NEWS-5-1101"><b>NEWS-5</b> <a href="https://www.coindesk.com/markets/2026/11/04/bitcoin-knocks-on-usd78-000-in-v-shaped-comeback-as-midterm-uncertainty-fades" target="_blank" rel="noopener">Bitcoin surges to $78,000 in V-shaped comeback as midterm election uncertainty fades</a> <code title="17ea90929dbc876ffd810f7448424cbab953c008c178b9e6ef012989424d2e31">17ea9092...</code></li><li id="ev-NEWS-6-1101"><b>NEWS-6</b> <a href="https://www.coindesk.com/markets/2026/11/04/jack-dorsey-s-block-faces-usd764-million-doj-settlement-as-bitcoin-profit-plunges-50" target="_blank" rel="noopener">Jack Dorsey's Block faces $764 million DOJ settlement as bitcoin profit plunges 50%</a> <code title="e3e48a73b60edbce906055e5b2965093e98d9b15af8cddcfdac6b1242769915c">e3e48a73...</code></li><li id="ev-KOL-1101"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">18 signals from 9 public voices; convergence: 3 voices BEAR on BTC; 3 voices BEAR on ETH; 2 voices BEAR on SOL; SOL 0 bull / 2 bear</a> <code title="3aef1b306988a3a76e44171923bfe3ef276a4e012e63167a8e423e084daa145f">3aef1b30...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 65s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1100: market moved -1 bps (position 1 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1100 at $93.32</span>
+    <a href="record.html?seq=1101"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4JSRchFiAPqcJDbErAVTf2GKNFTazFd4KGQpfYydSEcZPofz1WnEBuWWfhtGYwkQsrWJ8hEgoVdfBMF3QsPVZSuv?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="35185d472da3eedc3bfcec8292d7dc0252fc62169c12f9dc742141d9e10cc0d1">receipt 35185d472da3...</code>
+  </footer>
+</article>
 <article class="card" id="r1100">
   <header>
     <span class="badge sell">SELL</span>
