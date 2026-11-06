@@ -124,9 +124,17 @@ export function promptsSha256(): string {
   return documentHash({ system: SYSTEM, rules: RULES_OF_EVIDENCE, case_schema: CASE_SCHEMA, ruling_schema: RULING_SCHEMA } as unknown as Json);
 }
 
+/**
+ * Gemini keys: GEMINI_API_KEYS (comma separated) or the single GEMINI_API_KEY. Added Nov 6 2026 after the free-tier
+ * daily quota (HTTP 429) wiped out whole runs of cycles (no receipt is written when the debate cannot run). On a 429 or
+ * 403 the desk moves to the next key and retries at once; every other failure keeps the original backoff. The
+ * key never appears in a receipt, transcript, or log line, so rotation does not touch the policy hash.
+ */
+const GEMINI_KEYS = (process.env.GEMINI_API_KEYS ?? process.env.GEMINI_API_KEY ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+let geminiKeyCursor = 0;
+
 async function gemini(system: string, prompt: string, schema: object): Promise<{ text: string; modelVersion: string }> {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error("GEMINI_API_KEY is not set");
+  if (!GEMINI_KEYS.length) throw new Error("GEMINI_API_KEY is not set");
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
   const body = {
     systemInstruction: { parts: [{ text: system }] },
@@ -134,7 +142,10 @@ async function gemini(system: string, prompt: string, schema: object): Promise<{
     generationConfig: { temperature: 0, responseMimeType: "application/json", responseSchema: schema },
   };
   let lastErr = "";
-  for (let attempt = 0; attempt < 4; attempt++) {
+  const maxAttempts = Math.max(4, GEMINI_KEYS.length + 3);
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    const keyIndex = geminiKeyCursor % GEMINI_KEYS.length;
+    const key = GEMINI_KEYS[keyIndex];
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json", "x-goog-api-key": key },
@@ -149,6 +160,12 @@ async function gemini(system: string, prompt: string, schema: object): Promise<{
     } else {
       // the key travels in a header, never in the URL, so this message is safe to log
       lastErr = `HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`;
+      if ((res.status === 429 || res.status === 403) && GEMINI_KEYS.length > 1) {
+        geminiKeyCursor++;
+        console.error(`gemini key #${keyIndex + 1} of ${GEMINI_KEYS.length} returned ${res.status}; rotating to key #${(geminiKeyCursor % GEMINI_KEYS.length) + 1}`);
+        await new Promise((r) => setTimeout(r, 1500));
+        continue;
+      }
     }
     await new Promise((r) => setTimeout(r, 4000 * (attempt + 1)));
   }
