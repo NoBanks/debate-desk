@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1418</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1419</b><span>receipts on chain</span></div>
   <div class="stat"><b>115</b><span>debates</span></div>
   <div class="stat"><b>98</b><span>entries</span></div>
   <div class="stat"><b>97</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1418">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1418</span>
+    <time>2026-11-08T16:57:04Z</time>
+    <span class="px">SOL $88.80</span>
+  </header>
+  <p class="reason">position from #1416 open at 79 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>ac8469b1...</code></summary><ul class="ev"><li id="ev-PYTH-1418"><b>PYTH</b> <a>$88.796</a> - EMA $89.408, -68 bps from EMA, 27s old <code title="ed733160bd3fd4208ba948decf51171340f6725402e23d9230eeac5a08981bef">ed733160...</code></li><li id="ev-CL-1418"><b>CL</b> <a>$89.2954</a> <a href="https://sepolia.etherscan.io/tx/0xaa90bc681c53bd8337021020f1afc2c03128f3d61c3b88a42538735a52d49717" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="d5dbaf9b2ee1e27e673f83e5f33b84081be242741d140521a9a44bc3f235a755">d5dbaf9b...</code></li><li id="ev-CB-1418"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$88.76</a> - 24h -74 bps <code title="b65a889ba343cce72e387b93acd8959dc58d68abcd3aa77ff20118304b9322cd">b65a889b...</code></li><li id="ev-KR-1418"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$88.83</a> - -47 bps vs 24h VWAP <code title="66daf7dc58fea573c8b52fd5bf3dc1a1c784e9068f4ab77517188603b68b3268">66daf7dc...</code></li><li id="ev-CG-1418"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$88.92</a> - 1h 8 bps, 24h -66 bps, 7d -562 bps <code title="ba433308daacb0cb962fc5b180541046c8a610520250cb465211e507398ab16b">ba433308...</code></li><li id="ev-NEWS-1-1418"><b>NEWS-1</b> <a href="https://decrypt.co/382761/bitcoin-developer-quantum-landmines-losing-bet" target="_blank" rel="noopener">This Bitcoin Developer's Idea Would Make Quantum Attacks a Losing Bet</a> <code title="a57f4561b65aa62071bdf03692f100f5f33fdc8392b50510a6618b23b497d587">a57f4561...</code></li><li id="ev-NEWS-2-1418"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="4b37fc5fd524cb206677e1a5c519166f97fd4c1e455a5f797e2073e5c65c00ff">4b37fc5f...</code></li><li id="ev-NEWS-3-1418"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/binance-france-emails-announce-closure-of-its-users-accounts-on-dec-31?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance France emails announce closure of its users' accounts on Dec. 31</a> <code title="a6884ba4cae89de842a99f45cce37782711bc078780a6c6190d7a32cadcda600">a6884ba4...</code></li><li id="ev-NEWS-4-1418"><b>NEWS-4</b> <a href="https://www.coindesk.com/markets/2026/11/08/these-finland-homes-get-free-heat-from-bitcoin-miners-as-long-as-btc-stays-above-usd70-000" target="_blank" rel="noopener">These Finland homes get free heat from bitcoin miners (as long as BTC stays above $70,000)</a> <code title="36a762af6bfdec1d2e3ed97da3f1a2441314778ab3888c8da93842ab6eadbe85">36a762af...</code></li><li id="ev-NEWS-5-1418"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/amsterdam-data-center-protesters-break-into-construction-site-report?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Amsterdam protesters break into Microsoft data center construction site: Report</a> <code title="e1f583a0a8f27051b24308722ddd8bceef52834f1cd14ac81c19e01cdfc8d197">e1f583a0...</code></li><li id="ev-NEWS-6-1418"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/binances-finance-chief-kaiser-ng-to-leave-company-report-says?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance's finance chief Kaiser Ng to leave company, report says</a> <code title="a3c9c6a2f217f14f071a9c51ba90821e9dd2cb610d61dc53784a17a01ebdaab5">a3c9c6a2...</code></li><li id="ev-KOL-1418"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">11 signals from 9 public voices; no convergence; SOL 1 bull / 0 bear</a> <code title="cf940765b6c632842cc9cc885cb5f3ae20f8f28d549e87573b1198af194d4d24">cf940765...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 27s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1416: market moved -79 bps (position 79 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1416 at $89.51</span>
+    <a href="record.html?seq=1418"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4ToKCBfYyy21r3doB5n7W5bDso856TJF3GeCUSZtNu1XZJbEcEDCdXzVxoLa1CzwKHPA5KenyeiuP6GnSdqdwGbC?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="495db91bb5e0146d2c5f4ac10202e4e663b98b7227ae951de92c16d5280bed4f">receipt 495db91bb5e0...</code>
+  </footer>
+</article>
 <article class="card" id="r1417">
   <header>
     <span class="badge hold">HOLD</span>
