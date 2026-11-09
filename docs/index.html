@@ -38,12 +38,12 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1463</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1464</b><span>receipts on chain</span></div>
   <div class="stat"><b>119</b><span>debates</span></div>
   <div class="stat"><b>101</b><span>entries</span></div>
-  <div class="stat"><b>100</b><span>rule exits</span></div>
+  <div class="stat"><b>101</b><span>rule exits</span></div>
   <div class="stat"><b>1</b><span>rulings blocked by rules</span></div>
-  <div class="stat"><b>-144</b><span>bps on closed trades (market price)</span></div>
+  <div class="stat"><b>-161</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
   <b>How to check every word on this page</b>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1463">
+  <header>
+    <span class="badge buy">BUY</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #1463</span>
+    <time>2026-11-09T04:45:02Z</time>
+    <span class="px">SOL $87.31</span>
+  </header>
+  <p class="reason">HORIZON: close SHORT from #1451 at -17 bps</p>
+  <details ><summary>Evidence (11) - pack <code>c33cb1a9...</code></summary><ul class="ev"><li id="ev-PYTH-1463"><b>PYTH</b> <a>$87.307</a> - EMA $87.5536, -28 bps from EMA, 185s old <code title="31acb945d712b6ae9b770108a506972a22b7b541363bd502bb124b131fa51ff1">31acb945...</code></li><li id="ev-CB-1463"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$87.41</a> - 24h -176 bps <code title="a478387f2ec51f44439f9c55594b04d7d9de93eacfe9bf036fef69c0797d1b4f">a478387f...</code></li><li id="ev-KR-1463"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$87.38</a> - -36 bps vs 24h VWAP <code title="6dfc193bacf0367ecdf2bc80cf2e16bd811d6a64445de90e608ab708ed9bb2f4">6dfc193b...</code></li><li id="ev-CG-1463"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$87.37</a> - 1h -65 bps, 24h -180 bps, 7d -790 bps <code title="cdc722e87842d9d8327e2bbf0fb0c56c7a432758eb7c227359e91c7becec3e13">cdc722e8...</code></li><li id="ev-NEWS-1-1463"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/tbtc-bridge-resumes-aave-120m-reserve-frozen?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">tBTC bridge partially resumes as $120M Aave reserve remains frozen</a> <code title="844738ad9e513f238a9a6d456014123d32fb6dab95e34e7bbe5f580337c0ce75">844738ad...</code></li><li id="ev-NEWS-2-1463"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/09/bitcoin-drops-then-pops-as-nvidia-cheating-scandal-and-failed-iran-talks-trigger-volatility" target="_blank" rel="noopener">Bitcoin drops, then pops as Nvidia cheating scandal and failed Iran talks trigger volatility</a> <code title="a6d911485a06d7c31f67cc2c8adb0f5294d3ab5165515a77d9849ad392991b4c">a6d91148...</code></li><li id="ev-NEWS-3-1463"><b>NEWS-3</b> <a href="https://cointelegraph.com/magazine/vitaliks-pivots-to-eth-as-a-store-of-value-us-election-weighs-on-crypto-hodlers-digest?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Vitalik 'pivots' ETH to store of value, crypto suffers after US midterms: Hodler's Digest</a> <code title="207e7166f3842eeeb996508529e68924b74f042ffac06f3ac3ad85788a23b4af">207e7166...</code></li><li id="ev-NEWS-4-1463"><b>NEWS-4</b> <a href="https://www.coindesk.com/policy/2026/11/08/what-the-election-results-mean-for-crypto-state-of-crypto" target="_blank" rel="noopener">What the election results mean for crypto: State of Crypto</a> <code title="bbe0170f0393844685958f08843da3b9e4ed3b7740cf4581f315fe977711ed65">bbe0170f...</code></li><li id="ev-NEWS-5-1463"><b>NEWS-5</b> <a href="https://www.coindesk.com/business/2026/11/08/stablecoin-growth-has-stalled-the-payments-boom-hasn-t" target="_blank" rel="noopener">Stablecoin growth has stalled. The payments boom hasn't</a> <code title="041265ee5ddd7e288212f248892c82226618def63f6bb6ade361c165eae464d0">041265ee...</code></li><li id="ev-NEWS-6-1463"><b>NEWS-6</b> <a href="https://decrypt.co/382761/bitcoin-developer-quantum-landmines-losing-bet" target="_blank" rel="noopener">This Bitcoin Developer's Idea Would Make Quantum Attacks a Losing Bet</a> <code title="8f5ea44ffdb5b87b5c610dc07512453917fda1039a0243756c65d2721ea5f091">8f5ea44f...</code></li><li id="ev-KOL-1463"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">19 signals from 9 public voices; convergence: 4 voices BEAR on ETH; 2 voices BEAR on BTC; SOL 0 bull / 1 bear</a> <code title="e29690adcfff2c766057e3d9cab15a35381500dbb764a6cded06ffd2aa9c7f74">e29690ad...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 185s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> SHORT from #1451: market moved 17 bps (position -17 bps), stop -180, target +350, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 822833, available 10026071, minimum 100000</li></ul></details>
+  <footer>
+    <span>swap in 822833 -> est out 36975316 (min 36605562)</span>
+    <span>closed #1451 on HORIZON at -17 bps</span>
+    
+    <a href="record.html?seq=1463"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4s4YbwvQwhYEgcmvkjjt46rqWQk1xhcmjwRgL3WX9MRwnuLTpNfAeAVMb3G7kVza79WjBCveRKJ5Kz6A2aFjwC55?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="cf55099dd0f8ba623eaa67640941a0581eddd6f1d1662aec0518c24a189002a4">receipt cf55099dd0f8...</code>
+  </footer>
+</article>
 <article class="card" id="r1462">
   <header>
     <span class="badge hold">HOLD</span>
