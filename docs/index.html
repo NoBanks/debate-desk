@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1547</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1548</b><span>receipts on chain</span></div>
   <div class="stat"><b>128</b><span>debates</span></div>
   <div class="stat"><b>109</b><span>entries</span></div>
   <div class="stat"><b>108</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1547">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1547</span>
+    <time>2026-11-10T19:33:34Z</time>
+    <span class="px">SOL $82.73</span>
+  </header>
+  <p class="reason">position from #1545 open at -33 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>ee96c337...</code></summary><ul class="ev"><li id="ev-PYTH-1547"><b>PYTH</b> <a>$82.7274</a> - EMA $82.611, 14 bps from EMA, 28s old <code title="7f92a738ee213b8b0814e5b3d81e0cb01fb030bc49d3eeb35f25e44911b289bd">7f92a738...</code></li><li id="ev-CL-1547"><b>CL</b> <a>$83.1717</a> <a href="https://sepolia.etherscan.io/tx/0x9875a2cd84bccc72a03589b22a9b703a56d80efba780b2478014ea1d56d101d0" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="91c85d5921f3fa79d25f7d39a5e7fa581918602c53927a3c66f367261cdd20d8">91c85d59...</code></li><li id="ev-CB-1547"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$82.72</a> - 24h -427 bps <code title="9533fcd1e0e60973c2b6a33860afbda669cdb3a395d68fe3bf335f874cc34906">9533fcd1...</code></li><li id="ev-KR-1547"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$82.72</a> - -159 bps vs 24h VWAP <code title="5e3288e20c00e80215444714f5195bb273a409d1f7cbd3f98649c4b7c5fc1151">5e3288e2...</code></li><li id="ev-CG-1547"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$82.63</a> - 1h 73 bps, 24h -414 bps, 7d -1109 bps <code title="45f7e5b71921aa1899fe97849c094aaec1504cf1c7026d58c2769bcb8f6acc78">45f7e5b7...</code></li><li id="ev-NEWS-1-1547"><b>NEWS-1</b> <a href="https://decrypt.co/382836/solanas-jupiter-expands-beyond-trading-with-token-baskets-yield-vaults-and-new-portfolio" target="_blank" rel="noopener">Solana's Jupiter Expands Beyond Trading With Token Baskets, Yield Vaults and New Portfolio</a> <code title="928aa094192f567ea91f31535c6af6a1f57ed21ccc9ec21984846cee59f4cc0c">928aa094...</code></li><li id="ev-NEWS-2-1547"><b>NEWS-2</b> <a href="https://decrypt.co/382806/decrypt-money-account-gets-confidential-transfers-with-solana-privacy-firm-helius" target="_blank" rel="noopener">Decrypt Money Account Gets Confidential Transfers With Solana Privacy Firm Helius</a> <code title="904a055106299e29df5f026e1d9cf95aa7341e832c3f0f913027c1c0c7da2dcd">904a0551...</code></li><li id="ev-NEWS-3-1547"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/formation-securities-solana-stock-trading-venue-sec-exemption?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Formation Securities plans Solana stock trading venue under SEC exemption</a> <code title="cf3df9975b4e3f7e56622e8c55e1cea04fde1e292bc60d3dbd0a55ce2834e86c">cf3df997...</code></li><li id="ev-NEWS-4-1547"><b>NEWS-4</b> <a href="https://decrypt.co/382859/solana-tokenized-stock-venue-formation-sec" target="_blank" rel="noopener">Solana Set for Another Tokenized Stock Venue as Formation Notifies the SEC</a> <code title="dbe990c90919f653dba6ee1daecddb9811b7fd4e543d0e70ba9ebde943954412">dbe990c9...</code></li><li id="ev-NEWS-5-1547"><b>NEWS-5</b> <a href="https://www.coindesk.com/business/2026/11/06/solana-lset-for-its-first-tokenized-stock-venue-under-sec-framework-listing-galaxy" target="_blank" rel="noopener">Solana set for its first tokenized stock venue under SEC framework, listing Galaxy</a> <code title="04b75993410d78a2d491e7b694522df95c0fbf224fed510c35df9c667f172ffb">04b75993...</code></li><li id="ev-NEWS-6-1547"><b>NEWS-6</b> <a href="https://decrypt.co/382962/grayscale-bets-1-million-on-zcash-as-privacy-coin-tumbles" target="_blank" rel="noopener">Grayscale Bets $1 Million on Zcash as Privacy Coin Tumbles</a> <code title="0be79424a946c250e9fee6a62b75960602864b8a3b8e0ba4e294d17c7d43887e">0be79424...</code></li><li id="ev-KOL-1547"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">24 signals from 9 public voices; convergence: 4 voices BEAR on BTC; 2 voices BEAR on ETH; 2 voices BEAR on SOL; SOL 0 bull / 2 bear</a> <code title="a821159f198e6963121f20d28b5c68f19d0b1d6f56d8a8472ba5a62b02307e8b">a821159f...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 28s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #1545: market moved -33 bps (position -33 bps), stop -210, target +600, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #1545 at $83.01</span>
+    <a href="record.html?seq=1547"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/31WtkzFKuwER3ij4vhSCsVCSuDkGjWD7UqZyzk3YhofFcFH9QDdeuyWNCUj6emmed67voWTNdNUQhsB1otvm4AfL?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="11359222e16cd60061dc30506d8af6f202a51ae516c70ade937496487d72b11e">receipt 11359222e16c...</code>
+  </footer>
+</article>
 <article class="card" id="r1546">
   <header>
     <span class="badge hold">HOLD</span>
