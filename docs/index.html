@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1628</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1629</b><span>receipts on chain</span></div>
   <div class="stat"><b>132</b><span>debates</span></div>
   <div class="stat"><b>112</b><span>entries</span></div>
   <div class="stat"><b>111</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1628">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1628</span>
+    <time>2026-11-11T16:49:23Z</time>
+    <span class="px">SOL $84.69</span>
+  </header>
+  <p class="reason">position from #1619 open at 105 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>6652ef5c...</code></summary><ul class="ev"><li id="ev-PYTH-1628"><b>PYTH</b> <a>$84.6881</a> - EMA $84.5224, 19 bps from EMA, 33s old <code title="9641d2a2e8507abc2d0035f61723e85135c8ff87935233a4c0ba746b47f7f8fe">9641d2a2...</code></li><li id="ev-CL-1628"><b>CL</b> <a>$84.9678</a> <a href="https://sepolia.etherscan.io/tx/0x9420d328ad4eb8c85e8beb4a507cb0db184eb5fdbff8a833d6e27af9221650ca" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="7d4b22a1645705afc46cb467fec1856a616920125b2ea398c40ecfe2c87bc064">7d4b22a1...</code></li><li id="ev-CB-1628"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$84.6</a> - 24h 337 bps <code title="331c9127c67fa9eb32cfbc46cbf0f569a22fce18e0e7063248f0ce8f6c672f37">331c9127...</code></li><li id="ev-KR-1628"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$84.66</a> - 167 bps vs 24h VWAP <code title="01913490cd90902cc70ca8dbd3a767d8f2c550bb933800fd975eca0e74965f69">01913490...</code></li><li id="ev-CG-1628"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$84.64</a> - 1h 80 bps, 24h 349 bps, 7d -1081 bps <code title="0c6aa64858e0e62bf76b14e2ddf56f4af65fc5f29843527362103d1dbd18c2ff">0c6aa648...</code></li><li id="ev-NEWS-1-1628"><b>NEWS-1</b> <a href="https://decrypt.co/382992/decrypt-becomes-first-news-publisher-to-offer-perps-trading-powered-by-solanas-phoenix" target="_blank" rel="noopener">Decrypt Becomes First News Publisher to Offer Perps Trading, Powered by Solana's Phoenix</a> <code title="c833ec1b2ccb504f137005012263d4c71d6107a90b08efd4475f883f507497fb">c833ec1b...</code></li><li id="ev-NEWS-2-1628"><b>NEWS-2</b> <a href="https://decrypt.co/382836/solanas-jupiter-expands-beyond-trading-with-token-baskets-yield-vaults-and-new-portfolio" target="_blank" rel="noopener">Solana's Jupiter Expands Beyond Trading With Token Baskets, Yield Vaults and New Portfolio</a> <code title="21daa02817bc73b8b85454ccd36110c1f4e12647c1719930d33b766f3f52fa8a">21daa028...</code></li><li id="ev-NEWS-3-1628"><b>NEWS-3</b> <a href="https://decrypt.co/382806/decrypt-money-account-gets-confidential-transfers-with-solana-privacy-firm-helius" target="_blank" rel="noopener">Decrypt Money Account Gets Confidential Transfers With Solana Privacy Firm Helius</a> <code title="99b7395e9f46878a73b8e627d5056217a6a9f9de0f5b43cc54b2e60577a6e274">99b7395e...</code></li><li id="ev-NEWS-4-1628"><b>NEWS-4</b> <a href="https://cointelegraph.com/markets/bitcoin-74k-stocks-us-bond-yield-inflation-cpi?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin hovers near $74K as stocks rise despite US bond yield rebound</a> <code title="f5f08f4a50653ae22e00e26889e82ffd8eff7ef8eb3a2118406eae194a8a786a">f5f08f4a...</code></li><li id="ev-NEWS-5-1628"><b>NEWS-5</b> <a href="https://decrypt.co/383040/okx-ice-tokenized-stock-venue-sets-launch-crypto-companies-big-tech-opts-out" target="_blank" rel="noopener">OKX-ICE Tokenized Stock Venue Sets Launch, Turning to Crypto Companies After Big Tech Opts Out</a> <code title="8028b531188161503b9b0d0f4a82550afac73261a18bc37d1280bd454fbcf926">8028b531...</code></li><li id="ev-NEWS-6-1628"><b>NEWS-6</b> <a href="https://www.coindesk.com/coindesk-indices/2026/11/11/crypto-long-and-short-the-genius-act-s-guarantees-don-t-cover-defi-lending" target="_blank" rel="noopener">Crypto Long &amp; Short: The GENIUS Act's guarantees don't cover DeFi lending</a> <code title="8b539aea22b722825fb6cdde19ca0d635e294e4260791017edcc97686a8d910e">8b539aea...</code></li><li id="ev-KOL-1628"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">28 signals from 9 public voices; convergence: 4 voices BEAR on BTC; 3 voices BEAR on ETH; 2 voices BEAR on XRP; 2 voices BEAR on ZEC; SOL 0 bull / 0 bear</a> <code title="6b0cdb249063c828a3cfa250b5daeca2cccc9dfacea87047a19c2c71d6a0ddd7">6b0cdb24...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 33s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #1619: market moved 105 bps (position 105 bps), stop -200, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #1619 at $83.80</span>
+    <a href="record.html?seq=1628"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4i1jFMJ7MD7jc9iAxuZFEnv4qDPKAbxztHSTtCR71kFmG8GkNzbu5QEfbECenq6fhj9Xr71mpPoMMXrSnZSZSgVq?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="2f61f931f85dbff8df43764fb8d2f0ca17e4896193e7e4c0cf1cff78a9a67bf8">receipt 2f61f931f85d...</code>
+  </footer>
+</article>
 <article class="card" id="r1627">
   <header>
     <span class="badge hold">HOLD</span>
