@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1674</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1675</b><span>receipts on chain</span></div>
   <div class="stat"><b>136</b><span>debates</span></div>
   <div class="stat"><b>116</b><span>entries</span></div>
   <div class="stat"><b>115</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1674">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1674</span>
+    <time>2026-11-12T04:56:03Z</time>
+    <span class="px">SOL $83.08</span>
+  </header>
+  <p class="reason">position from #1671 open at -23 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>ea7ecbd0...</code></summary><ul class="ev"><li id="ev-PYTH-1674"><b>PYTH</b> <a>$83.0818</a> - EMA $83.0949, -1 bps from EMA, 260s old <code title="160f0ea531cc212766848f300271758a2761f0814d629a02957ffc7d34bd1a8b">160f0ea5...</code></li><li id="ev-CL-1674"><b>CL</b> <a>$83.1551</a> <a href="https://sepolia.etherscan.io/tx/0x2e17e23154068f144ee5c297c48653850ea8f46626a450f43aa4d27e62b832fa" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="c404fe9851694a9a36d148bd2190065c7d0330a79355ae2683b082082baabf20">c404fe98...</code></li><li id="ev-CB-1674"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$83.09</a> - 24h 46 bps <code title="7b22c094d02cccd1c4ac81e4e7eeb777f030e402a88a388fdc8f65bc3a4612b8">7b22c094...</code></li><li id="ev-KR-1674"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$83.08</a> - -117 bps vs 24h VWAP <code title="05b5daec02f436a7eab97cc07cf6240c625697e20ae19f5c7930eeb4712d4fab">05b5daec...</code></li><li id="ev-CG-1674"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$83.1</a> - 1h -6 bps, 24h 28 bps, 7d -1351 bps <code title="00ba46cc6ee735290d5fb8e3b06521270ba42d59321f756005977e55058129fe">00ba46cc...</code></li><li id="ev-NEWS-1-1674"><b>NEWS-1</b> <a href="https://decrypt.co/resources/what-are-solana-privacy-rings-inside-helius-privacy-protocol-for-solana" target="_blank" rel="noopener">What Are Solana Privacy Rings? Inside Helius' Privacy Protocol for Solana</a> <code title="c8631c1ea774a50f07bc95ac3a01fc8c5555c1b6a88335486b5e154c6c80182c">c8631c1e...</code></li><li id="ev-NEWS-2-1674"><b>NEWS-2</b> <a href="https://decrypt.co/382992/decrypt-becomes-first-news-publisher-to-offer-perps-trading-powered-by-solanas-phoenix" target="_blank" rel="noopener">Decrypt Becomes First News Publisher to Offer Perps Trading, Powered by Solana's Phoenix</a> <code title="6180a90b28529a3e1813e0730c48b49383b98ccfeeefdc095649b285f16575f3">6180a90b...</code></li><li id="ev-NEWS-3-1674"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/11/12/bitcoin-listless-nvidia-perps-crash-7-as-ceo-jensen-huang-reportedly-faces-the-axe" target="_blank" rel="noopener">Bitcoin listless, Nvidia perps crash 7% as CEO Jensen Huang reportedly faces the axe</a> <code title="b59d552e3422c4e2fcd3e314864b35564aee76b0a480698d9925c56397211db4">b59d552e...</code></li><li id="ev-NEWS-4-1674"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/msci-confirms-strategys-removal-from-indexes-end-november?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">MSCI confirms Strategy's removal from indexes at end of November</a> <code title="8e56e1641170ddca184a75734bfcd6606fa89fd604a10ecbb94e9d73502dff5a">8e56e164...</code></li><li id="ev-NEWS-5-1674"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/suiet-wallet-shut-down-latest-exit-sui-ecosystem?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Suiet wallet to shut down in latest exit from Sui ecosystem</a> <code title="794bb8c9d7d84a8eea4a6f2972a64aeaa9878292b48d4ea8bf88af22921f03c3">794bb8c9...</code></li><li id="ev-NEWS-6-1674"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/nvidia-preparing-to-oust-ceo-jensen-huang-reports?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Nvidia preparing to oust CEO Jensen Huang after affairs: WSJ</a> <code title="3662f4a9a897066282a4dd3ff70da3871f8bc15d1a0bc87bab33832e5ac09181">3662f4a9...</code></li><li id="ev-KOL-1674"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">22 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BEAR on NVDA; SOL 0 bull / 0 bear</a> <code title="3a2f2fc1abce74bbad3ba865fea1443364919b79b112251c210aff8545797be6">3a2f2fc1...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 260s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #1671: market moved -23 bps (position -23 bps), stop -200, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #1671 at $83.28</span>
+    <a href="record.html?seq=1674"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3zczmQv45zs2tSbgSMcpQdX4En6ZRdALsTaow3caD2ToBuGwRyimu5mXnvbjdcCSzxKB93DuXkyWUmKik1PG1exu?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="13899d0455dc64987305fb3cc83834b822c53d9cd52c26e240c64e82c58954dd">receipt 13899d0455dc...</code>
+  </footer>
+</article>
 <article class="card" id="r1673">
   <header>
     <span class="badge hold">HOLD</span>
