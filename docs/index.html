@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1813</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1814</b><span>receipts on chain</span></div>
   <div class="stat"><b>151</b><span>debates</span></div>
   <div class="stat"><b>126</b><span>entries</span></div>
   <div class="stat"><b>125</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1813">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1813</span>
+    <time>2026-11-13T22:33:32Z</time>
+    <span class="px">SOL $78.40</span>
+  </header>
+  <p class="reason">position from #1812 open at -19 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>0fc83385...</code></summary><ul class="ev"><li id="ev-PYTH-1813"><b>PYTH</b> <a>$78.4003</a> - EMA $78.9559, -70 bps from EMA, 49s old <code title="c8f3a76148456cdf13e5dd41cc6b0a3d8ae4bc5a89ee2574a071d32ef62bd19b">c8f3a761...</code></li><li id="ev-CB-1813"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$78.41</a> - 24h -360 bps <code title="a58c13c73325fa13c088e2f046cd077ce75d61405dc2f02be83b026d1293f978">a58c13c7...</code></li><li id="ev-KR-1813"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$78.44</a> - -151 bps vs 24h VWAP <code title="ce60b2f054b89c3d485a2a189ab89801932ca61dacb0c668d021ee8bff911076">ce60b2f0...</code></li><li id="ev-CG-1813"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$78.48</a> - 1h -159 bps, 24h -353 bps, 7d -1247 bps <code title="da523acb48d8063f721d221adc4cd7d9196ac9798162e07ee75fff81974d5f6f">da523acb...</code></li><li id="ev-NEWS-1-1813"><b>NEWS-1</b> <a href="https://www.coindesk.com/business/2026/11/12/dtcc-adds-solana-to-wall-street-tokenization-plans-targeting-2027-rollout" target="_blank" rel="noopener">DTCC adds Solana to Wall Street tokenization plans, targeting 2027 rollout</a> <code title="ae59f1de86ac37ab714bd37a174aca21bf042872619afafc24828e4a5e5f14d4">ae59f1de...</code></li><li id="ev-NEWS-2-1813"><b>NEWS-2</b> <a href="https://www.coindesk.com/business/2026/11/12/jupiter-adds-anchorage-backed-usdgo-to-its-usd1-billion-solana-lending-platform" target="_blank" rel="noopener">Jupiter adds Anchorage-backed USDGO to its $1 billion Solana lending platform</a> <code title="ec9888d0b85bd602a16dddf8e8584a7666727c3d4063f0e0cc2a979d85647296">ec9888d0...</code></li><li id="ev-NEWS-3-1813"><b>NEWS-3</b> <a href="https://decrypt.co/383276/nvidia-arm-ceo-rene-haas-replace-jensen-huang" target="_blank" rel="noopener">Could a Former Nvidia Executive Replace Jensen Huang? Arm's Rene Haas Emerges as Candidate</a> <code title="b33131157b55bb743bbeb4503825d34a8ecae24545524a087d128da2dc601b9c">b3313115...</code></li><li id="ev-NEWS-4-1813"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="24ad96a9c0863ac61939d46dca5ba01df27ba19b799529115f2310a1b4ef893b">24ad96a9...</code></li><li id="ev-NEWS-5-1813"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/openai-ai-payments-chatgpt-wallet-visa-mastercard-amex?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">OpenAI launches AI payments in ChatGPT with Visa, Mastercard and Amex</a> <code title="fbaf6d22c139ec0ec4b4c52461b83ecf931ee108cd0314c9409274a58100ef73">fbaf6d22...</code></li><li id="ev-NEWS-6-1813"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/adam-back-simpler-security-blockstream-bitcoin-custody-system?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Adam Back makes case for simpler security as Blockstream launches Bitcoin custody system</a> <code title="243c6319dd1b3a7c0c7889672991d52fd088a607c084770a1639155f748b59fb">243c6319...</code></li><li id="ev-KOL-1813"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">26 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BULL on ETH; SOL 0 bull / 0 bear</a> <code title="8ddcd7654360e8826ea977bb64f086f046f7e2c2f0e1fa61b1299acb2f96667c">8ddcd765...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 49s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1812: market moved 19 bps (position -19 bps), stop -200, target +500, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1812 at $78.25</span>
+    <a href="record.html?seq=1813"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3UAdxnag8imgT9uxZ7QGea3y8s16CgogPc8qxfcy8M569zUtkR5DnDboqVQjucuhAoC2p3YPVmmeQehxMrc8rHM9?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="46051a217755a2c5e499d4abba7d36e4f4d946f31a0466e711d86018bda2b573">receipt 46051a217755...</code>
+  </footer>
+</article>
 <article class="card" id="r1812">
   <header>
     <span class="badge sell">SELL</span>
