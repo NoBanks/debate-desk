@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1752</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1753</b><span>receipts on chain</span></div>
   <div class="stat"><b>144</b><span>debates</span></div>
   <div class="stat"><b>121</b><span>entries</span></div>
   <div class="stat"><b>120</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1752">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1752</span>
+    <time>2026-11-13T01:36:29Z</time>
+    <span class="px">SOL $81.42</span>
+  </header>
+  <p class="reason">position from #1743 open at -20 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>8c603f11...</code></summary><ul class="ev"><li id="ev-PYTH-1752"><b>PYTH</b> <a>$81.4184</a> - EMA $81.402, 2 bps from EMA, 189s old <code title="7b2870612f450272640afec54bf8249d048bd81b30575374183f43c83bc59077">7b287061...</code></li><li id="ev-CL-1752"><b>CL</b> <a>$80.8033</a> <a href="https://sepolia.etherscan.io/tx/0xcb30e6f5d1fcaa15565c6f99df9ccabb98b4c0db2dcde22f40af34708ad69723" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="9402c09b53e8787334a5644d67a28359090e2489d6fa5939049ea2098534dc7a">9402c09b...</code></li><li id="ev-CB-1752"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$81.45</a> - 24h -191 bps <code title="ffee585478252fbebe542f251ffd2f95f25134352e8b3e61fd50dc7e8199a179">ffee5854...</code></li><li id="ev-KR-1752"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$81.42</a> - -23 bps vs 24h VWAP <code title="1c3962df9db6e754c474cf5e60bac4fc278fed4e5e45c5b8c95a75c6ec83b009">1c3962df...</code></li><li id="ev-CG-1752"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$81.44</a> - 1h -19 bps, 24h -209 bps, 7d -868 bps <code title="057703828a03491a36016efddcaf4b6bd30c10e92df3213d6cf9a2f5047cc4a1">05770382...</code></li><li id="ev-NEWS-1-1752"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/dtcc-plans-solana-expansion-wallet-rules-limit-access?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">DTCC Plans Solana Expansion as Wallet Rules Limit Access</a> <code title="f965b5dfaf65753e27fc30515664ac351406488f4b2740638497b01b3bd6bd69">f965b5df...</code></li><li id="ev-NEWS-2-1752"><b>NEWS-2</b> <a href="https://www.coindesk.com/business/2026/11/12/dtcc-adds-solana-to-wall-street-tokenization-plans-targeting-2027-rollout" target="_blank" rel="noopener">DTCC adds Solana to Wall Street tokenization plans, targeting 2027 rollout</a> <code title="4264886b70c8a62398b47909c53fc287d884820323d6d53a6699337bdeaf2809">4264886b...</code></li><li id="ev-NEWS-3-1752"><b>NEWS-3</b> <a href="https://www.coindesk.com/business/2026/11/12/jupiter-adds-anchorage-backed-usdgo-to-its-usd1-billion-solana-lending-platform" target="_blank" rel="noopener">Jupiter adds Anchorage-backed USDGO to its $1 billion Solana lending platform</a> <code title="4e815d0918d312d92e6f9a53d5a11962c5292b49125e13de7f3801cc5c092dc7">4e815d09...</code></li><li id="ev-NEWS-4-1752"><b>NEWS-4</b> <a href="https://decrypt.co/383132/dtcc-to-bring-tokenized-stocks-and-treasuries-to-solana-in-2027" target="_blank" rel="noopener">DTCC to Bring Tokenized Stocks and Treasuries to Solana in 2027</a> <code title="3aff3a6eebc0c474e9a4bab0200b404ac6141be4a5a1b574acf44af5f0050871">3aff3a6e...</code></li><li id="ev-NEWS-5-1752"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/former-nvidia-ceo-huang-had-third-alleged-affair-reuters?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Former Nvidia CEO Huang had third alleged affair: Reuters</a> <code title="dd31753e3c8b962286673016f5b9be9299f1994d0dab3adce791aadaee421bbd">dd31753e...</code></li><li id="ev-NEWS-6-1752"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/geminis-quarterly-retail-trading-volume-sinks-to-3-year-low?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Gemini's quarterly retail trading volume sinks to 3-year low</a> <code title="2957a985a596c31498e43b6f903e942f7bf34e1ac4ad6a5361adb7061edbb076">2957a985...</code></li><li id="ev-KOL-1752"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">27 signals from 9 public voices; convergence: 4 voices BEAR on BTC; 2 voices BEAR on ETH; SOL 0 bull / 0 bear</a> <code title="3f931bfbee372e05fe460adff55a68b384323fec8f54b27c09d02d12518da66e">3f931bfb...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 189s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #1743: market moved -20 bps (position -20 bps), stop -250, target +500, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #1743 at $81.58</span>
+    <a href="record.html?seq=1752"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/5KPZJhMcWBge991h4grM95puiE96b2gGCSAqt3zWvicwkhePFUSXtAab93iZWVqx4dCevtCcaLiLauuAKghs9ihL?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="3128aea9da9655a5f256ab754e64d8e723f785bb97e68711c1348eefa9c6d412">receipt 3128aea9da96...</code>
+  </footer>
+</article>
 <article class="card" id="r1751">
   <header>
     <span class="badge hold">HOLD</span>
