@@ -38,12 +38,12 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1931</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1932</b><span>receipts on chain</span></div>
   <div class="stat"><b>162</b><span>debates</span></div>
   <div class="stat"><b>134</b><span>entries</span></div>
-  <div class="stat"><b>133</b><span>rule exits</span></div>
+  <div class="stat"><b>134</b><span>rule exits</span></div>
   <div class="stat"><b>1</b><span>rulings blocked by rules</span></div>
-  <div class="stat"><b>+450</b><span>bps on closed trades (market price)</span></div>
+  <div class="stat"><b>+648</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
   <b>How to check every word on this page</b>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1931">
+  <header>
+    <span class="badge buy">BUY</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #1931</span>
+    <time>2026-11-15T17:04:54Z</time>
+    <span class="px">SOL $71.24</span>
+  </header>
+  <p class="reason">HORIZON: close SHORT from #1921 at 198 bps</p>
+  <details ><summary>Evidence (12) - pack <code>8be95bc9...</code></summary><ul class="ev"><li id="ev-PYTH-1931"><b>PYTH</b> <a>$71.2358</a> - EMA $71.3363, -14 bps from EMA, 12s old <code title="cb82328e7b4eb763aa1d3481422fdf141c9163fa97d968aa21ba2410195b5c5a">cb82328e...</code></li><li id="ev-CL-1931"><b>CL</b> <a>$72.0062</a> <a href="https://sepolia.etherscan.io/tx/0xc37aeb2ba7f4bdbfb3153b0e83a1a757b03ae061db927c7bafbd8b19f20f1c93" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="438c9593415cc9ee82cc302cf9980a8895f0804c4eee55317ee323e7177649f7">438c9593...</code></li><li id="ev-CB-1931"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$71.27</a> - 24h -210 bps <code title="5f699df5d4f72093e9e81d133000d7d217db8ef77d6c3bfa73a5eb9d92382508">5f699df5...</code></li><li id="ev-KR-1931"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$71.24</a> - 90 bps vs 24h VWAP <code title="fee685ccf1d5e8544a66c05f74dc73bb9ea7235064bd99bc613d55d4c10047aa">fee685cc...</code></li><li id="ev-CG-1931"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$71.47</a> - 1h 38 bps, 24h -118 bps, 7d -2026 bps <code title="5274da69508a5f692ff5118e8a69585c77b9de723d50634b66619963f898d1f5">5274da69...</code></li><li id="ev-NEWS-1-1931"><b>NEWS-1</b> <a href="https://decrypt.co/383284/how-wall-street-racing-onchain-dollar-stablecoins" target="_blank" rel="noopener">How Wall Street Is Racing to Claim the Onchain Dollar</a> <code title="2c6bedc814ab1e3a47d5f1d1c6914f5b6acf457f79b0f5c58d8b761e19354957">2c6bedc8...</code></li><li id="ev-NEWS-2-1931"><b>NEWS-2</b> <a href="https://cointelegraph.com/opinion/enterprise-blockchain-come-back-from-dead?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Enterprise blockchain is going to come back from the dead</a> <code title="349306fa43aaa6712418179b256a05569d077d054878e790f5c27aae67dafeee">349306fa...</code></li><li id="ev-NEWS-3-1931"><b>NEWS-3</b> <a href="https://decrypt.co/383282/bitcoin-etfs-lose-2-1-billion-november-outflow-streak-seven-days" target="_blank" rel="noopener">Bitcoin ETFs Lose $2.1 Billion in November as Outflow Streak Hits Seven Days</a> <code title="5454a00dd7e73f26952793b3266b276b558eb1c623d001dee1e31691de3942e2">5454a00d...</code></li><li id="ev-NEWS-4-1931"><b>NEWS-4</b> <a href="https://www.coindesk.com/news-analysis/2026/11/13/crypto-insiders-aren-t-counting-on-silver-linings-in-congress-lame-duck-session" target="_blank" rel="noopener">Crypto insiders aren't counting on silver linings in Congress' 'lame duck' session</a> <code title="a63384c28d71c9c9df315b9eaac8339ea973990f45a56fd4bd5ebd530f0990d1">a63384c2...</code></li><li id="ev-NEWS-5-1931"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="577a1014ee18a5b88487479a5717f896f337046ac9bffcde089918567ade6d48">577a1014...</code></li><li id="ev-NEWS-6-1931"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/bitcoin-four-month-low-62k-crypto-market-selloff?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin falls to four-month low near $62K as crypto selloff deepens</a> <code title="9bce6610d7a553f1b0e5940644d787c9409c20e66203af15a5746126834c1afc">9bce6610...</code></li><li id="ev-KOL-1931"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">21 signals from 9 public voices; convergence: 4 voices BEAR on BTC; SOL 0 bull / 0 bear</a> <code title="9ca2bcaad8f557cabf66b42e67ea5a1e1c2044498ea6ac93e1624b13c3082e09">9ca2bcaa...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 12s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> SHORT from #1921: market moved -198 bps (position 198 bps), stop -150, target +400, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 877175, available 10197552, minimum 100000</li></ul></details>
+  <footer>
+    <span>swap in 877175 -> est out 39449273 (min 39054780)</span>
+    <span>closed #1921 on HORIZON at 198 bps</span>
+    
+    <a href="record.html?seq=1931"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2f6oarKMikemxyS1ZUriYrLSyqbAeQfzqXs8ZkLzzqL3maQQWZiowyaWfA1Ww1K4SeHhNGQgcd29Z812czgKaP7q?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="f6b272858df25064f2579c8ff9e9dacd843bdaf01a52aad54e9ac9e8b2955e2c">receipt f6b272858df2...</code>
+  </footer>
+</article>
 <article class="card" id="r1930">
   <header>
     <span class="badge hold">HOLD</span>
