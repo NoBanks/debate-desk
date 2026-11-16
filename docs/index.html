@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1992</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1993</b><span>receipts on chain</span></div>
   <div class="stat"><b>169</b><span>debates</span></div>
   <div class="stat"><b>139</b><span>entries</span></div>
   <div class="stat"><b>138</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1992">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1992</span>
+    <time>2026-11-16T09:21:04Z</time>
+    <span class="px">SOL $70.56</span>
+  </header>
+  <p class="reason">position from #1990 open at 64 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>91b9e66d...</code></summary><ul class="ev"><li id="ev-PYTH-1992"><b>PYTH</b> <a>$70.5592</a> - EMA $70.8972, -47 bps from EMA, 237s old <code title="d4cdfefb09cd67a198bbbca22114fadfa5a945db93aaa7d17dee4f59159c637a">d4cdfefb...</code></li><li id="ev-CL-1992"><b>CL</b> <a>$70.5711</a> <a href="https://sepolia.etherscan.io/tx/0x2abc103caae7a6344d2f6ae9e60e17ec301ee4291d0c822927d882cbe8e5f2a3" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="ad508cb67ce3e8e51fdd3294ebaa9bd6c79751e5f42cfa3076eb52d2b8d55bcc">ad508cb6...</code></li><li id="ev-CB-1992"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$70.59</a> - 24h -151 bps <code title="37c4c5b372aa4426f5246a032d6ad4ba1e73a2948b1a07a9e904deed0c11a87a">37c4c5b3...</code></li><li id="ev-KR-1992"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$70.65</a> - -161 bps vs 24h VWAP <code title="9245646212fbbc90232571fe2566f38f5caf8399a68dfdf2c173c5f88c2bd2a4">92456462...</code></li><li id="ev-CG-1992"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$70.58</a> - 1h -81 bps, 24h -241 bps, 7d -1716 bps <code title="ad0ff289a4390ee00cad8d1883c75d475307d8e53c62fdffcd1a54b257b6ea6a">ad0ff289...</code></li><li id="ev-NEWS-1-1992"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/dbs-jpmorgans-kinexys-launch-tokenized-transfers?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">DBS, JPMorgan's Kinexys launch 24/7 transfers of tokenized deposits</a> <code title="38ad8dfd17754c28cf913667fb1655c61406d71f17dfddd03c709f9fd216cd35">38ad8dfd...</code></li><li id="ev-NEWS-2-1992"><b>NEWS-2</b> <a href="https://www.coindesk.com/business/2026/11/16/j-p-morgan-and-dbs-let-clients-move-dollars-across-borders-on-weekends" target="_blank" rel="noopener">JPMorgan and DBS let clients move dollars across borders on weekends</a> <code title="4ed1d32b9adb5f0567e3767e3fe2106159cb494f263aee3b2c0a93dbed52f215">4ed1d32b...</code></li><li id="ev-NEWS-3-1992"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/harvard-dartmouth-bitcoin-etf-ibit-up-q3?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Harvard, Dartmouth keep Bitcoin ETF stakes steady as fund gains 42% in Q3</a> <code title="1c3f93a10af1ccf86084f8f5f9b1d5a58fa3442bfdc44711c597bfe8a0b95bea">1c3f93a1...</code></li><li id="ev-NEWS-4-1992"><b>NEWS-4</b> <a href="https://www.coindesk.com/tech/2026/11/16/vitalik-buterin-flips-to-total-bull-on-a-faster-route-to-quantum-safe-ethereum" target="_blank" rel="noopener">Vitalik Buterin flips to 'total bull' on a faster route to quantum-safe Ethereum</a> <code title="d531dfdae321d4605505b1fa8352dbffbe563aae6dacd1cc0b5138f0a3549cb8">d531dfda...</code></li><li id="ev-NEWS-5-1992"><b>NEWS-5</b> <a href="https://www.coindesk.com/tech/2026/11/16/bitcoin-miners-were-hijacked-and-their-btc-rewards-redirected-to-an-attacker" target="_blank" rel="noopener">Bitcoin miners were hijacked and their BTC rewards redirected to an attacker</a> <code title="378a105db836b6b63d744135d41d0ae14e76e8ea2016d283b7a7ce584e637267">378a105d...</code></li><li id="ev-NEWS-6-1992"><b>NEWS-6</b> <a href="https://www.coindesk.com/markets/2026/11/16/cardano-holders-vote-down-usd5-million-bid-to-buy-warehouse-copper" target="_blank" rel="noopener">Cardano holders vote down $5 million bid to buy warehouse copper</a> <code title="8813a188e8f0b9da69fb62b31cfd3e9dc66ace962ddbe9ce1d8c6dc183c85f91">8813a188...</code></li><li id="ev-KOL-1992"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">20 signals from 9 public voices; convergence: 3 voices BEAR on BTC; SOL 0 bull / 0 bear</a> <code title="66a36fad270afdb6c4e674f912dabba9b09942cb90e7972315a8f326bf38789a">66a36fad...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 237s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1990: market moved -64 bps (position 64 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1990 at $71.02</span>
+    <a href="record.html?seq=1992"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/3R1RbAV1ytVEo3rH7i2SFjbSJiKmdyAVJFa3XULoci8C5iHDvHBt7Kz51Gme62r32Mzap4R4idMGaATaUX9w2hkZ?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="a8976f9ca6a4baac4743c9b7dee64af0adec2a7a0736661d95b7b37d308fe578">receipt a8976f9ca6a4...</code>
+  </footer>
+</article>
 <article class="card" id="r1991">
   <header>
     <span class="badge hold">HOLD</span>
