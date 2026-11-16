@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>1980</b><span>receipts on chain</span></div>
+  <div class="stat"><b>1981</b><span>receipts on chain</span></div>
   <div class="stat"><b>166</b><span>debates</span></div>
   <div class="stat"><b>138</b><span>entries</span></div>
   <div class="stat"><b>137</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r1980">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #1980</span>
+    <time>2026-11-16T05:53:28Z</time>
+    <span class="px">SOL $71.21</span>
+  </header>
+  <p class="reason">position from #1975 open at 81 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>daf60fa2...</code></summary><ul class="ev"><li id="ev-PYTH-1980"><b>PYTH</b> <a>$71.2064</a> - EMA $71.5803, -52 bps from EMA, 11s old <code title="8aa7065c9fba933669af4d3625995ddfbec2540c5ee3c7fbe8413c40d5686c83">8aa7065c...</code></li><li id="ev-CL-1980"><b>CL</b> <a>$72.0062</a> <a href="https://sepolia.etherscan.io/tx/0x14ed713181af2be0265f86fb879b039001ef3ca2aa73e9283ce0282a632c4d99" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="4ff22548da0866218950a100ac9756548d72633e1dbefa1019130f271be26ec6">4ff22548...</code></li><li id="ev-CB-1980"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$71.22</a> - 24h 65 bps <code title="7f804502cdb3c935524226fd0af193552d7b6cc5d515bfea68e9680e845de5a7">7f804502...</code></li><li id="ev-KR-1980"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$71.2</a> - -70 bps vs 24h VWAP <code title="5c60846b42f1801a938555dd7e9c811238bbfdc3166286b05c8177ad7a88b926">5c60846b...</code></li><li id="ev-CG-1980"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$71.23</a> - 1h -83 bps, 24h 30 bps, 7d -1815 bps <code title="6c87e32870a5fff8797bd29223b7fa8d7c18b26351e3b81a6f380b663c76dad8">6c87e328...</code></li><li id="ev-NEWS-1-1980"><b>NEWS-1</b> <a href="https://cointelegraph.com/markets/aster-ceo-suspects-foul-play-after-token-plunges-32-in-minutes?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Aster CEO suspects foul play after token plunges 32% in minutes</a> <code title="b9ab3d4f7f1fef670f1ccefd29c255afdd6d769333e06d61f571619dc551e916">b9ab3d4f...</code></li><li id="ev-NEWS-2-1980"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/16/bitcoin-s-biggest-bet-is-now-a-drop-below-usd60-000-not-a-rally-above-usd100-000" target="_blank" rel="noopener">Bitcoin's biggest bet is now a drop below $60,000, not a rally above $100,000</a> <code title="af9fc66f7fd3d6ae29c3ae136ef9dbf3eab3c7e280e8dfb0bb7f1b822b156e06">af9fc66f...</code></li><li id="ev-NEWS-3-1980"><b>NEWS-3</b> <a href="https://cointelegraph.com/markets/asian-chip-stocks-tumble-ahead-of-nvidia-q3-earnings?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Asian chip stocks tumble ahead of Nvidia Q3 earnings</a> <code title="c034d5dd8ec6d6d4c6a9141bd6af491a6ae1039e589fe19c4553c8a1aabf7a87">c034d5dd...</code></li><li id="ev-NEWS-4-1980"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/luxor-ceo-warns-of-ai-dark-forest-after-bitcoin-miner-hijack?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Luxor CEO warns of AI 'dark forest' following Bitcoin miner hijack</a> <code title="044fed8950dba2fb1838f13b7d3854a07edca9340d9b13bc9b4d04b22187e66f">044fed89...</code></li><li id="ev-NEWS-5-1980"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/jensen-huang-weighs-nvidia-comeback-days-after-shock-exit?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Jensen Huang weighs Nvidia comeback days after shock exit: FT</a> <code title="fbd204074bf66dbd97260b132c83c3c00884c90e1cfd44d843c00b556b472385">fbd20407...</code></li><li id="ev-NEWS-6-1980"><b>NEWS-6</b> <a href="https://cointelegraph.com/magazine/us-sellers-drive-bitcoin-crash-jensen-plots-comeback-hodlers-digest?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">US sellers drive Bitcoin crash, Jensen plots Nvidia comeback: Hodler's Digest</a> <code title="df2e8efbd3eb3b0bcc0c7b874f7685fd7a2777c04044f17d648100475c781eb6">df2e8efb...</code></li><li id="ev-KOL-1980"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">18 signals from 9 public voices; no convergence; SOL 0 bull / 0 bear</a> <code title="96137d5af7a35411ba2b59e57f815dbf00e9537b069ced9169de04ec0961838b">96137d5a...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 11s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #1975: market moved -81 bps (position 81 bps), stop -180, target +350, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #1975 at $71.79</span>
+    <a href="record.html?seq=1980"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2ykw8kFVhb8a84rYpMiRevHCyphGeESai9WPUe9WdTX7bFMSKUauy9yqWiKbqHawi3mSWSChTCbPhAV3dhAxC4Sr?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="d40dee0252f4acbc4461e829bea20a8b27bc7c0ad9e06cb9fd58ae7aa90b5847">receipt d40dee0252f4...</code>
+  </footer>
+</article>
 <article class="card" id="r1979">
   <header>
     <span class="badge hold">HOLD</span>
