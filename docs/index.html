@@ -38,11 +38,11 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2112</b><span>receipts on chain</span></div>
-  <div class="stat"><b>177</b><span>debates</span></div>
+  <div class="stat"><b>2113</b><span>receipts on chain</span></div>
+  <div class="stat"><b>178</b><span>debates</span></div>
   <div class="stat"><b>145</b><span>entries</span></div>
   <div class="stat"><b>145</b><span>rule exits</span></div>
-  <div class="stat"><b>2</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>3</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>+338</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2112">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2112</span>
+    <time>2026-11-17T23:29:07Z</time>
+    <span class="px">SOL $75.50</span>
+  </header>
+  <p class="reason">market price is stale; refusing to trade on it</p>
+  <details ><summary>Evidence (12) - pack <code>88dde311...</code></summary><ul class="ev"><li id="ev-PYTH-2112"><b>PYTH</b> <a>$75.4981</a> - EMA $73.7566, 236 bps from EMA, 1162s old <code title="fe8308109eb9a4367b68ef64f8fd5ed6b45971b21cb36d473e5c71ea77a4205d">fe830810...</code></li><li id="ev-CL-2112"><b>CL</b> <a>$75.02</a> <a href="https://sepolia.etherscan.io/tx/0x84965f354bc541a081073ee470b01d23d1431e16368f0968dd482b3d47f997d4" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="80bb444fc099ad295a24fba3c9ddb33a3d6863a40e81f2268639e64033eaef5f">80bb444f...</code></li><li id="ev-CB-2112"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$75.04</a> - 24h 494 bps <code title="68a5eaf65c52b784ea69d81bbb3b4851933c6ca993094beeceb79eed461585ca">68a5eaf6...</code></li><li id="ev-KR-2112"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$75.07</a> - 295 bps vs 24h VWAP <code title="e0246bb83101e3ed8dc689eda0f510b979d15426eced74d9fbb2f976dd5c3bad">e0246bb8...</code></li><li id="ev-CG-2112"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$75.21</a> - 1h 95 bps, 24h 505 bps, 7d -1112 bps <code title="8d837c9ac2a9885740be98294ed62fefbc745ffcdc71fe616f98f9d6aa60905c">8d837c9a...</code></li><li id="ev-NEWS-1-2112"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/coingecko-solana-foundation-majority-stake?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Solana Foundation takes majority interest in crypto data firm CoinGecko</a> <code title="59e3da77426f0d522aff0edbff5b4ec97bd90731f069afcf23d4cf49a2e54031">59e3da77...</code></li><li id="ev-NEWS-2-2112"><b>NEWS-2</b> <a href="https://decrypt.co/383417/the-biggest-opportunity-in-crypto-is-already-underway-solana-bets-big-on-ai-agents" target="_blank" rel="noopener">'The Biggest Opportunity in Crypto Is Already Underway': Solana Bets Big on AI Agents</a> <code title="a236165f104e1f3116cca1253da54607fcfae1ad9f27fa6953ece1ece035a3c7">a236165f...</code></li><li id="ev-NEWS-3-2112"><b>NEWS-3</b> <a href="https://www.coindesk.com/business/2026/11/17/solana-foundation-takes-majority-stake-in-crypto-data-provider-coingecko" target="_blank" rel="noopener">Solana Foundation takes majority stake in crypto data provider CoinGecko</a> <code title="0a70dd4c2de6e185a795b987889d7556fcb7b4a6f7a7f37727a714d654a470a7">0a70dd4c...</code></li><li id="ev-NEWS-4-2112"><b>NEWS-4</b> <a href="https://decrypt.co/383401/solana-foundation-backs-coingecko-eyes-trading" target="_blank" rel="noopener">Solana Foundation Backs CoinGecko as Crypto Data Giant Eyes Trading</a> <code title="be2fba5cd3e54facde1fc2c754214b3fedc9af4195dc70cb04ff5880b9b8df99">be2fba5c...</code></li><li id="ev-NEWS-5-2112"><b>NEWS-5</b> <a href="https://decrypt.co/383468/why-microsoft-thinks-smaller-cheaper-ai-beat-claude-gpt" target="_blank" rel="noopener">Why Microsoft Thinks Smaller, Cheaper AI Can Beat Claude and GPT</a> <code title="8f9e7fb702aeaadd009b5474d222f21c6d80146adeb32b5e80fc4dc25603f1c2">8f9e7fb7...</code></li><li id="ev-NEWS-6-2112"><b>NEWS-6</b> <a href="https://decrypt.co/383513/nvidia-board-shuts-down-jensen-huang-comeback" target="_blank" rel="noopener">Nvidia Board Shuts Down Jensen Huang Comeback, Launches Search for New CEO</a> <code title="394207f244a734c80b5e6f6fc4e2f1a2adcbc96217fa4cd1fc872ac88bf7124f">394207f2...</code></li><li id="ev-KOL-2112"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">27 signals from 9 public voices; no convergence; SOL 0 bull / 0 bear</a> <code title="3f8d0512d6a559df1334eb4778a3d89aa72c648cbc898a949ef1457aa70f421e">3f8d0512...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 75</span></h4>
+    <p class="thesis">SOL is exhibiting strong short-term bullish momentum, supported by significant strategic ecosystem developments and a focus on high-growth sectors, making it a compelling buy.</p>
+    <ol><li>SOL is demonstrating robust short-term price appreciation and is trading above key moving averages. <a class="cite" href="#ev-PYTH-2112">PYTH</a> <a class="cite" href="#ev-CB-2112">CB</a> <a class="cite" href="#ev-KR-2112">KR</a> <a class="cite" href="#ev-CG-2112">CG</a><div class="ce">The current price of SOL is significantly above its 24-hour open, 24-hour Volume Weighted Average Price (VWAP), and Exponential Moving Average (EMA), with 24-hour gains exceeding 490 basis points across multiple exchanges. This indicates strong buying pressure and an upward price trajectory, which is likely to persist in the immediate term.</div></li><li>The Solana ecosystem is strategically expanding and positioning itself in high-potential growth areas. <a class="cite" href="#ev-NEWS-1-2112">NEWS-1</a> <a class="cite" href="#ev-NEWS-2-2112">NEWS-2</a> <a class="cite" href="#ev-NEWS-3-2112">NEWS-3</a> <a class="cite" href="#ev-NEWS-4-2112">NEWS-4</a> <a class="cite" href="#ev-KOL-2112">KOL</a><div class="ce">The Solana Foundation's acquisition of a majority stake in CoinGecko and its strategic focus on AI agents demonstrate a clear commitment to ecosystem growth and innovation. This expansion into critical data infrastructure and emerging technology sectors is expected to increase network utility and adoption, leading to higher demand and value for SOL. The high percentage of Solana tokens tracked by CoinGecko further validates its growing ecosystem.</div></li></ol>
+    <p class="muted">Would change my mind: A significant reversal in 24-hour price action, with SOL falling below its 24-hour open or key moving averages like the EMA or VWAP, would change my mind. Additionally, negative news specifically impacting the CoinGecko acquisition or the AI agent strategy, or a strong bearish convergence in KOL sentiment directly targeting SOL, would prompt a re-evaluation.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 60</span></h4>
+    <p class="thesis">SOL has experienced a significant decline over the past week, indicating underlying bearish pressure, and its current price is trading above short-term averages, suggesting a potential short-term overextension that could lead to a pullback.</p>
+    <ol><li>Solana has shown significant negative price performance over the past seven days, indicating a bearish trend. <a class="cite" href="#ev-CG-2112">CG</a><div class="ce">A substantial 7-day price drop of 11.12% (CG: change_7d_bps -1112) indicates strong selling pressure and a bearish trend, suggesting further downside is likely as the market continues to correct.</div></li><li>The current price of SOL is trading above its short-term moving average and volume-weighted average price, indicating a potential short-term overbought condition. <a class="cite" href="#ev-PYTH-2112">PYTH</a> <a class="cite" href="#ev-KR-2112">KR</a><div class="ce">When the price is significantly above its EMA (PYTH: deviation_from_ema_bps 236) and VWAP (KR: price_vs_vwap_bps 295), it often suggests a temporary upward deviation that is unsustainable, leading to a reversion to the mean or a pullback, especially in the context of a longer-term bearish trend.</div></li></ol>
+    <p class="muted">Would change my mind: A sustained reversal in the 7-day price trend to positive, or if SOL's price continues to climb significantly above its EMA and VWAP without a pullback, indicating stronger bullish momentum than anticipated.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">BULL wins - BUY at conviction 70</span></h4>
+        <p>Solana is experiencing strong short-term bullish momentum, evidenced by a significant 24-hour price increase of over 490 basis points and trading above its EMA and VWAP. This upward trajectory is further supported by positive fundamental developments, including the Solana Foundation's strategic acquisition of a majority stake in CoinGecko and its focus on AI agents, which are expected to enhance network utility and adoption. While there has been a 7-day decline and the price is currently trading above short-term averages, the recent strong buying pressure and strategic ecosystem growth initiatives suggest that the bullish momentum is likely to continue in the short to medium term, outweighing the bearish concerns of a longer-term correction or temporary overextension.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-PYTH-2112">PYTH</a> <a class="cite" href="#ev-KR-2112">KR</a> <a class="cite" href="#ev-NEWS-1-2112">NEWS-1</a> <a class="cite" href="#ev-NEWS-2-2112">NEWS-2</a> <a class="cite" href="#ev-KOL-2112">KOL</a> - stop 300 bps, target 600 bps, horizon 240 min, size 100% of max</p>
+        
+      </div>
+  <details><summary>Rules (0/1 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>evidence.pyth_fresh</code> Pyth age 1162s, limit 900s</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=2112"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/h21yQ3B8BRxEPrPt6xg9v1x5BNXAvcZvQoMjciwZMCka9tY5GECuP4WLLKfvJg6AmrU31CoDDojjvfmxdgCS8Gs?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="4b607966cbcc4e0e78d81f5513a5ec96d5f3303952b7cba7c1e2bd35e7a93904">receipt 4b607966cbcc...</code>
+  </footer>
+</article>
 <article class="card" id="r2111">
   <header>
     <span class="badge buy">BUY</span>
