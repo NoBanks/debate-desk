@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2166</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2167</b><span>receipts on chain</span></div>
   <div class="stat"><b>190</b><span>debates</span></div>
   <div class="stat"><b>149</b><span>entries</span></div>
   <div class="stat"><b>148</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2166">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2166</span>
+    <time>2026-11-19T17:08:17Z</time>
+    <span class="px">SOL $72.74</span>
+  </header>
+  <p class="reason">position from #2164 open at 126 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>1b861560...</code></summary><ul class="ev"><li id="ev-PYTH-2166"><b>PYTH</b> <a>$72.7411</a> - EMA $73.7452, -136 bps from EMA, 42s old <code title="f7ed4d85affc19b515e2e2f9392e9de010a66b77e388b19f31656163dbfb11ae">f7ed4d85...</code></li><li id="ev-CL-2166"><b>CL</b> <a>$73.36</a> <a href="https://sepolia.etherscan.io/tx/0x69fa624991db3ee09fee49b375299336a2582af96c9ed2375adc9da36c3b2b78" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="510f1a82ffe5f350df033bf8303beb07c6dd5c56beacdcf1310ed674e52977e6">510f1a82...</code></li><li id="ev-CB-2166"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$72.94</a> - 24h -73 bps <code title="d0be27fb6c1eb5f6cfea69e71e217bbe5b13f55c9396d5e51851762c7a0f458b">d0be27fb...</code></li><li id="ev-KR-2166"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$72.85</a> - -135 bps vs 24h VWAP <code title="06e2a176c5222a30617cf5a22e0c2fefb15d33ae9fb35afbf21d87035c5556ae">06e2a176...</code></li><li id="ev-CG-2166"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$72.73</a> - 1h -54 bps, 24h -69 bps, 7d -1025 bps <code title="a248f3ab56d5569802e73c9d063f8f6a771bceabaa5a755e4c6b035003832d0a">a248f3ab...</code></li><li id="ev-NEWS-1-2166"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/19/roundhill-scraps-solana-and-xrp-income-etfs-as-rival-funds-attract-just-usd12-million" target="_blank" rel="noopener">Roundhill scraps Solana and XRP income ETFs as rival funds indicate low demand</a> <code title="59d064f15a2c17fc8ecb7278ab08f1b941e23d48403d64136f357746dd5206e5">59d064f1...</code></li><li id="ev-NEWS-2-2166"><b>NEWS-2</b> <a href="https://decrypt.co/383570/why-coinshares-just-sold-all-ethereum-half-solana" target="_blank" rel="noopener">Why CoinShares Just Sold All Its Ethereum and Half Its Solana</a> <code title="b888853e7009ba282b402f9146c3e8ec2e2e340c1385086c0f9aa7c4aaf21fc1">b888853e...</code></li><li id="ev-NEWS-3-2166"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/11/19/anthropic-opens-for-trade-at-usd11-50-up-34-from-ipo-price" target="_blank" rel="noopener">Anthropic opens for trade at $111.50, up 34% from IPO price</a> <code title="d1f8a946acc3aa09ccc81012986e1bea51e1131bc6ff02d8d463fea49cad6087">d1f8a946...</code></li><li id="ev-NEWS-4-2166"><b>NEWS-4</b> <a href="https://decrypt.co/383631/anthropic-stock-indicated-open-33-above-ipo-price" target="_blank" rel="noopener">Anthropic Stock Opens 33% Above IPO Price as AI Stocks Rally</a> <code title="a8172ee46409f1f4d9c7a3ff50889e4bdc437486e15485468563ea82fcb2e510">a8172ee4...</code></li><li id="ev-NEWS-5-2166"><b>NEWS-5</b> <a href="https://www.coindesk.com/coindesk-indices/2026/11/19/crypto-for-advisors-falling-prices-drove-october-s-10-drop-in-institutional-crypto-exposure" target="_blank" rel="noopener">Crypto for Advisors: Falling prices drove October's 10% drop in institutional crypto exposure</a> <code title="e9ebf8500b6cd2999c8d9acdba4de832518bb57d16a383a3fe9e47fd4f07a70e">e9ebf850...</code></li><li id="ev-NEWS-6-2166"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/anthropic-shares-expected-to-open-above-83-ipo-price?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Anthropic shares open at $111.50, 34.3% above $83 IPO price</a> <code title="75ebef8e4269a7071ea07ad88f64e3cf026d03629b5fe9d15905f26d132f2a18">75ebef8e...</code></li><li id="ev-KOL-2166"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">25 signals from 9 public voices; no convergence; SOL 0 bull / 1 bear</a> <code title="d74ace35ddfbf9bce198f825c1a9d936c5f67d5e2c67e13b145f9de26bf09c7a">d74ace35...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 42s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #2164: market moved -126 bps (position 126 bps), stop -250, target +200, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #2164 at $73.67</span>
+    <a href="record.html?seq=2166"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/XFzAPCj2jB7p1dP7LrfZVMZemTP9sq9MjvbN4jQXkcFkbtejPZr86n9wnVMnR5FJ2GXCx5PwYr3xdxk5EH7ihBP?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="79e8c02a6db601a625795fd3522e8d270d701262cf1e177a7c8851e8078bd409">receipt 79e8c02a6db6...</code>
+  </footer>
+</article>
 <article class="card" id="r2165">
   <header>
     <span class="badge hold">HOLD</span>
