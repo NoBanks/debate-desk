@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2171</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2172</b><span>receipts on chain</span></div>
   <div class="stat"><b>190</b><span>debates</span></div>
   <div class="stat"><b>149</b><span>entries</span></div>
   <div class="stat"><b>148</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2171">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2171</span>
+    <time>2026-11-19T18:26:58Z</time>
+    <span class="px">SOL $74.28</span>
+  </header>
+  <p class="reason">position from #2164 open at -83 bps; no exit condition met</p>
+  <details ><summary>Evidence (12) - pack <code>3bb0f3a4...</code></summary><ul class="ev"><li id="ev-PYTH-2171"><b>PYTH</b> <a>$74.2821</a> - EMA $73.7559, 71 bps from EMA, 45s old <code title="e4083a4c9463635541f0d5520d7cf26ac68b404a44511fd967baeb37b1a125f8">e4083a4c...</code></li><li id="ev-CL-2171"><b>CL</b> <a>$73.36</a> <a href="https://sepolia.etherscan.io/tx/0x35ff31b510902bbde607e3dd80f99869bd42e64758688f5d011e30e1fd62b9af" target="_blank" rel="noopener">anchored on Sepolia</a> <code title="bf80ea61db477d4f6a0f96a97fa00c8f828de5ae4f57e70b491caece92bd08a8">bf80ea61...</code></li><li id="ev-CB-2171"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$74.19</a> - 24h 51 bps <code title="cae8cb92aefbb1361c7761c97931ab37e7e157aca1aa9613c46b25ac2d8ef913">cae8cb92...</code></li><li id="ev-KR-2171"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$74.45</a> - 78 bps vs 24h VWAP <code title="85b0d08450b6b4fb6ed6fcba7fba4d64a7722b898fb9b9689fa54c71d5a0e8b2">85b0d084...</code></li><li id="ev-CG-2171"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$74.08</a> - 1h 85 bps, 24h 47 bps, 7d -923 bps <code title="9c640306e1edd741a56e1f9d47623e0b5a9f3c69a4f9bc8ce1c6f996668349e9">9c640306...</code></li><li id="ev-NEWS-1-2171"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/19/roundhill-scraps-solana-and-xrp-income-etfs-as-rival-funds-attract-just-usd12-million" target="_blank" rel="noopener">Roundhill scraps Solana and XRP income ETFs as rival funds indicate low demand</a> <code title="e07cb3bddaddaf2a230e093b16ffc81d66549f5dbb0fbff1fe41e0af46879b42">e07cb3bd...</code></li><li id="ev-NEWS-2-2171"><b>NEWS-2</b> <a href="https://decrypt.co/383570/why-coinshares-just-sold-all-ethereum-half-solana" target="_blank" rel="noopener">Why CoinShares Just Sold All Its Ethereum and Half Its Solana</a> <code title="c9f882018d6cfb2e94ad42e2ea35be27ba80065ab0eff9345e2eb82d0b9d3a82">c9f88201...</code></li><li id="ev-NEWS-3-2171"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/ethereum-glamsterdam-could-slip-to-may-2027?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Ethereum's Glamsterdam upgrade could slip to May 2027 over compatibility concerns</a> <code title="ea8e70d65ebcd2b1bb288b0cb30fcb17c24829ed8fe3319a47b96306d0ae8504">ea8e70d6...</code></li><li id="ev-NEWS-4-2171"><b>NEWS-4</b> <a href="https://www.coindesk.com/policy/2026/11/19/trump-s-democratic-sec-pick-suggests-tokenization-policy-deserves-full-rule-process" target="_blank" rel="noopener">Trump's Democratic SEC pick suggests tokenization policy deserves full rule process</a> <code title="d90a86dff1d69bdf75611802d9cebe9651afe453606a9f9e76d85658d960247a">d90a86df...</code></li><li id="ev-NEWS-5-2171"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/why-higher-rates-could-slow-bitcoin-buying-at-treasury-firms?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Why higher rates could slow Bitcoin buying at treasury firms</a> <code title="610b165d0d17d4569a245ae94bcb8132e37062995b9747386c8dbad09617ff38">610b165d...</code></li><li id="ev-NEWS-6-2171"><b>NEWS-6</b> <a href="https://cointelegraph.com/markets/bitcoin-price-ignores-anthropic-debut-ant-share-price-dips-below-100?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin price ignores Anthropic debut as ANT share price dips below $100</a> <code title="e25d22c13d2a0e1d52b5ec2a0618042900671811b1816f4fffe7d9201f3fb269">e25d22c1...</code></li><li id="ev-KOL-2171"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">24 signals from 9 public voices; no convergence; SOL 0 bull / 1 bear</a> <code title="9f21b8afb7d8a1f3221d34cd40ab2473cbccc76a01632036082af7467addae5d">9f21b8af...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 45s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #2164: market moved 83 bps (position -83 bps), stop -250, target +200, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #2164 at $73.67</span>
+    <a href="record.html?seq=2171"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2HgtsUudrhkSKnUmTWzUV19vnN7nDhXYXR4KikhJ6WFtr6N8UoiBUFRCg8hiKw8hbXEznJh75EDFpVbv7yWUwacu?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="0ecb2ad98be72b1763c5c7a37094c2e92c01beb89a8b8684a3e05f6ab0b6ad25">receipt 0ecb2ad98be7...</code>
+  </footer>
+</article>
 <article class="card" id="r2170">
   <header>
     <span class="badge hold">HOLD</span>
