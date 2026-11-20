@@ -38,12 +38,12 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2210</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2211</b><span>receipts on chain</span></div>
   <div class="stat"><b>192</b><span>debates</span></div>
   <div class="stat"><b>151</b><span>entries</span></div>
-  <div class="stat"><b>150</b><span>rule exits</span></div>
+  <div class="stat"><b>151</b><span>rule exits</span></div>
   <div class="stat"><b>9</b><span>rulings blocked by rules</span></div>
-  <div class="stat"><b>+590</b><span>bps on closed trades (market price)</span></div>
+  <div class="stat"><b>+740</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
   <b>How to check every word on this page</b>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2210">
+  <header>
+    <span class="badge buy">BUY</span>
+    <span class="kind">EXIT</span>
+    <span class="seq">receipt #2210</span>
+    <time>2026-11-20T04:37:59Z</time>
+    <span class="px">SOL $71.86</span>
+  </header>
+  <p class="reason">HORIZON: close SHORT from #2194 at 150 bps</p>
+  <details ><summary>Evidence (11) - pack <code>a5ffaa00...</code></summary><ul class="ev"><li id="ev-PYTH-2210"><b>PYTH</b> <a>$71.8595</a> - EMA $72.4803, -85 bps from EMA, 59s old <code title="7874da530d2841a3161e05fac0250d57e4059ddd22c2389ad46fbec17099fd5b">7874da53...</code></li><li id="ev-CB-2210"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$71.86</a> - 24h -357 bps <code title="b7db0fdaff52d0e0bbef15a9a3412bb4568bcae70f9862fdc602b7a992220646">b7db0fda...</code></li><li id="ev-KR-2210"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$71.88</a> - -246 bps vs 24h VWAP <code title="9d6a50e754f63402e03ad551e1cd1793c28dafb0191926c3fe944e0fe69dda44">9d6a50e7...</code></li><li id="ev-CG-2210"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$72.07</a> - 1h 31 bps, 24h -347 bps, 7d -912 bps <code title="3a9c9befaa12a3ac305859d11789a1bd588665119c6f0c70da7bc190df937e1b">3a9c9bef...</code></li><li id="ev-NEWS-1-2210"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/20/vaneck-drops-gemini-as-custodian-of-its-bitcoin-ether-and-sol-etfs" target="_blank" rel="noopener">VanEck drops Gemini as custodian of its bitcoin, ether and SOL ETFs</a> <code title="7a8d20278d377046845396351cbd9aa70814838c02114ff286e59b8523117df1">7a8d2027...</code></li><li id="ev-NEWS-2-2210"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/19/roundhill-scraps-solana-and-xrp-income-etfs-as-rival-funds-attract-just-usd12-million" target="_blank" rel="noopener">Roundhill scraps Solana and XRP income ETFs as rival funds indicate low demand</a> <code title="0fb5c00f89d3ea0b112a09a6f1bf8161c1b41f873e136aead1e20681cc49aa24">0fb5c00f...</code></li><li id="ev-NEWS-3-2210"><b>NEWS-3</b> <a href="https://decrypt.co/383570/why-coinshares-just-sold-all-ethereum-half-solana" target="_blank" rel="noopener">Why CoinShares Just Sold All Its Ethereum and Half Its Solana</a> <code title="807719959997b76feb5f608fdf7c88c8efa0072e49013388fad2306b51d73ee2">80771995...</code></li><li id="ev-NEWS-4-2210"><b>NEWS-4</b> <a href="https://cointelegraph.com/markets/institutional-bitcoin-etf-holdings-clock-record-quarter-after-selling-streak?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Institutions pile back into US Bitcoin ETFs in Q3 after selling streak</a> <code title="f1605fee479d95796ecffc14af8b150b8da76c515ad54b50116cf3b9397952f4">f1605fee...</code></li><li id="ev-NEWS-5-2210"><b>NEWS-5</b> <a href="https://www.coindesk.com/markets/2026/11/20/bitcoin-hits-four-month-low-after-anthropic-s-ipo-as-tech-stocks-wilt" target="_blank" rel="noopener">Bitcoin hits four-month low after Anthropic's IPO as tech stocks wilt</a> <code title="7c338959af6b625dd5a73a0998afcfd66c3fb96701fb9b1db915c6beaebd03ef">7c338959...</code></li><li id="ev-NEWS-6-2210"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/ledger-cto-charles-guillemet-to-leave-after-nine-years-at-company?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Ledger CTO Charles Guillemet to leave after nine years at company</a> <code title="99ad5d19ece55707e7df19f255b3f54f794067ce68a96c0781300c100b9eb134">99ad5d19...</code></li><li id="ev-KOL-2210"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">23 signals from 9 public voices; convergence: 2 voices BEAR on BTC; SOL 0 bull / 0 bear</a> <code title="113f79dbb268bfe3eda4fe2bd87ef9824159cabfaa2b02713790be95893afa05">113f79db...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (3/3 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 59s, limit 900s</li><li class="pass"><span>PASS</span> <code>exit.trigger</code> SHORT from #2194: market moved -150 bps (position 150 bps), stop -150, target +300, horizon passed</li><li class="pass"><span>PASS</span> <code>exit.funded</code> exit wants 831568, available 10211057, minimum 100000</li></ul></details>
+  <footer>
+    <span>swap in 831568 -> est out 36976990 (min 36607220)</span>
+    <span>closed #2194 on HORIZON at 150 bps</span>
+    
+    <a href="record.html?seq=2210"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/5creRD8aSBDjqfc4iPLAs3AyCUwRk6gq81hTCLgAqTbmsocwRTguP8gXS3tZ2vjzrCfRwLLAWi37awhkafbCPhES?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="b1b13b87756fcdf99e8ab4278ccdbb0f80980f0c7b543302257c5f1f7933a3ae">receipt b1b13b87756f...</code>
+  </footer>
+</article>
 <article class="card" id="r2209">
   <header>
     <span class="badge hold">HOLD</span>
