@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2238</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2239</b><span>receipts on chain</span></div>
   <div class="stat"><b>194</b><span>debates</span></div>
   <div class="stat"><b>153</b><span>entries</span></div>
   <div class="stat"><b>152</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2238">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2238</span>
+    <time>2026-11-20T11:48:35Z</time>
+    <span class="px">SOL $72.40</span>
+  </header>
+  <p class="reason">position from #2224 open at 16 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>e240e8db...</code></summary><ul class="ev"><li id="ev-PYTH-2238"><b>PYTH</b> <a>$72.4019</a> - EMA $72.2561, 20 bps from EMA, 2888s old <code title="fe414f523fd503745bfa3440a5ad66fb7aa6f94f78e7a9971a69f66f606ab317">fe414f52...</code></li><li id="ev-CB-2238"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$71.72</a> - 24h -408 bps <code title="a074feb5998753446301dec4a1055fe563f3ff85ef1808304bfab5227910cd1c">a074feb5...</code></li><li id="ev-KR-2238"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$71.74</a> - -214 bps vs 24h VWAP <code title="36b95480a506df1c17e844bde1f64b21340f497dec8a664880042e4c4d35b0c1">36b95480...</code></li><li id="ev-CG-2238"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$71.89</a> - 1h 52 bps, 24h -407 bps, 7d -949 bps <code title="8560cc104d16cd6db360bbe340841bbbc12677513e2f814b927be1b3d66af372">8560cc10...</code></li><li id="ev-NEWS-1-2238"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/20/vaneck-drops-gemini-as-custodian-of-its-bitcoin-ether-and-sol-etfs" target="_blank" rel="noopener">VanEck drops Gemini as custodian of its bitcoin, ether and SOL ETFs</a> <code title="f979545bfd1a27ea5b3bdd0bfba5a96c9189dabf207e6bbf04690c434eab1144">f979545b...</code></li><li id="ev-NEWS-2-2238"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/20/bitcoin-drops-for-third-straight-day-as-asian-tech-shares-slide" target="_blank" rel="noopener">Bitcoin drops for third straight day as Asian tech shares slide</a> <code title="3c65c2629264f20edb30f403235c6a0b7cb3cf4832fed100dd63b836531ea698">3c65c262...</code></li><li id="ev-NEWS-3-2238"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/binance-hacker-600m-eth-routes-thorchain-chainflip?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Binance hacker moves nearly $600M in ETH, routes funds through THORChain, Chainflip</a> <code title="7705c7242278f68871e8a95683f7628bd3f06f67b3b44b341c556a3fdb78cff5">7705c724...</code></li><li id="ev-NEWS-4-2238"><b>NEWS-4</b> <a href="https://decrypt.co/383682/coinbase-targets-in-house-prediction-markets-by-first-half-of-2027-report" target="_blank" rel="noopener">Coinbase Targets In-House Prediction Markets by First Half of 2027: Report</a> <code title="7d9d317835560cf6a23437584478f5da0e2f750dab30652ba5fb53460fbe27a6">7d9d3178...</code></li><li id="ev-NEWS-5-2238"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/vaneck-gemini-etf-custody-end-keep-coinbase?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">VanEck to end Gemini ETF custody deals, keeps Coinbase</a> <code title="bfce3879687914a2181b3e892f8a668c88c9bc66c01a3f6f084199cf77c5b326">bfce3879...</code></li><li id="ev-NEWS-6-2238"><b>NEWS-6</b> <a href="https://www.coindesk.com/business/2026/11/20/coinbase-targets-first-half-2027-for-its-own-prediction-market-contracts" target="_blank" rel="noopener">Coinbase targets first-half 2027 for its own prediction market contracts</a> <code title="5b2c17701d67472f2a11dabf81e5ad3ac2e1ebbbe033f5e65dc2141ade2d50d2">5b2c1770...</code></li><li id="ev-KOL-2238"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">16 signals from 9 public voices; convergence: 4 voices BEAR on ETH; SOL 0 bull / 0 bear</a> <code title="7abbf8e7ad8df0649ce45ecb6a0c1f5856f63e55c48ca278681ea0f575141cd0">7abbf8e7...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (0/2 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>exit.pyth_fresh</code> Pyth age 2888s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #2224: market moved -16 bps (position 16 bps), stop -150, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #2224 at $72.52</span>
+    <a href="record.html?seq=2238"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/WWLEJj7QjsT4NvJimJDPkuwd3PfJZMP2QKVb5szCT9ZUfUVWhaFgzEDrncrYwNxejAGMM3hUdWxLpWjpUTje6Zi?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="6f416dba8e73dd24376a30c924dfaa31feebb562a8a3544ad4cdc23e348c97b2">receipt 6f416dba8e73...</code>
+  </footer>
+</article>
 <article class="card" id="r2237">
   <header>
     <span class="badge hold">HOLD</span>
