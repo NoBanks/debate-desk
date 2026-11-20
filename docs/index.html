@@ -38,11 +38,11 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2249</b><span>receipts on chain</span></div>
-  <div class="stat"><b>194</b><span>debates</span></div>
+  <div class="stat"><b>2250</b><span>receipts on chain</span></div>
+  <div class="stat"><b>195</b><span>debates</span></div>
   <div class="stat"><b>153</b><span>entries</span></div>
   <div class="stat"><b>153</b><span>rule exits</span></div>
-  <div class="stat"><b>9</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>10</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>+821</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2249">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2249</span>
+    <time>2026-11-20T14:37:12Z</time>
+    <span class="px">SOL $71.32</span>
+  </header>
+  <p class="reason">market price is stale; refusing to trade on it</p>
+  <details ><summary>Evidence (11) - pack <code>8c359240...</code></summary><ul class="ev"><li id="ev-PYTH-2249"><b>PYTH</b> <a>$71.32</a> - EMA $71.1042, 30 bps from EMA, 2192s old <code title="b5a0c940a11467a4e3da6a1bf8425405a43fac3268a18b77b79eaa1d107dfa60">b5a0c940...</code></li><li id="ev-CB-2249"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$71.19</a> - 24h -492 bps <code title="2e68c3f9b905f238a27498bd5d83388fb6d130f928e3e20667402356f528a781">2e68c3f9...</code></li><li id="ev-KR-2249"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$71.19</a> - -206 bps vs 24h VWAP <code title="9f7196a3ea7010ba4009122fefbfd6e344a5ff5b63f4f001ffde6bb7717933eb">9f7196a3...</code></li><li id="ev-CG-2249"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$71.12</a> - 1h 10 bps, 24h -571 bps, 7d -1163 bps <code title="8e685c697296891e2f1a64711415ba1253476097c97fa3e589cdaf3347e843c2">8e685c69...</code></li><li id="ev-NEWS-1-2249"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/20/vaneck-drops-gemini-as-custodian-of-its-bitcoin-ether-and-sol-etfs" target="_blank" rel="noopener">VanEck drops Gemini as custodian of its bitcoin, ether and SOL ETFs</a> <code title="dc34fffa518b9ba1265e79d4cd8925c329e113f4b81d030b90915aa2ca48475d">dc34fffa...</code></li><li id="ev-NEWS-2-2249"><b>NEWS-2</b> <a href="https://www.coindesk.com/policy/2026/11/20/u-s-senated-passes-bill-to-ban-prediction-market-best-on-war-and-death" target="_blank" rel="noopener">U.S. Senate passes bill to ban prediction market bets on war and death</a> <code title="d3b3ca4d6a1ca256ed199da36d9b68597b7cf088d4bb6ff4be172c0ef25de89e">d3b3ca4d...</code></li><li id="ev-NEWS-3-2249"><b>NEWS-3</b> <a href="https://www.coindesk.com/tech/2026/11/20/live-news-bitcoin-hovers-just-above-usd61-000-as-anthropic-slides-13-after-nasdaq-debut" target="_blank" rel="noopener">Live news: Bitcoin hovers just above $61,000 as Anthropic slides after Nasdaq debut</a> <code title="f228d1786d0af35ed9a6ad0bdce384ec3e99d516cc323945f14c5a5749d99bb8">f228d178...</code></li><li id="ev-NEWS-4-2249"><b>NEWS-4</b> <a href="https://www.coindesk.com/tech/2026/11/20/bitcoin-bots-pounced-within-seconds-when-researchers-exposed-their-keys" target="_blank" rel="noopener">Bitcoin bots pounced within seconds when researchers exposed their wallet keys</a> <code title="f7a5ae4c68c67797a67a8a40e660ae8a86fabab1b53c9b57ccbbfccf8ca39c70">f7a5ae4c...</code></li><li id="ev-NEWS-5-2249"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="0046706977ee128a0f57dfe17f4abeb2bc70d7894962f7725bbe911c341cd23c">00467069...</code></li><li id="ev-NEWS-6-2249"><b>NEWS-6</b> <a href="https://decrypt.co/383691/morning-minute-anthropic-ipo-pops-sinks-markets" target="_blank" rel="noopener">Morning Minute: Anthropic IPO Pops, Sinks Markets</a> <code title="d17ef9875ede593754151fe602b8ade8c79cf545d146431ed65c0b2b9713f127">d17ef987...</code></li><li id="ev-KOL-2249"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">23 signals from 9 public voices; convergence: 3 voices BEAR on BTC; 2 voices BEAR on ANT; 2 voices BEAR on ETH; 2 voices BULL on SOL; SOL 2 bull / 1 bear</a> <code title="5e30deab7c65a3ec7f802c8e520c8c9e973cf47df5784bb40c7747ce2f2ce36e">5e30deab...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 30</span></h4>
+    <p class="thesis">Despite prevailing bearish sentiment and recent price declines, a strategic move by the Solana Foundation provides a fundamental long-term positive, while current price action shows minor short-term stabilization.</p>
+    <ol><li>The Solana ecosystem is strengthening through strategic acquisitions, which could drive long-term value for SOL. <a class="cite" href="#ev-KOL-2249">KOL</a><div class="ce">The Solana Foundation's acquisition of a controlling stake in CoinGecko is a strategic move that enhances the ecosystem's data and market intelligence, potentially fostering long-term growth and increased utility for SOL.</div></li><li>SOL's price is showing a very minor short-term positive movement, suggesting a potential temporary pause in the recent downtrend. <a class="cite" href="#ev-CG-2249">CG</a><div class="ce">A slight positive 1-hour price change, even amidst broader 24-hour declines, indicates a momentary shift in buying pressure that could lead to a short-term rebound.</div></li></ol>
+    <p class="muted">Would change my mind: Sustained positive price action across multiple timeframes (e.g., 1h, 4h, 24h), a clear bullish convergence from multiple KOL voices specifically for SOL, or new fundamental news indicating significant positive adoption or development for the Solana network.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 65</span></h4>
+    <p class="thesis">SOL is poised for further decline due to significant negative price momentum, institutional re-evaluation, and weakness in its ecosystem's tokenized assets.</p>
+    <ol><li>SOL has experienced substantial price declines over the past 24 hours and 7 days, indicating strong selling pressure. <a class="cite" href="#ev-CB-2249">CB</a> <a class="cite" href="#ev-KR-2249">KR</a> <a class="cite" href="#ev-CG-2249">CG</a><div class="ce">The consistent negative 24-hour price changes of -492 bps (CB), -257 bps (KR), and -571 bps (CG), coupled with a -1163 bps 7-day change (CG) and trading below VWAP by -206 bps (KR), demonstrate a clear downtrend and suggest continued downward price movement.</div></li><li>Institutional confidence in Solana ETFs is weakening, potentially leading to reduced capital inflows. <a class="cite" href="#ev-NEWS-1-2249">NEWS-1</a><div class="ce">VanEck's decision to drop Gemini as custodian for its SOL ETF signals a potential decrease in institutional trust or a strategic shift, which could deter further institutional investment in SOL and exert downward pressure on its price.</div></li><li>A significant tokenized asset on the Solana network is experiencing a sharp downturn, which could negatively impact overall ecosystem sentiment and SOL's value. <a class="cite" href="#ev-KOL-2249">KOL</a><div class="ce">The reported 24.3% drop in the Backpack-issued tokenized ANT listed on Solana (DegenerateNews, KOL) indicates weakness within the Solana ecosystem. This decline in a prominent on-chain asset can erode investor confidence in Solana-based projects and potentially lead to further selling of SOL.</div></li></ol>
+    <p class="muted">Would change my mind: A sustained reversal in SOL's 24-hour and 7-day price trends, positive news regarding new institutional partnerships or significant ecosystem developments for Solana, or a clear shift in public market sentiment (KOL) towards a strong bullish convergence for SOL.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">BEAR wins - SELL at conviction 75</span></h4>
+        <p>SOL is exhibiting strong negative price momentum across multiple timeframes, with significant 24-hour declines reported by Coinbase (-492 bps), Kraken (-257 bps), and CoinGecko (-571 bps), alongside a substantial 7-day decline of -1163 bps (CG). Kraken also shows SOL trading -206 bps below its 24-hour VWAP, reinforcing the bearish trend. Furthermore, a prominent tokenized asset on the Solana network, ANT, has experienced a sharp 24.3% drop, as noted in KOL, indicating potential weakness within the broader Solana ecosystem. While CoinGecko reports a minor 1-hour positive change of 10 bps and the Solana Foundation's acquisition of a stake in CoinGecko (KOL) is a long-term positive, these are insufficient to counteract the overwhelming immediate bearish signals from price action and ecosystem sentiment.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-CB-2249">CB</a> <a class="cite" href="#ev-KR-2249">KR</a> <a class="cite" href="#ev-CG-2249">CG</a> <a class="cite" href="#ev-KOL-2249">KOL</a> - stop 150 bps, target 300 bps, horizon 180 min, size 50% of max</p>
+        <p class="muted">Rejected:</p><ul><li><b>BEAR</b>: Institutional confidence in Solana ETFs is weakening, potentially leading to reduced capital inflows. - NEWS-1 states that VanEck dropped Gemini as a custodian for its SOL ETF. This is an operational change regarding a custodian, not direct evidence of weakening institutional confidence in SOL itself or a guaranteed reduction in capital inflows. The evidence does not support the claim of weakening confidence in the asset.</li></ul>
+      </div>
+  <details><summary>Rules (0/1 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>evidence.pyth_fresh</code> Pyth age 2192s, limit 900s</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=2249"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/SjZjS48GLJm9P75KqX18FbMtaXHxbCcBc1yHYv6PgMWMYipYM8wufMrYW2Rn7AssX2buxcP5YVQs6XEkki2M4aC?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="903543d045fdfebbf52f9fc0d103d9391f35e7143073e0b390ef89c81be19374">receipt 903543d045fd...</code>
+  </footer>
+</article>
 <article class="card" id="r2248">
   <header>
     <span class="badge buy">BUY</span>
