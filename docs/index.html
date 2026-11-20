@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2259</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2260</b><span>receipts on chain</span></div>
   <div class="stat"><b>196</b><span>debates</span></div>
   <div class="stat"><b>154</b><span>entries</span></div>
   <div class="stat"><b>153</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2259">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2259</span>
+    <time>2026-11-20T17:12:05Z</time>
+    <span class="px">SOL $69.22</span>
+  </header>
+  <p class="reason">position from #2250 open at 216 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>5b5036e6...</code></summary><ul class="ev"><li id="ev-PYTH-2259"><b>PYTH</b> <a>$69.225</a> - EMA $69.192, 4 bps from EMA, 1714s old <code title="37351ee7e55e9516a8ab7d4b6ced54ba42055b315518b8d0195bb068cd1a9886">37351ee7...</code></li><li id="ev-CB-2259"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$69.12</a> - 24h -624 bps <code title="c0825c3de6e1b4b05f35df4f1764ccc1b74704f16fa9be10e27fbf61effa58cf">c0825c3d...</code></li><li id="ev-KR-2259"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$69.01</a> - -293 bps vs 24h VWAP <code title="08d0b27cb6c8fcb0f50a2b478b0d866ba7752967bf682f14a90b4467e3d4b1f9">08d0b27c...</code></li><li id="ev-CG-2259"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$69.17</a> - 1h 168 bps, 24h -516 bps, 7d -1318 bps <code title="ae312dd1c0d3a3976e01e215006d15addfbdb867ee824c03c588f5e42bca5e44">ae312dd1...</code></li><li id="ev-NEWS-1-2259"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/20/vaneck-drops-gemini-as-custodian-of-its-bitcoin-ether-and-sol-etfs" target="_blank" rel="noopener">VanEck drops Gemini as custodian of its bitcoin, ether and SOL ETFs</a> <code title="1d6bf1f7f9791e1a4ffdfedb68942be1b061a96b2890e1e6eb2ac502694d4e69">1d6bf1f7...</code></li><li id="ev-NEWS-2-2259"><b>NEWS-2</b> <a href="https://cointelegraph.com/markets/bitcoin-falls-below-60k-for-first-time-since-july-amid-broader-market-selloff?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin falls below $60K for first time since July amid broader market selloff</a> <code title="71cab408e590da1fb55eec124b98c613c2ce368ee5b2ed9b5a1b1c230136fbc4">71cab408...</code></li><li id="ev-NEWS-3-2259"><b>NEWS-3</b> <a href="https://decrypt.co/383702/bitcoin-breaks-below-60k-crypto-fear-greed-index-lowest" target="_blank" rel="noopener">Bitcoin Breaks Below $60K as Crypto Fear Index Hits Worst Level Since February</a> <code title="f7da89877735b90383587ef209a0eed40c5e30710358ed24e5647e704310ecf0">f7da8987...</code></li><li id="ev-NEWS-4-2259"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/us-senate-advances-prediction-market-restrictions-with-death-bets-act?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">US Senate advances prediction market restrictions with DEATH BETS Act</a> <code title="8e3ae2141411527ab9f3e16f58326eac9517d2f787c81d6f4387e1111294d253">8e3ae214...</code></li><li id="ev-NEWS-5-2259"><b>NEWS-5</b> <a href="https://cointelegraph.com/markets/bitcoin-hits-new-20-week-low-anthropic-drops-87-tech-sell-off?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin price drops to $60K as Anthropic drops to $87 in tech sell-off</a> <code title="fc48da2c5aa293c66342eb9c091292143d388bf55eb6218f8d610dd95b1c1e7f">fc48da2c...</code></li><li id="ev-NEWS-6-2259"><b>NEWS-6</b> <a href="https://decrypt.co/383700/senate-passes-bill-banning-prediction-market-bets-on-war-terrorism-and-death" target="_blank" rel="noopener">Senate Passes Bill Banning Prediction Market Bets on War, Terrorism and Death</a> <code title="fe977bc0efc2ebe88b58629fcc82d962cd7d0697f4e4480edd0f1f1ee9a29322">fe977bc0...</code></li><li id="ev-KOL-2259"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">29 signals from 9 public voices; convergence: 6 voices BEAR on BTC; 3 voices BEAR on ETH; 2 voices BULL on SOL; SOL 2 bull / 0 bear</a> <code title="a4c5b58d3ab3d289bea33a22a57852814e46d21ab3b8dfa04131ff4d8a22c750">a4c5b58d...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (0/2 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>exit.pyth_fresh</code> Pyth age 1714s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #2250: market moved -216 bps (position 216 bps), stop -180, target +360, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #2250 at $70.76</span>
+    <a href="record.html?seq=2259"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/58x9jNVJP99rhKmBpkRnTpEpaUPuLA6Qa4vqub93T9J7XARXbDF8hFvx8xYGbthSfesbRekBoB1xSGstiMwQfnK4?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="f598740a53ff28744dd309563e9cc8844d7b9ebc5a8bb3f14fc4838956abdcd0">receipt f598740a53ff...</code>
+  </footer>
+</article>
 <article class="card" id="r2258">
   <header>
     <span class="badge hold">HOLD</span>
