@@ -38,11 +38,11 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2335</b><span>receipts on chain</span></div>
-  <div class="stat"><b>207</b><span>debates</span></div>
+  <div class="stat"><b>2336</b><span>receipts on chain</span></div>
+  <div class="stat"><b>208</b><span>debates</span></div>
   <div class="stat"><b>160</b><span>entries</span></div>
   <div class="stat"><b>160</b><span>rule exits</span></div>
-  <div class="stat"><b>15</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>16</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>+1347</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2335">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2335</span>
+    <time>2026-11-21T16:34:11Z</time>
+    <span class="px">SOL $70.27</span>
+  </header>
+  <p class="reason">market price is stale; refusing to trade on it</p>
+  <details ><summary>Evidence (11) - pack <code>423ef528...</code></summary><ul class="ev"><li id="ev-PYTH-2335"><b>PYTH</b> <a>$70.271</a> - EMA $70.2552, 2 bps from EMA, 3278s old <code title="a6f42f2be715d83234a9fdbd9a00dea6447d5b0928b3498dee392e1c10f6674f">a6f42f2b...</code></li><li id="ev-CB-2335"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$70.31</a> - 24h 130 bps <code title="71bf74922711c1fcbf8df8940b612d0e41ebcb87862473d8e2300b2e01d03372">71bf7492...</code></li><li id="ev-KR-2335"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$70.32</a> - 343 bps vs 24h VWAP <code title="00654ae18e3ba626012993268f74de2b3216ef64472f76ead3b9fd5dd40401d6">00654ae1...</code></li><li id="ev-CG-2335"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$70.35</a> - 1h -42 bps, 24h 221 bps, 7d -511 bps <code title="6bfe1cf4ee1a7af14768e02c9faa5d401d4f123ddfb9cf1100f4ec3f162d69a3">6bfe1cf4...</code></li><li id="ev-NEWS-1-2335"><b>NEWS-1</b> <a href="https://decrypt.co/383750/signal-os-level-ai-existential-threat-blocks-screenshots" target="_blank" rel="noopener">Signal Calls OS-Level AI an 'Existential Threat' and Blocks Screenshots to Fight It</a> <code title="00f7426815b13c07304dacfbd79efab0918daa7add30201d0680db87edf9378a">00f74268...</code></li><li id="ev-NEWS-2-2335"><b>NEWS-2</b> <a href="https://decrypt.co/383754/ai-bubble-finally-popping-nvidia-crashes-48-wall-street-alarm" target="_blank" rel="noopener">Is the AI Bubble Finally Popping? Nvidia Crashes 48% as Wall Street Experts Sound the Alarm</a> <code title="b0efe220fcc211abb4bafbde52daf770e239dacbd51ef9f5b88db21748ea5241">b0efe220...</code></li><li id="ev-NEWS-3-2335"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/11/21/ether-treasury-firm-btcs-warns-sec-its-usd54-million-aave-loan-could-be-liquidated" target="_blank" rel="noopener">Ether treasury firm BTCS warns SEC its $54 million Aave loan could be liquidated</a> <code title="a1b48b5d2eb354b2eda7e89e12bebb51b7f03f8398d77fd6b27a49b04e7b3cad">a1b48b5d...</code></li><li id="ev-NEWS-4-2335"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Here's what happened in crypto today</a> <code title="6bcb5323352b57c9253ef1f318fe84b5b9e61583f6edd312327dd36dc1ec4db7">6bcb5323...</code></li><li id="ev-NEWS-5-2335"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/ecb-tokenized-deposits-securities-experiments-appia?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">ECB seeks industry partners for tokenized deposits, securities experiments</a> <code title="f45500d60db629dd062f6423de1e474ff5752b71405d5abe767d725f23d34404">f45500d6...</code></li><li id="ev-NEWS-6-2335"><b>NEWS-6</b> <a href="https://cointelegraph.com/news/us-prediction-market-whistleblower-rewards-30-percent?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">US lawmakers propose up to 30% rewards for prediction market whistleblowers</a> <code title="3a8a5fdae864576acc84f3d2e54baf32d1aaa95333b5b032d88033db24f6fcea">3a8a5fda...</code></li><li id="ev-KOL-2335"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">16 signals from 9 public voices; convergence: 4 voices BEAR on BTC; 2 voices BULL on BTC; 2 voices BEAR on USDT; SOL 0 bull / 0 bear</a> <code title="474460faaabf9ccb07fc68a6c459759ddf6632f28db38260e0e8bf0d3088bbf1">474460fa...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 65</span></h4>
+    <p class="thesis">SOL is currently exhibiting strong short-term upward momentum, driven by significant buying pressure over the past 24 hours.</p>
+    <ol><li>SOL has experienced substantial positive price movement over the last 24 hours across multiple major exchanges. <a class="cite" href="#ev-CB-2335">CB</a> <a class="cite" href="#ev-KR-2335">KR</a> <a class="cite" href="#ev-CG-2335">CG</a><div class="ce">The observed 24-hour price increases of 130 bps on Coinbase, 234 bps on Kraken, and 221 bps on CoinGecko indicate robust buying interest, which is expected to propel the price of SOL higher in the immediate term.</div></li><li>The current SOL price is trading significantly above its 24-hour volume-weighted average price (VWAP), signaling sustained demand. <a class="cite" href="#ev-KR-2335">KR</a><div class="ce">Kraken's data showing SOL's price is 343 basis points above its 24-hour VWAP suggests that buyers are actively acquiring SOL at prices higher than the average, indicating strong demand and likely continued upward price trajectory.</div></li></ol>
+    <p class="muted">Would change my mind: A significant reversal in the 24-hour price trend across major exchanges, or the emergence of direct SOL-specific bearish news or a bearish convergence in KOL sentiment, would invalidate this bullish thesis.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 75</span></h4>
+    <p class="thesis">SOL is poised for a decline due to recent short-term price weakness, strong bearish sentiment in Bitcoin, and broader market risk-off signals.</p>
+    <ol><li>Solana (SOL) is exhibiting clear short-term bearish momentum. <a class="cite" href="#ev-CG-2335">CG</a><div class="ce">The 1-hour price change of -42 basis points and the 7-day price change of -511 basis points for SOL indicate a sustained downward trend, suggesting that current selling pressure will likely continue and drive prices lower.</div></li><li>Bitcoin, a primary driver of the crypto market, is under significant bearish pressure, including severe price anomalies. <a class="cite" href="#ev-KOL-2335">KOL</a><div class="ce">Multiple public market voices (DegenerateNews, CoinBureau, wublockchainenglish, the_block_crypto) are expressing bearish sentiment on BTC, with high conviction. Specifically, the Kraken BTC pricing anomaly, where BTC briefly crashed by 70% and executed trades were confirmed to stand, signals extreme market instability and potential for broader market contagion, which will likely pull SOL prices down.</div></li><li>Broader market sentiment is shifting to risk-off, with concerns about an 'AI bubble' popping and significant stablecoin movements to exchanges. <a class="cite" href="#ev-NEWS-2-2335">NEWS-2</a> <a class="cite" href="#ev-KOL-2335">KOL</a><div class="ce">News of a potential 'AI bubble' popping and a 48% crash in Nvidia (NEWS-2) suggests a broader market risk aversion, which typically leads to capital withdrawal from speculative assets like SOL. Additionally, a large transfer of 165.9 million USDT to Binance (KOL, whale_alert_io) often indicates an intent to sell other crypto assets or increase stablecoin holdings, adding to overall market selling pressure that will affect SOL.</div></li></ol>
+    <p class="muted">Would change my mind: A sustained reversal in SOL's short-term price action (e.g., positive 1-hour and 24-hour changes), a significant shift in KOL sentiment towards bullish for BTC or SOL, or positive news directly impacting Solana's ecosystem would lead me to reconsider this bearish stance.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">BEAR wins - SELL at conviction 70</span></h4>
+        <p>Despite a positive 24-hour price change, Solana is exhibiting recent short-term weakness with a negative 1-hour change of -42 bps and a significant negative 7-day change of -511 bps. This suggests the 24-hour rally may be losing momentum within a broader downtrend. Crucially, the broader crypto market is under severe bearish pressure, evidenced by a strong bearish convergence in KOL sentiment for Bitcoin, including a confirmed 70% price crash anomaly on Kraken. This market instability is compounded by news of a potential 'AI bubble' popping and a 48% crash in Nvidia, alongside a large stablecoin transfer to an exchange, all indicating a risk-off environment. These macro and BTC-specific bearish signals are likely to exert significant downward pressure on SOL.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-CG-2335">CG</a> <a class="cite" href="#ev-KOL-2335">KOL</a> <a class="cite" href="#ev-NEWS-2-2335">NEWS-2</a> - stop 150 bps, target 300 bps, horizon 180 min, size 100% of max</p>
+        
+      </div>
+  <details><summary>Rules (0/1 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>evidence.pyth_fresh</code> Pyth age 3278s, limit 900s</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=2335"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2quHDbq3rAjdjYzZPVBSjdDJ5jHt9TincjTK9xuASLKDff3KHjwwWGYL7oq3ZWAeuJPN2zWhWahNiBY53M7iZjkQ?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="0e6cc6ee595ddd9543c73cfb8c48bd250bade2a513273895af4112e6fbb05b74">receipt 0e6cc6ee595d...</code>
+  </footer>
+</article>
 <article class="card" id="r2334">
   <header>
     <span class="badge hold">HOLD</span>
