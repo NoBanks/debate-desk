@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2345</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2346</b><span>receipts on chain</span></div>
   <div class="stat"><b>209</b><span>debates</span></div>
   <div class="stat"><b>161</b><span>entries</span></div>
   <div class="stat"><b>160</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2345">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2345</span>
+    <time>2026-11-21T19:08:41Z</time>
+    <span class="px">SOL $70.72</span>
+  </header>
+  <p class="reason">position from #2336 open at 46 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>d3122a4e...</code></summary><ul class="ev"><li id="ev-PYTH-2345"><b>PYTH</b> <a>$70.7194</a> - EMA $70.5957, 17 bps from EMA, 710s old <code title="bf46cd5bb78d3b1b3baaf4b5609566bf6229fdb0a5b956ed911e32aee7828942">bf46cd5b...</code></li><li id="ev-CB-2345"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$70.66</a> - 24h 374 bps <code title="1f5e4cd7392b283dc054c90404e209cb01a0c9cae88eda7d31eb0c08e383d0c2">1f5e4cd7...</code></li><li id="ev-KR-2345"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$70.62</a> - 403 bps vs 24h VWAP <code title="e003890c7282ef42109883f9a272a1059d04b53bd7ee6e23ca74254d92034c79">e003890c...</code></li><li id="ev-CG-2345"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$70.7</a> - 1h 24 bps, 24h 293 bps, 7d -285 bps <code title="b21622b195402e326cb6cd679f4d7c56a65791f823c872e9bd16f30eda2b697c">b21622b1...</code></li><li id="ev-NEWS-1-2345"><b>NEWS-1</b> <a href="https://decrypt.co/383756/gta-6-leaker-dangles-pc-port-15-million-crypto-pump" target="_blank" rel="noopener">GTA 6 Leaker Dangles a PC Port Behind a $15 Million Crypto Pump</a> <code title="9236d9c1334a9f52fa10a775d9ada079162d1f24a7b4a88c8e5b51c2d485ee27">9236d9c1...</code></li><li id="ev-NEWS-2-2345"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_blank" rel="noopener">Bitcoin bounces 9% from two-year low to retake $60,000 as traders eye Monday's stock open</a> <code title="61c4222ee628ab167a836ab3dacced7474ad3006acddaf09164b6d1eb694b640">61c4222e...</code></li><li id="ev-NEWS-3-2345"><b>NEWS-3</b> <a href="https://decrypt.co/383752/fraudsters-fake-crypto-exchanges-steal-37-million-sec" target="_blank" rel="noopener">Fraudsters Used Fake Crypto Exchanges to Steal $37 Million, SEC Alleges</a> <code title="caa253db7c6c220368bb015840701822b42eedfce22a6548b67538927af942b1">caa253db...</code></li><li id="ev-NEWS-4-2345"><b>NEWS-4</b> <a href="https://www.coindesk.com/business/2026/11/21/cross-chain-protocol-chainflip-s-flip-tanks-30-after-suspected-usd4-86-million-vault-drain" target="_blank" rel="noopener">Cross-chain protocol Chainflip's FLIP tanks 30% after suspected $4.86 million vault drain</a> <code title="8d09c2f77e88d5e939fc4a01e97f99942086bef1713abc3693c423e3261575e1">8d09c2f7...</code></li><li id="ev-NEWS-5-2345"><b>NEWS-5</b> <a href="https://decrypt.co/383750/signal-os-level-ai-existential-threat-blocks-screenshots" target="_blank" rel="noopener">Signal Calls OS-Level AI an 'Existential Threat' and Blocks Screenshots to Fight It</a> <code title="a38ff6ccf3c1bfdd2ace3b6a47f7318d6b5450dc036fbf6cd6e51cdfcc6fa725">a38ff6cc...</code></li><li id="ev-NEWS-6-2345"><b>NEWS-6</b> <a href="https://decrypt.co/383754/ai-bubble-finally-popping-nvidia-crashes-48-wall-street-alarm" target="_blank" rel="noopener">Is the AI Bubble Finally Popping? Nvidia Crashes 48% as Wall Street Experts Sound the Alarm</a> <code title="a7240f6278dc7e0d8a4f17dd7e9b84ac9dac38f66159d3419ee51b4853c44299">a7240f62...</code></li><li id="ev-KOL-2345"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">15 signals from 9 public voices; convergence: 3 voices BEAR on BTC; 2 voices BULL on BTC; 2 voices BEAR on USDT; SOL 0 bull / 0 bear</a> <code title="7659567eb61dc80da8c0a6d7bdc0cd3269c70d96c29fa55297da9b59bece1af8">7659567e...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 710s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #2336: market moved 46 bps (position 46 bps), stop -250, target +500, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #2336 at $70.39</span>
+    <a href="record.html?seq=2345"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/F6w15oQk6BcEwqPsYJQ4kkt7ikFoiM2k8yJmqxoi6inFGD817pA9knBp6JsVZr46Yh4923YboxVAB3viNBEo6ZH?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="5737173a8308c0c38abcf26d1ee738fb5c4a295ecd2d00d415754e67a662ff73">receipt 5737173a8308...</code>
+  </footer>
+</article>
 <article class="card" id="r2344">
   <header>
     <span class="badge hold">HOLD</span>
