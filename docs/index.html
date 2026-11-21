@@ -38,11 +38,11 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2302</b><span>receipts on chain</span></div>
-  <div class="stat"><b>201</b><span>debates</span></div>
+  <div class="stat"><b>2303</b><span>receipts on chain</span></div>
+  <div class="stat"><b>202</b><span>debates</span></div>
   <div class="stat"><b>157</b><span>entries</span></div>
   <div class="stat"><b>157</b><span>rule exits</span></div>
-  <div class="stat"><b>12</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>13</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>+1757</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2302">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2302</span>
+    <time>2026-11-21T04:21:40Z</time>
+    <span class="px">SOL $65.98</span>
+  </header>
+  <p class="reason">market price is stale; refusing to trade on it</p>
+  <details ><summary>Evidence (11) - pack <code>80cfc496...</code></summary><ul class="ev"><li id="ev-PYTH-2302"><b>PYTH</b> <a>$65.9817</a> - EMA $67.8573, -276 bps from EMA, 2229s old <code title="dc43e81679c8a9436656c6fed9aed43a42a4c96cbbb57d7c9d7b18191f3c80df">dc43e816...</code></li><li id="ev-CB-2302"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$65.5</a> - 24h -910 bps <code title="ab8cdbe37f006660470f049183283e1688b6b871662c0883669e28193c5deb83">ab8cdbe3...</code></li><li id="ev-KR-2302"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$65.33</a> - -504 bps vs 24h VWAP <code title="2b55f639057c8650bfdd5a453a4699bc18b20d1c72a3964fbbd9b6f6f42a744b">2b55f639...</code></li><li id="ev-CG-2302"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$65.57</a> - 1h -342 bps, 24h -952 bps, 7d -1305 bps <code title="62dd21267d007433e770b9b5f7a0ff1ae3f95c826cd9dec0f53e1581d12f270b">62dd2126...</code></li><li id="ev-NEWS-1-2302"><b>NEWS-1</b> <a href="https://www.coindesk.com/markets/2026/11/20/vaneck-drops-gemini-as-custodian-of-its-bitcoin-ether-and-sol-etfs" target="_blank" rel="noopener">VanEck drops Gemini as custodian of its bitcoin, ether and SOL ETFs</a> <code title="98719ab9694a60478e316166333c35f362db8578abb972dedd4d75080ea3e972">98719ab9...</code></li><li id="ev-NEWS-2-2302"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-tanks-below-usd57-000-for-the-first-time-in-two-years-and-its-not-alone" target="_blank" rel="noopener">Bitcoin tanks below $57,000 for the first time in two years, and its not alone</a> <code title="fc1a38a9d4b911a4e3e93d8abea2bc582bce54a31346c89c59886f6344d7324f">fc1a38a9...</code></li><li id="ev-NEWS-3-2302"><b>NEWS-3</b> <a href="https://www.coindesk.com/policy/2026/11/20/kalshi-races-to-get-ahead-of-new-york-order-that-could-shut-down-exchange" target="_blank" rel="noopener">Kalshi races to get ahead of New York order that could shut down exchange</a> <code title="80f55ce7bbd52b42b8ec003ac548e6b60fc82de2ea5bf6f43bc16478eff00d54">80f55ce7...</code></li><li id="ev-NEWS-4-2302"><b>NEWS-4</b> <a href="https://www.coindesk.com/business/2026/11/20/fairmint-plans-tokenized-stock-venue-on-canton-ethereum-under-sec-experiment" target="_blank" rel="noopener">Fairmint plans tokenized stock venue on Canton, Ethereum under SEC experiment</a> <code title="c23cf6e4e8a1ed8f25f0c1fc41a6b26a71107f7bc59b295961e0885f99d2a36b">c23cf6e4...</code></li><li id="ev-NEWS-5-2302"><b>NEWS-5</b> <a href="https://decrypt.co/383747/claude-historic-math-breakthrough-anthropic-ipo" target="_blank" rel="noopener">Claude Claims Historic Math Breakthrough One Day After Anthropic IPO</a> <code title="592fb91640972e83ee1de0424ff656089cca773d2139ff43f376531187e90f2f">592fb916...</code></li><li id="ev-NEWS-6-2302"><b>NEWS-6</b> <a href="https://decrypt.co/383744/nvidia-shares-sink-52-week-low-sec-probing-accounting" target="_blank" rel="noopener">Nvidia Shares Sink to 52-Week Low After Report SEC Is Probing Accounting</a> <code title="79c77e0b6ee655597235eab20ac729ce1c7acc6b3facb110bf781ade875dd63f">79c77e0b...</code></li><li id="ev-KOL-2302"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">28 signals from 9 public voices; convergence: 8 voices BEAR on BTC; 3 voices BEAR on ETH; 2 voices BEAR on NVDA; SOL 0 bull / 1 bear</a> <code title="01051877ace36bd2bf09b135a8933f8368737b79c821fbec504b70fe9f710fa5">01051877...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 0</span></h4>
+    <p class="thesis">Based on the provided evidence, there is no direct or indirect support for initiating a BUY position on SOL/USD at this time.</p>
+    <ol></ol>
+    <p class="muted">Would change my mind: Any new evidence indicating positive price momentum, increased demand, or a shift in market sentiment specifically for SOL, or a clear technical indicator from the provided data suggesting an imminent rebound.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 85</span></h4>
+    <p class="thesis">SOL is experiencing significant price depreciation across multiple timeframes, driven by broad market bearishness, specific negative news, and strong negative sentiment from public market voices, indicating further downside.</p>
+    <ol><li>SOL's price is in a clear and accelerating downtrend, indicating strong bearish momentum. <a class="cite" href="#ev-PYTH-2302">PYTH</a> <a class="cite" href="#ev-CB-2302">CB</a> <a class="cite" href="#ev-KR-2302">KR</a> <a class="cite" href="#ev-CG-2302">CG</a><div class="ce">The current price of SOL is significantly below its EMA, 24-hour open, and VWAP, with 1-hour, 24-hour, and 7-day changes all showing substantial negative percentages (e.g., -910 bps 24h on CB, -952 bps 24h on CG, -276 bps deviation from EMA on PYTH). This sustained downward pressure across multiple timeframes suggests that sellers are in control, which will likely lead to further price depreciation.</div></li><li>The broader cryptocurrency market, including Bitcoin and Ethereum, is undergoing a severe crash with massive liquidations, which is dragging down SOL's price. <a class="cite" href="#ev-NEWS-2-2302">NEWS-2</a> <a class="cite" href="#ev-KOL-2302">KOL</a><div class="ce">Bitcoin has tanked below $57,000, and public market voices report 'Crypto continues to crash' with '$650,000,000 in leveraged cryptocurrency positions liquidated in the past 60 minutes' (KOL). This general market panic and deleveraging, with BTC and ETH experiencing significant drops and liquidations, typically leads to correlated assets like SOL experiencing similar downward price movements as investors de-risk across the board.</div></li><li>Specific negative news and direct bearish public sentiment regarding SOL contribute to its downward price pressure. <a class="cite" href="#ev-NEWS-1-2302">NEWS-1</a> <a class="cite" href="#ev-KOL-2302">KOL</a><div class="ce">VanEck dropping Gemini as custodian for its SOL ETF (NEWS-1) is negative news, potentially signaling institutional concerns or operational shifts that could reduce confidence in SOL. Furthermore, a prominent public voice explicitly stating '$SOL falls under $66' (KOL) reinforces the bearish narrative and can influence market participants to sell, driving the price lower.</div></li></ol>
+    <p class="muted">Would change my mind: A significant reversal in SOL's price action, showing strong buying pressure and breaking above recent resistance levels, would change my mind. Additionally, a shift in overall crypto market sentiment from bearish to bullish, particularly for BTC and ETH, or positive news specifically for Solana, such as new partnerships or successful upgrades, could alter my conviction.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">BEAR wins - SELL at conviction 85</span></h4>
+        <p>SOL is in a clear and accelerating downtrend, confirmed by multiple price sources showing significant negative changes and deviation below EMA/VWAP. This is exacerbated by a severe broader crypto market crash, with Bitcoin and Ethereum experiencing massive liquidations and strong bearish public sentiment. Specific negative news regarding VanEck dropping Gemini as custodian for its SOL ETF further adds to the negative pressure, alongside direct bearish calls on SOL from public market voices. All indicators point to continued downside.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-PYTH-2302">PYTH</a> <a class="cite" href="#ev-CB-2302">CB</a> <a class="cite" href="#ev-KR-2302">KR</a> <a class="cite" href="#ev-CG-2302">CG</a> <a class="cite" href="#ev-NEWS-1-2302">NEWS-1</a> <a class="cite" href="#ev-NEWS-2-2302">NEWS-2</a> <a class="cite" href="#ev-KOL-2302">KOL</a> - stop 200 bps, target 600 bps, horizon 360 min, size 100% of max</p>
+        
+      </div>
+  <details><summary>Rules (0/1 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>evidence.pyth_fresh</code> Pyth age 2229s, limit 900s</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=2302"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2534BK7qNfTYutfp9L98hry5rT2P7ZyHmyCp7hKa3LndxgbxXcahLkn7PFHFuKhmt19LswU7z8QDjnFEpkurnCp4?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="0825d45f6513664bd2bfe04b8a9b9255ee185aa55cf7231c6897c982bf76ac00">receipt 0825d45f6513...</code>
+  </footer>
+</article>
 <article class="card" id="r2301">
   <header>
     <span class="badge hold">HOLD</span>
