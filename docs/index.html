@@ -38,11 +38,11 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2350</b><span>receipts on chain</span></div>
-  <div class="stat"><b>210</b><span>debates</span></div>
+  <div class="stat"><b>2351</b><span>receipts on chain</span></div>
+  <div class="stat"><b>211</b><span>debates</span></div>
   <div class="stat"><b>161</b><span>entries</span></div>
   <div class="stat"><b>161</b><span>rule exits</span></div>
-  <div class="stat"><b>17</b><span>rulings blocked by rules</span></div>
+  <div class="stat"><b>18</b><span>rulings blocked by rules</span></div>
   <div class="stat"><b>+1393</b><span>bps on closed trades (market price)</span></div>
 </div>
 <div class="how">
@@ -57,6 +57,42 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2350">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2350</span>
+    <time>2026-11-22T08:23:26Z</time>
+    <span class="px">SOL $69.10</span>
+  </header>
+  <p class="reason">market price is stale; refusing to trade on it</p>
+  <details ><summary>Evidence (11) - pack <code>2a51e5fb...</code></summary><ul class="ev"><li id="ev-PYTH-2350"><b>PYTH</b> <a>$69.0999</a> - EMA $69.038, 8 bps from EMA, 2226s old <code title="61ecb36bc44c525c20a64a49429fdde0d084ac5c1696bafccb1743216f703817">61ecb36b...</code></li><li id="ev-CB-2350"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$69.85</a> - 24h 396 bps <code title="498a9866fa02d978f72428c630e00fd372a206b81ef29105a76989f7d5636df0">498a9866...</code></li><li id="ev-KR-2350"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$69.87</a> - 39 bps vs 24h VWAP <code title="dbf15d13acd4722926e1b4af719d5331516afe41ff8ac0838cbc0f297e4a6d05">dbf15d13...</code></li><li id="ev-CG-2350"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$69.45</a> - 1h 7 bps, 24h 376 bps, 7d -190 bps <code title="d1d8bf63e2dc49e3d8c92a90c8cf3de4eadd84ccc770be6cffa4d32733d08b79">d1d8bf63...</code></li><li id="ev-NEWS-1-2350"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/upbit-bithumb-suspend-cyber-transfers-bridge-exploit?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">South Korean exchanges halt CYBER transfers amid suspected bridge exploit</a> <code title="5516306155d8d5397b177a45ac67eaf61b0ae2025aa62b22de1f617096a6d35b">55163061...</code></li><li id="ev-NEWS-2-2350"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/chainflip-12m-crypto-hack-10-percent-bounty?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Chainflip confirms $12M hack, offers attacker 10% bounty</a> <code title="5813d9d022fd088b364dde1a87ade60b3ea12822e476e66be7da1f59e509974c">5813d9d0...</code></li><li id="ev-NEWS-3-2350"><b>NEWS-3</b> <a href="https://decrypt.co/383756/gta-6-leaker-dangles-pc-port-15-million-crypto-pump" target="_blank" rel="noopener">GTA 6 Leaker Dangles a PC Port Behind a $15 Million Crypto Pump</a> <code title="0d2bb56c23dac13f6aee8481d36a4d018c383c8a4c63d78cd62f4be9bc762d60">0d2bb56c...</code></li><li id="ev-NEWS-4-2350"><b>NEWS-4</b> <a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_blank" rel="noopener">Bitcoin rebounds above $60,000 after $1.8 billion crypto liquidation wave</a> <code title="1f475fb9302d7662dfd8b901e2c28f345ab34775e61f7309072a8e57d2b1c444">1f475fb9...</code></li><li id="ev-NEWS-5-2350"><b>NEWS-5</b> <a href="https://decrypt.co/383752/fraudsters-fake-crypto-exchanges-steal-37-million-sec" target="_blank" rel="noopener">Fraudsters Used Fake Crypto Exchanges to Steal $37 Million, SEC Alleges</a> <code title="c91bd13c909cc700c05de45a6c0af9ee389bd01992343556e4c9b1dcabad3c2c">c91bd13c...</code></li><li id="ev-NEWS-6-2350"><b>NEWS-6</b> <a href="https://www.coindesk.com/business/2026/11/21/cross-chain-protocol-chainflip-s-flip-tanks-30-after-suspected-usd4-86-million-vault-drain" target="_blank" rel="noopener">Cross-chain protocol Chainflip's FLIP tanks 30% after suspected $4.86 million vault drain</a> <code title="7350734f05546420f48517ca9c1bc8fb09742f7018b2400ad0b5b748876ee058">7350734f...</code></li><li id="ev-KOL-2350"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">12 signals from 9 public voices; no convergence; SOL 0 bull / 0 bear</a> <code title="f5266e928f73ce2197d788a82e9fe2df547537e61c1dcd99e5c856215d929bb8">f5266e92...</code></li></ul></details>
+  <div class="debate"><div class="side bull">
+    <h4>BULL <span class="conf">confidence 75</span></h4>
+    <p class="thesis">SOL is currently demonstrating strong short-term bullish momentum and robust ecosystem growth, making it an attractive BUY.</p>
+    <ol><li>SOL is exhibiting strong short-term bullish momentum, evidenced by positive 24-hour and 1-hour price changes, and trading above its 24-hour volume-weighted average price (VWAP). <a class="cite" href="#ev-CB-2350">CB</a> <a class="cite" href="#ev-CG-2350">CG</a> <a class="cite" href="#ev-KR-2350">KR</a><div class="ce">The 24-hour price increases of 396 bps on Coinbase and 376 bps on CoinGecko, coupled with a 7 bps increase in the last hour on CoinGecko, indicate sustained buying interest. Furthermore, Kraken's report that SOL's price is 39 bps above its 24-hour VWAP suggests that current demand is pushing the price higher than its average trading price, signaling continued upward pressure. This collective data points to a strong likelihood of further price appreciation.</div></li><li>Solana's network demonstrates robust utility and adoption, leading in tokenized asset DEX volume. <a class="cite" href="#ev-KOL-2350">KOL</a><div class="ce">The report from DegenerateNews within KOL, stating that Solana led tokenized ANT DEX volume with over $140M in its first two days, surpassing all other chains combined, highlights significant and growing utility for the Solana blockchain. This strong on-chain activity and market dominance in a specific sector can attract more users, developers, and capital to the ecosystem, thereby increasing demand for SOL and supporting its price.</div></li></ol>
+    <p class="muted">Would change my mind: A reversal in the positive 24-hour price trend, SOL falling below its VWAP, or new information indicating a decline in Solana's network activity or adoption would change my mind.</p>
+  </div><div class="side bear">
+    <h4>BEAR <span class="conf">confidence 65</span></h4>
+    <p class="thesis">Solana (SOL) is currently exhibiting a bearish trend over the past week, compounded by a negative daily price movement and a broader cryptocurrency market facing significant negative sentiment from security exploits and fraud. This combination suggests a high probability of further price depreciation for SOL.</p>
+    <ol><li>Solana has experienced a notable price decline over the last seven days. <a class="cite" href="#ev-CG-2350">CG</a><div class="ce">The 190 basis point decrease in SOL's price over the past week indicates a sustained bearish momentum, suggesting that selling pressure is outweighing buying interest and is likely to continue driving the price lower.</div></li><li>SOL's price has shown a negative change in the current trading day. <a class="cite" href="#ev-KR-2350">KR</a><div class="ce">A 43 basis point drop today, following a week of decline, reinforces the immediate bearish sentiment and indicates that sellers are maintaining control, which could lead to further short-term price depreciation.</div></li><li>The wider cryptocurrency market is currently under pressure due to multiple reported hacks and fraud allegations. <a class="cite" href="#ev-NEWS-1-2350">NEWS-1</a> <a class="cite" href="#ev-NEWS-2-2350">NEWS-2</a> <a class="cite" href="#ev-NEWS-5-2350">NEWS-5</a> <a class="cite" href="#ev-NEWS-6-2350">NEWS-6</a><div class="ce">General negative news regarding security breaches and fraudulent activities across the crypto ecosystem tends to foster a risk-off environment, leading investors to divest from altcoins like SOL, thereby increasing selling pressure on SOL/USD.</div></li></ol>
+    <p class="muted">Would change my mind: A reversal in SOL's 7-day price trend, strong positive SOL-specific news, or a clear bullish convergence from public market voices on SOL.</p>
+  </div></div>
+  <div class="judge"><h4>JUDGE <span class="conf">BULL wins - BUY at conviction 70</span></h4>
+        <p>SOL is demonstrating strong short-term bullish momentum, evidenced by significant positive 24-hour price changes across multiple exchanges (Coinbase +396 bps, CoinGecko +376 bps) and a positive 1-hour change (CoinGecko +7 bps). The price is also trading above its 24-hour volume-weighted average price (Kraken +39 bps), indicating sustained buying interest. Furthermore, Solana's ecosystem shows robust utility and adoption, leading in tokenized asset DEX volume, which provides a fundamental tailwind. While there is a negative 7-day trend and general crypto market FUD, the immediate price action and SOL-specific positive news outweigh these concerns for a short-term trade.</p>
+        <p class="muted">Decisive: <a class="cite" href="#ev-CB-2350">CB</a> <a class="cite" href="#ev-CG-2350">CG</a> <a class="cite" href="#ev-KR-2350">KR</a> <a class="cite" href="#ev-KOL-2350">KOL</a> - stop 180 bps, target 400 bps, horizon 120 min, size 100% of max</p>
+        
+      </div>
+  <details><summary>Rules (0/1 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>evidence.pyth_fresh</code> Pyth age 2226s, limit 900s</li></ul></details>
+  <footer>
+    
+    
+    
+    <a href="record.html?seq=2350"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4zfPZi5SrxQk2y8GVqrDSDHL7LQYNWr6LdXXuwkbmJdhE7D8JjyoVyoGUfM63qySe67656MUThyfed3MWstRdwoA?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="af3fdbf9d81afb5b83b6a24161597d34c80220bb8fde9fff2018512ea23bf847">receipt af3fdbf9d81a...</code>
+  </footer>
+</article>
 <article class="card" id="r2349">
   <header>
     <span class="badge hold">HOLD</span>
