@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2368</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2369</b><span>receipts on chain</span></div>
   <div class="stat"><b>220</b><span>debates</span></div>
   <div class="stat"><b>162</b><span>entries</span></div>
   <div class="stat"><b>161</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2368">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2368</span>
+    <time>2026-11-23T11:10:03Z</time>
+    <span class="px">SOL $72.25</span>
+  </header>
+  <p class="reason">position from #2359 open at 9 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>745a0a88...</code></summary><ul class="ev"><li id="ev-PYTH-2368"><b>PYTH</b> <a>$72.2549</a> - EMA $72.272, -2 bps from EMA, 1890s old <code title="17cdf50a865f423ff312c8159cfea1fbf6cd84b14a3586b25e1cfc88f548817f">17cdf50a...</code></li><li id="ev-CB-2368"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$72.13</a> - 24h 230 bps <code title="a64f4cc3ca024534e5cef15637c4962766c3837bfb6b7491699182797d10995b">a64f4cc3...</code></li><li id="ev-KR-2368"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$72.11</a> - 168 bps vs 24h VWAP <code title="ac0a27cc28a3b77927cbccdb3200f403d451b9b37223213c603a52804ce9adc4">ac0a27cc...</code></li><li id="ev-CG-2368"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$72.12</a> - 1h -3 bps, 24h 205 bps, 7d 209 bps <code title="9bbd5c8d2bf02cde3bb23e3cdad87e1fce70954f71a49f28505f09f07407f7c7">9bbd5c8d...</code></li><li id="ev-NEWS-1-2368"><b>NEWS-1</b> <a href="https://www.coindesk.com/policy/2026/11/23/south-korea-to-expand-cryptocurrency-account-freezes-and-curb-illicit-transfers-abroad" target="_blank" rel="noopener">South Korea to expand cryptocurrency account freezes and curb illicit transfers abroad</a> <code title="673a2aead4e383740c0409b85b2c12a84246017639013f9a0d717b6e68091d2c">673a2aea...</code></li><li id="ev-NEWS-2-2368"><b>NEWS-2</b> <a href="https://www.coindesk.com/markets/2026/11/23/bitcoin-breaks-a-record-streak-of-lower-highs-here-s-what-it-means" target="_blank" rel="noopener">Bitcoin breaks a record streak of 'lower highs.' Here's what it means</a> <code title="33767c7de2d09ad5ec221c1f0663c15e913f056455f27798b88432f609698fa2">33767c7d...</code></li><li id="ev-NEWS-3-2368"><b>NEWS-3</b> <a href="https://www.coindesk.com/markets/2026/11/23/u-s-inflation-thanksgiving-trading-crypto-week-ahead" target="_blank" rel="noopener">U.S. inflation, Thanksgiving trading: Crypto Week Ahead</a> <code title="bcf605cd85aadecaf1f30144a855fe302ac17d993089fde888e860449d361279">bcf605cd...</code></li><li id="ev-NEWS-4-2368"><b>NEWS-4</b> <a href="https://cointelegraph.com/news/moldyroost-malware-drain-iphone-wallets-one-tap?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">'MoldyRoost' ads can steal crypto wallet recovery phrases from iPhones</a> <code title="983557ea3c1ea7e472ac298f57daad2eebea5b87f2b516658692e09fea97efe5">983557ea...</code></li><li id="ev-NEWS-5-2368"><b>NEWS-5</b> <a href="https://cointelegraph.com/markets/bitcoin-etfs-third-largest-weekly-outflows-1-8-billion?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin ETFs shed $1.8B in third-largest weekly outflow</a> <code title="acd9c6bab13eae1ad64318303dcd0c7730655169a93be0d7164cc17ac4475c50">acd9c6ba...</code></li><li id="ev-NEWS-6-2368"><b>NEWS-6</b> <a href="https://www.coindesk.com/tech/2026/11/23/moldyroost-malvertizing-campaign-uses-one-tap-iphone-hacks-to-hunt-crypto-wallet-keys-research-shows" target="_blank" rel="noopener">Crypto thieves are using online ads to infect iPhones with a single tap, research finds</a> <code title="4966267ad652f0c91d548c2e1cd13b070ca143c0ea86005ae9ca3a2a33670322">4966267a...</code></li><li id="ev-KOL-2368"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">22 signals from 9 public voices; convergence: 4 voices BEAR on BTC; 2 voices BULL on SOL; SOL 2 bull / 0 bear</a> <code title="a154a7f7fe0520d8cd67f7d1fb9c379baf586821924404607a6d6b92acd3ff9c">a154a7f7...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (0/2 passed)</summary><ul class="rules"><li class="fail"><span>FAIL</span> <code>exit.pyth_fresh</code> Pyth age 1890s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #2359: market moved 9 bps (position 9 bps), stop -200, target +400, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #2359 at $72.19</span>
+    <a href="record.html?seq=2368"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/4bJK6tYQpWdJE1ThCHmAT8BaPWgVfvBbutLSShhkHq6jxZB8wVyMCgDzGpNUGrSdkhmjJHWwoqX4ZUKt1J8tKja4?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="bb1fe2fa66d7469a583536832aa8f4ebe4da1b08ed1a40d915a6bc529782f0e6">receipt bb1fe2fa66d7...</code>
+  </footer>
+</article>
 <article class="card" id="r2367">
   <header>
     <span class="badge hold">HOLD</span>
