@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2441</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2442</b><span>receipts on chain</span></div>
   <div class="stat"><b>232</b><span>debates</span></div>
   <div class="stat"><b>168</b><span>entries</span></div>
   <div class="stat"><b>167</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2441">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2441</span>
+    <time>2026-11-25T10:11:37Z</time>
+    <span class="px">SOL $67.53</span>
+  </header>
+  <p class="reason">position from #2433 open at 29 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>16f67181...</code></summary><ul class="ev"><li id="ev-PYTH-2441"><b>PYTH</b> <a>$67.5274</a> - EMA $67.7054, -26 bps from EMA, 634s old <code title="5913b7e1819fdcd9aeabe3936d770324415253dddd847bc6462d31c3b51231a2">5913b7e1...</code></li><li id="ev-CB-2441"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$67.55</a> - 24h -401 bps <code title="15aabb5a47bfdb87113e2abecffaec101925f9cb3593f1fed7b7f927c7509827">15aabb5a...</code></li><li id="ev-KR-2441"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$67.58</a> - -246 bps vs 24h VWAP <code title="ff80bd59d7a54d292e7511413093bbf27b80af366df3f173a426da6919c5ca60">ff80bd59...</code></li><li id="ev-CG-2441"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$67.57</a> - 1h -76 bps, 24h -446 bps, 7d -959 bps <code title="b18ee13c6b64f17017a628dbec91910628c7200ce7ad1fb9789cdb1735a44bb1">b18ee13c...</code></li><li id="ev-NEWS-1-2441"><b>NEWS-1</b> <a href="https://www.coindesk.com/tech/2026/11/25/solana-developers-move-to-stop-validators-finishing-work-on-blocks-that-already-lost" target="_blank" rel="noopener">Solana developers move to stop validators finishing work on blocks that already lost</a> <code title="b9f9bda85819669c05ba6991ba95c141abc0babff38e404c9a9b259d11f113f2">b9f9bda8...</code></li><li id="ev-NEWS-2-2441"><b>NEWS-2</b> <a href="https://cointelegraph.com/news/solana-dex-velocity-halts-transactions-over-bug-coming-2-months-after-relaunch?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Solana DEX Velocity halts trading over bug just months after relaunch</a> <code title="d3a426ddcbd75e231849e9cfa0a06434cf77bcef65bb15d65c879494de1c073c">d3a426dd...</code></li><li id="ev-NEWS-3-2441"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/french-senate-rejects-disclosing-self-custodied-crypto-wallets-100k?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">French Senate rejects 100K euro crypto wallet disclosure requirement</a> <code title="fc32cef669fdeb51cb5c863d8033fd26f0218e8c5b2b6ef64c7013acaff08e56">fc32cef6...</code></li><li id="ev-NEWS-4-2441"><b>NEWS-4</b> <a href="https://cointelegraph.com/markets/stablecoin-cash-out-2022-bear-market?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Stablecoin redemptions hit $12B in 30 days, echoing 2022 bear market</a> <code title="3d1a259141974ca4bd5fbda1f82a6c3c8f4d1c4c838df38a649cd8e99e30f835">3d1a2591...</code></li><li id="ev-NEWS-5-2441"><b>NEWS-5</b> <a href="https://cointelegraph.com/news/eu-55-billion-ai-quantum-computing-investment-fund?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">EU seeks up to $55B for AI and quantum computing fund: Report</a> <code title="ea727ca7827701165e65d7edda14f443cd16d65fb2def53f3935423a8aed1ff4">ea727ca7...</code></li><li id="ev-NEWS-6-2441"><b>NEWS-6</b> <a href="https://www.coindesk.com/business/2026/11/25/live-updates-bitcoin-slips-back-under-usd60-000-as-hype-leads-altcoins-lower" target="_blank" rel="noopener">Live updates: Bitcoin slips back under $60,000 as HYPE leads altcoins lower</a> <code title="4905c7c4a1e7090e29fe9fedf40ddb3f86566c054d1d9c79835cbe099550c592">4905c7c4...</code></li><li id="ev-KOL-2441"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">21 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BEAR on ETH; SOL 0 bull / 1 bear</a> <code title="0607b74ccbd1c9ad1583327ea3e033acbdcd5a12957338ba72ed8391380291c4">0607b74c...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 634s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> SHORT from #2433: market moved -29 bps (position 29 bps), stop -150, target +300, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open SHORT from #2433 at $67.73</span>
+    <a href="record.html?seq=2441"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/QjVNf5rkzojjLJ8ZTUMW6SMbJgyqLyZp5Q21y7KWN3vh44CrjeJXzdazGDZeVHZaw2yejr428SaLiEEjK2caHs2?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="7af1116ce0c00f701fed5d9cdcbcb49a76cbbf1401dfed7fbcaea6169adc0b17">receipt 7af1116ce0c0...</code>
+  </footer>
+</article>
 <article class="card" id="r2440">
   <header>
     <span class="badge hold">HOLD</span>
