@@ -38,7 +38,7 @@ a{color:var(--acc)}
 <h1>Debate <span>Desk</span></h1>
 <p class="lede">Two agents argue about SOL from the same evidence: on-chain prices (Pyth, and Chainlink via a CRE workflow that anchors each report on Ethereum Sepolia), exchange data, headlines, and what public market voices are saying, with convergence flagged. A third judges. Fixed rules decide whether the ruling may trade, and every decision lands on Solana devnet as a receipt in the same transaction as its trade. The reasoning trail cannot be edited after the fact.</p>
 <div class="stats">
-  <div class="stat"><b>2459</b><span>receipts on chain</span></div>
+  <div class="stat"><b>2460</b><span>receipts on chain</span></div>
   <div class="stat"><b>237</b><span>debates</span></div>
   <div class="stat"><b>169</b><span>entries</span></div>
   <div class="stat"><b>168</b><span>rule exits</span></div>
@@ -57,6 +57,28 @@ a{color:var(--acc)}
 npx tsx src/verify.ts --tx all</pre>
   <span class="muted">Desk DEBATE_DESK <code>FHLgLhiFimjkjP34cuGHQZTfy9DvY4QphskxPMsSk14B</code>. Devnet: trades are real transactions on devnet liquidity, the signal is the real SOL/USD market. This is practice trading, not a performance claim.</span>
 </div>
+<article class="card" id="r2459">
+  <header>
+    <span class="badge hold">HOLD</span>
+    <span class="kind">HOLD</span>
+    <span class="seq">receipt #2459</span>
+    <time>2026-11-26T10:30:54Z</time>
+    <span class="px">SOL $70.93</span>
+  </header>
+  <p class="reason">position from #2450 open at 10 bps; no exit condition met</p>
+  <details ><summary>Evidence (11) - pack <code>8af674fe...</code></summary><ul class="ev"><li id="ev-PYTH-2459"><b>PYTH</b> <a>$70.9324</a> - EMA $70.9667, -4 bps from EMA, 17s old <code title="1389ddb12d2d3443235ca60df053f3b09da747a40686e583ac4bf080e2d0510b">1389ddb1...</code></li><li id="ev-CB-2459"><b>CB</b> <a href="https://api.exchange.coinbase.com/products/SOL-USD/stats" target="_blank" rel="noopener">$70.93</a> - 24h 469 bps <code title="bdc45969c0e97eb9dbad5c58f1b0f10ff64e9430297d8417b93a8301163208ca">bdc45969...</code></li><li id="ev-KR-2459"><b>KR</b> <a href="https://api.kraken.com/0/public/Ticker?pair=SOLUSD" target="_blank" rel="noopener">$70.92</a> - 334 bps vs 24h VWAP <code title="5aec8c9ed3f2b230fa48c5d41c1874ce165e24fce2e772b1f74ef8cbd7f5cb0d">5aec8c9e...</code></li><li id="ev-CG-2459"><b>CG</b> <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&amp;ids=solana&amp;price_change_percentage=1h,24h,7d" target="_blank" rel="noopener">$70.9</a> - 1h -3 bps, 24h 480 bps, 7d -467 bps <code title="5746529151f8e43cea56a81a0894ec7c95a8b64ffe9a581bf4af8078c2fd3aa6">57465291...</code></li><li id="ev-NEWS-1-2459"><b>NEWS-1</b> <a href="https://cointelegraph.com/news/sbi-smfg-solana-global-stablecoin-tokenization?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Japan's SBI, SMFG launch Solana venture for stablecoins, tokenization</a> <code title="6af4f987f2d9585464e490e2291554e0289f58f659fd9c527a98f00a23ad109c">6af4f987...</code></li><li id="ev-NEWS-2-2459"><b>NEWS-2</b> <a href="https://www.coindesk.com/tech/2026/11/25/solana-developers-move-to-stop-validators-finishing-work-on-blocks-that-already-lost" target="_blank" rel="noopener">Solana developers move to stop validators finishing work on blocks that already lost</a> <code title="5c10cf741b77e22bdb02b953da82a81ed62ffefe2989b54b36a6593c5b4c1f0f">5c10cf74...</code></li><li id="ev-NEWS-3-2459"><b>NEWS-3</b> <a href="https://cointelegraph.com/news/zcash-users-migrate-zec-supply-sapling-pool-retirement?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Zcash devs urge users to migrate 2% of ZEC supply to accelerate Sapling pool retirement</a> <code title="b59940745aeaae0c18af2ee6afd882d060abb382de04c1d0d909031c397f6f50">b5994074...</code></li><li id="ev-NEWS-4-2459"><b>NEWS-4</b> <a href="https://cointelegraph.com/markets/morgan-stanley-bitcoin-etf-trend-outflows-november?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Bitcoin ETF November outflows top $5B, Morgan Stanley bucks trend</a> <code title="8288a4e17d9779b09902dc150bb1c377f9ac2809b5ae45147cb764eb5d0b4bd5">8288a4e1...</code></li><li id="ev-NEWS-5-2459"><b>NEWS-5</b> <a href="https://cointelegraph.com/markets/bit-debuts-switzerlands-first-spot-bitcoin-etf?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Switzerland's first spot Bitcoin ETF ticks up 0.6% in opening hour</a> <code title="9a14d33eb98abef62e6e244c0b9dc722c8a9ee8c80f2e7decf1d234efc57b67a">9a14d33e...</code></li><li id="ev-NEWS-6-2459"><b>NEWS-6</b> <a href="https://www.coindesk.com/markets/2026/11/26/usd7-billion-of-bitcoin-options-expire-friday-and-the-biggest-bets-look-starkly-different-from-october" target="_blank" rel="noopener">$7 billion of bitcoin options expire Friday, and the biggest bets look starkly different from October</a> <code title="b625e009437cdb123d7ba8b0ef2baab818d1e7c79720f229562a8662027db55c">b625e009...</code></li><li id="ev-KOL-2459"><b>KOL</b> <a href="https://t.me/s/" target="_blank" rel="noopener">24 signals from 9 public voices; convergence: 2 voices BEAR on BTC; 2 voices BEAR on VVV; SOL 1 bull / 0 bear</a> <code title="e9e5032716b9c8c3d216cb15ae613dcaa1b43cf815a8d43036f70032dd8419ba">e9e50327...</code></li></ul></details>
+  
+  <div class="judge"><h4>NO DEBATE</h4><p>A position was open, so the exit rules ran alone. No model was asked.</p></div>
+  <details><summary>Rules (1/2 passed)</summary><ul class="rules"><li class="pass"><span>PASS</span> <code>exit.pyth_fresh</code> Pyth age 17s, limit 900s</li><li class="fail"><span>FAIL</span> <code>exit.trigger</code> LONG from #2450: market moved 10 bps (position 10 bps), stop -900, target +1000, horizon not reached</li></ul></details>
+  <footer>
+    
+    
+    <span>open LONG from #2450 at $70.86</span>
+    <a href="record.html?seq=2459"><b>Decision Record</b></a>
+    <a href="https://explorer.solana.com/tx/2sMqrh9iTLLGfgmpWtsXuUBcvap3ndFrTzZknjgCDrVTTgxtwAvcw9dWpVex7jn9qy7xLxGKmAX7X4gn2pt3uMg7?cluster=devnet" target="_blank" rel="noopener">transaction</a>
+    <code title="55304c0b83661818be4375057f6d439528830a29c757d2e72fd444b180c6f2cd">receipt 55304c0b8366...</code>
+  </footer>
+</article>
 <article class="card" id="r2458">
   <header>
     <span class="badge hold">HOLD</span>
